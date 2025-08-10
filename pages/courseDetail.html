@@ -249,651 +249,1347 @@
           </div>
         </div>
       </nav>
-      <div
-        class="bg-[--primary-color] text-white text-center py-3 mt-16 dark:bg-gray-700 dark:text-white transition-colors duration-300"
-      >
-        <p class="text-sm font-medium">Explore our new website today!</p>
-      </div>
     </header>
-    <main
-      class="max-w-screen-xl mx-auto px-4 py-8 dark:bg-black dark:text-white transition-colors duration-300"
-    >
-      <section class="mb-16 mt-12 text-center">
-        <h2
-          class="text-[38px] font-semibold text-[--secondary-color] mb-4 dark:text-white"
-        >
-          Build Responsive Real-World Websites with HTML and CSS
-        </h2>
-        <p class="text-gray-600 mb-6 dark:text-white">
-          Learn modern HTML5, CSS3 and web design by building a stunning website
-          for your portfolio! Includes flexbox and CSS Grid.
-        </p>
-        <button
-          class="bg-[--primary-color] text-white px-8 py-3 rounded-lg font-semibold hover:bg-[#00A0FF] transform hover:scale-105 transition-all duration-200"
-        >
-          <a href="#">Start Learning Now</a>
-        </button>
+    <main class="pt-16">
+      <!-- Hero Section -->
+      <section
+        class="bg-gradient-to-r from-blue-500 to-blue-600 dark:from-blue-700 dark:to-blue-800 text-white py-12 md:py-16 lg:py-20"
+      >
+        <div class="container mx-auto px-4">
+          <div class="flex flex-col lg:flex-row items-center justify-between">
+            <!-- Course Info -->
+            <div class="lg:w-2/3 mb-8 lg:mb-0">
+              <h1 class="text-4xl lg:text-5xl font-bold mb-4">
+                Build Responsive Real-World<br />
+                Websites with HTML and CSS
+              </h1>
+              <p class="text-xl mb-6 opacity-90">
+                Learn modern HTML5, CSS3 and web design by building a huge
+                project. Includes flexbox, CSS Grid, animations, responsive
+                design, and much more!
+              </p>
+              <!-- Rating and Stats -->
+              <div class="flex flex-wrap items-center gap-4 mt-6 text-sm">
+                <!-- Rating -->
+                <div class="flex items-center">
+                  <span class="text-yellow-400 text-lg">★★★★★</span>
+                  <span class="ml-2">4.8</span>
+                  <span class="ml-1 text-sky-100">(350 reviews)</span>
+                </div>
+
+                <!-- Students -->
+                <div class="flex items-center">
+                  <i class="fas fa-users mr-2"></i>
+                  <span>112,500 students</span>
+                </div>
+
+                <!-- Duration -->
+                <div class="flex items-center">
+                  <i class="fas fa-clock mr-2"></i>
+                  <span>48 hours</span>
+                </div>
+              </div>
+              <div class="flex items-center space-x-6 text-lg mt-4">
+                <div class="flex items-center">
+                  <i class="fas fa-play-circle mr-2"></i>
+                  <span>130 lessons</span>
+                </div>
+                <div class="text-sm opacity-75">Created by Mr. Dara</div>
+              </div>
+            </div>
+
+            <!-- Pricing Card -->
+            <div
+              class="max-w-sm mx-auto bg-white dark:bg-gray-800 rounded-lg shadow-lg overflow-hidden border border-gray-200 dark:border-gray-700 p-4 transition-colors duration-300"
+            >
+              <!-- Media Placeholder with Play Icon -->
+              <div class="flex justify-center mb-4">
+                <div class="relative w-full">
+                  <img
+                    src="https://www.ultimatewb.com/blog/wp-content/uploads/html-js-css-website-coding-1536x852.jpg"
+                    alt="Course Thumbnail"
+                    class="w-full h-48 object-cover rounded-lg shadow-md"
+                  />
+                  <!-- Play Icon Overlay -->
+                  <div
+                    class="absolute inset-0 flex items-center justify-center"
+                  >
+                    <div
+                      class="bg-white bg-opacity-80 dark:bg-gray-800 dark:bg-opacity-80 p-3 rounded-full shadow-md hover:scale-110 transition-transform duration-300"
+                    >
+                      <svg
+                        class="w-8 h-8 text-blue-600 dark:text-blue-400"
+                        fill="currentColor"
+                        viewBox="0 0 24 24"
+                      >
+                        <path d="M8 5v14l11-7z" />
+                      </svg>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Tech Icons -->
+              <div class="flex justify-center space-x-4 mb-4">
+                <div
+                  class="bg-orange-500 text-white px-3 py-1 rounded font-semibold uppercase text-xs"
+                >
+                  HTML
+                </div>
+                <div
+                  class="bg-yellow-500 text-white px-3 py-1 rounded font-semibold uppercase text-xs"
+                >
+                  JS
+                </div>
+                <div
+                  class="bg-blue-500 text-white px-3 py-1 rounded font-semibold uppercase text-xs"
+                >
+                  CSS
+                </div>
+              </div>
+
+              <!-- Pricing -->
+              <div
+                class="flex items-center justify-center mb-2 space-x-2 text-lg font-semibold"
+              >
+                <span class="text-gray-800 dark:text-white">$79.99</span>
+                <span class="text-gray-400 line-through text-sm">$99.99</span>
+                <span class="text-green-600 text-sm">25% off</span>
+              </div>
+
+              <!-- Time Left -->
+              <p class="text-center text-sm text-red-500 mb-4">
+                <span class="font-semibold">3 hours</span> left at this price!
+              </p>
+
+              <!-- Action Buttons -->
+              <div class="space-y-2 mb-4">
+                <button
+                  onclick="openPaymentModal('Premium Plan', '$79.99')"
+                   class="w-full bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-lg font-semibold transform hover:scale-105 transition-all duration-200"
+                >
+                  Add to cart
+                </button>
+                <button
+                  onclick="openPaymentModal('Premium Plan', '$79.99')"
+                  class="w-full border border-blue-600 dark:border-blue-400 text-blue-600 dark:text-blue-400 font-semibold py-2 px-4 rounded hover:bg-blue-50 dark:hover:bg-blue-900 transition duration-300"
+                >
+                  Enroll Now
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
       </section>
 
-      <!-- Main Content -->
-      <div class="grid md:grid-cols-3 gap-6 mb-12">
-        <!-- Left Content -->
-        <div class="md:col-span-2 space-y-8">
-          <!-- What You'll Learn -->
-          <section>
-            <h3 class="text-lg font-semibold mb-2 text-[#40a0d9]">
-              What you'll learn
-            </h3>
-            <ul
-              class="list-disc list-inside space-y-2 text-gray-700 dark:text-white"
-            >
-              <li>
-                Become a modern and confident HTML and CSS developer, no prior
-                knowledge needed!
-              </li>
-              <li>
-                Design and build a stunning real-world project for your
-                portfolio from scratch
-              </li>
-              <li>Modern, semantic and accessible HTML5</li>
-              <li>
-                Modern CSS (previous CSS3), including flexbox and CSS Grid for
-                layout
-              </li>
-              <li>
-                Important CSS concepts such as the box model, positioning
-                schemes, inheritance, and conflicts
-              </li>
-              <li>
-                A web design framework with easy-to-use rules and guidelines to
-                design eye-catching websites
-              </li>
-              <li>
-                How to plan, sketch, design, build, test, and optimize a
-                professional website
-              </li>
-              <li>
-                How to make websites work on every mobile device (responsive
-                design)
-              </li>
-              <li>
-                How to use common components and layout patterns for
-                professional web development
-              </li>
-              <li>
-                Developer skills such as reading documentation, debugging, and
-                using professional tools
-              </li>
-              <li>
-                How to find and use free design assets such as images, fonts,
-                and icons
-              </li>
-              <li>
-                Practice your skills with 10+ challenges (solutions included)
-              </li>
-            </ul>
-          </section>
-
-          <!-- Course Content -->
-          <section>
-            <h3 class="text-lg font-semibold mb-2 text-[#40a0d9]">
-              Course Content
-            </h3>
-            <ul class="space-y-2 text-gray-800">
-              <li
-                class="flex justify-between border p-3 rounded shadow-sm bg-white dark:bg-gray-700 dark:text-gray-100 transition-colors duration-300"
-              >
-                <span class="dark:text-white"
-                  ><strong>HTML Fundamentals</strong></span
-                >
-                <span class="text-sm text-gray-600 dark:text-white"
-                  >24 lectures · 5h 25min</span
-                >
-              </li>
-              <li
-                class="flex justify-between border p-3 rounded shadow-sm bg-white dark:bg-gray-700 transition-colors duration-300"
-              >
-                <span class="dark:text-white"
-                  ><strong>CSS Fundamentals</strong></span
-                >
-                <span class="text-sm text-gray-600 dark:text-white"
-                  >24 lectures · 5h 25min</span
-                >
-              </li>
-              <li
-                class="flex justify-between border p-3 rounded shadow-sm bg-white dark:bg-gray-700 transition-colors duration-300"
-              >
-                <span class="dark:text-white"
-                  ><strong>Layouts: Floats, Flexbox, and CSS Grid</strong></span
-                >
-                <span class="text-sm text-gray-600 dark:text-white"
-                  >21 lectures · 4h 2min</span
-                >
-              </li>
-              <li
-                class="flex justify-between border p-3 rounded shadow-sm bg-white dark:bg-gray-700 transition-colors duration-300"
-              >
-                <span class="dark:text-white"
-                  ><strong>Web Design Rules and Framework</strong></span
-                >
-                <span class="text-sm text-gray-600 dark:text-white"
-                  >20 lectures · 4h 53min</span
-                >
-              </li>
-              <li
-                class="flex justify-between border p-3 rounded shadow-sm bg-white dark:bg-gray-700 transition-colors duration-300"
-              >
-                <span class="dark:text-white"
-                  ><strong>Components and Layout Patterns</strong></span
-                >
-                <span class="text-sm text-gray-600 dark:text-white"
-                  >14 lectures · 4h 29min</span
-                >
-              </li>
-              <li
-                class="flex justify-between border p-3 rounded shadow-sm bg-white dark:bg-gray-700 transition-colors duration-300"
-              >
-                <span class="dark:text-white"
-                  ><strong>Omnifood Project - Setup & Desktop</strong></span
-                >
-                <span class="text-sm text-gray-600 dark:text-white"
-                  >29 lectures · 10h 17min</span
-                >
-              </li>
-              <li
-                class="flex justify-between border p-3 rounded shadow-sm bg-white dark:bg-gray-700 transition-colors duration-300"
-              >
-                <span class="dark:text-white"
-                  ><strong>Omnifood Project - Responsive Design</strong></span
-                >
-                <span class="text-sm text-gray-600 dark:text-white"
-                  >9 lectures · 2h 44min</span
-                >
-              </li>
-              <li
-                class="flex justify-between border p-3 rounded shadow-sm bg-white dark:bg-gray-700 transition-colors duration-300"
-              >
-                <span class="dark:text-white"
-                  ><strong
-                    >Omnifood Project - Effects & Deployment</strong
-                  ></span
-                >
-                <span class="text-sm text-gray-600 dark:text-white"
-                  >11 lectures · 2h 40min</span
-                >
-              </li>
-              <li
-                class="flex justify-between border p-3 rounded shadow-sm bg-white dark:bg-gray-700 transition-colors duration-300"
-              >
-                <span class="dark:text-white"><strong>The End!</strong></span>
-                <span class="text-sm text-gray-600 dark:text-white"
-                  >2 lectures · 6min</span
-                >
-              </li>
-            </ul>
-          </section>
-        </div>
-
-        <!-- Sidebar -->
-        <aside>
+      <!-- Payment Modal -->
+      <section
+        id="modalOverlay"
+        class="fixed inset-0 bg-black bg-opacity-60 backdrop-blur-sm flex items-center justify-center z-50 opacity-0 invisible transition-all duration-300"
+        onclick="closeModal(event)"
+      >
+        <div
+          class="bg-white dark:bg-gray-800 rounded-2xl shadow-2xl w-full max-w-lg mx-4 max-h-screen overflow-y-auto transform scale-95 opacity-0 transition-all duration-300"
+          onclick="event.stopPropagation()"
+          id="paymentModal"
+        >
+          <!-- Modal Header -->
           <div
-            class="max-w-sm mx-auto bg-white rounded-lg shadow-lg overflow-hidden border border-gray-200 p-4 dark:bg-gray-900 text-gray-900 dark:text-gray-100 transition-colors duration-300 dark:border-0"
+            class="relative bg-blue-600 dark:bg-blue-700 text-white p-6 rounded-t-2xl"
           >
-            <!-- Media Placeholder with Play Icon -->
-            <div class="flex justify-center mb-4">
-              <div class="relative w-full">
-                <img
-                  src="https://www.ultimatewb.com/blog/wp-content/uploads/html-js-css-website-coding-1536x852.jpg"
-                  alt="Course Thumbnail"
-                  class="w-full h-48 object-cover rounded-lg shadow-md"
+            <button
+              onclick="closeModal()"
+              class="absolute top-4 right-4 w-8 h-8 flex items-center justify-center rounded-full hover:bg-white hover:bg-opacity-20 transition-colors duration-200"
+            >
+              <i class="fas fa-times"></i>
+            </button>
+            <div class="text-center">
+              <h2 class="text-2xl font-bold mb-2">Complete Your Purchase</h2>
+              <p id="selectedPlan" class="text-blue-100">
+                Premium Plan - $79.99
+              </p>
+            </div>
+          </div>
+
+          <!-- Payment Form -->
+          <form
+            id="paymentForm"
+            onsubmit="processPayment(event)"
+            class="p-6 space-y-6"
+          >
+            <!-- Email -->
+            <div>
+              <label
+                for="email"
+                class="block text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2"
+                >Email Address</label
+              >
+              <input
+                type="email"
+                id="email"
+                name="email"
+                required
+                class="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors duration-200 bg-gray-50 dark:bg-gray-700 dark:text-white focus:bg-white dark:focus:bg-gray-600"
+              />
+            </div>
+
+            <!-- Cardholder Name -->
+            <div>
+              <label
+                for="cardName"
+                class="block text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2"
+                >Cardholder Name</label
+              >
+              <input
+                type="text"
+                id="cardName"
+                name="cardName"
+                required
+                class="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors duration-200 bg-gray-50 dark:bg-gray-700 dark:text-white focus:bg-white dark:focus:bg-gray-600"
+              />
+            </div>
+
+            <!-- Card Number -->
+            <div>
+              <label
+                for="cardNumber"
+                class="block text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2"
+                >Card Number</label
+              >
+              <div class="relative">
+                <input
+                  type="text"
+                  id="cardNumber"
+                  name="cardNumber"
+                  placeholder="1234 5678 9012 3456"
+                  required
+                  maxlength="19"
+                  class="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors duration-200 bg-gray-50 dark:bg-gray-700 dark:text-white focus:bg-white dark:focus:bg-gray-600"
                 />
-                <!-- Play Icon Overlay -->
-                <div class="absolute inset-0 flex items-center justify-center">
-                  <div
-                    class="bg-white bg-opacity-80 p-3 rounded-full shadow-md hover:scale-110 transition-transform duration-300"
-                  >
-                    <svg
-                      class="w-8 h-8 text-blue-600"
-                      fill="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <path d="M8 5v14l11-7z" />
-                    </svg>
-                  </div>
+                <div
+                  class="absolute right-3 top-1/2 transform -translate-y-1/2"
+                >
+                  <i class="fab fa-cc-mastercard text-2xl text-gray-400"></i>
                 </div>
               </div>
             </div>
 
-            <!-- Tech Icons -->
-            <div class="flex justify-center space-x-4 mb-4">
-              <div
-                class="bg-orange-500 text-white px-3 py-1 rounded font-semibold uppercase text-xs"
-              >
-                HTML
+            <!-- Expiry and CVV -->
+            <div class="grid grid-cols-2 gap-4">
+              <div>
+                <label
+                  for="expiry"
+                  class="block text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2"
+                  >Expiry Date</label
+                >
+                <input
+                  type="text"
+                  id="expiry"
+                  name="expiry"
+                  placeholder="MM/YY"
+                  required
+                  maxlength="5"
+                  class="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors duration-200 bg-gray-50 dark:bg-gray-700 dark:text-white focus:bg-white dark:focus:bg-gray-600"
+                />
               </div>
-              <div
-                class="bg-yellow-500 text-white px-3 py-1 rounded font-semibold uppercase text-xs"
-              >
-                JS
-              </div>
-              <div
-                class="bg-blue-500 text-white px-3 py-1 rounded font-semibold uppercase text-xs"
-              >
-                CSS
+              <div>
+                <label
+                  for="cvv"
+                  class="block text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2"
+                  >CVV</label
+                >
+                <input
+                  type="text"
+                  id="cvv"
+                  name="cvv"
+                  placeholder="123"
+                  required
+                  maxlength="4"
+                  class="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors duration-200 bg-gray-50 dark:bg-gray-700 dark:text-white focus:bg-white dark:focus:bg-gray-600"
+                />
               </div>
             </div>
 
-            <!-- Pricing -->
+            <!-- Billing Address -->
+            <div>
+              <label
+                for="billingAddress"
+                class="block text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2"
+                >Billing Address</label
+              >
+              <input
+                type="text"
+                id="billingAddress"
+                name="billingAddress"
+                required
+                class="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors duration-200 bg-gray-50 dark:bg-gray-700 dark:text-white focus:bg-white dark:focus:bg-gray-600"
+              />
+            </div>
+
+            <!-- City and ZIP -->
+            <div class="grid grid-cols-2 gap-4">
+              <div>
+                <label
+                  for="city"
+                  class="block text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2"
+                  >City</label
+                >
+                <input
+                  type="text"
+                  id="city"
+                  name="city"
+                  required
+                  class="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors duration-200 bg-gray-50 dark:bg-gray-700 dark:text-white focus:bg-white dark:focus:bg-gray-600"
+                />
+              </div>
+              <div>
+                <label
+                  for="zipCode"
+                  class="block text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2"
+                  >ZIP Code</label
+                >
+                <input
+                  type="text"
+                  id="zipCode"
+                  name="zipCode"
+                  required
+                  class="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors duration-200 bg-gray-50 dark:bg-gray-700 dark:text-white focus:bg-white dark:focus:bg-gray-600"
+                />
+              </div>
+            </div>
+
+            <!-- Submit Button -->
+            <button
+              type="submit"
+              id="submitBtn"
+              class="w-full bg-blue-600 dark:bg-blue-700 text-white font-semibold py-4 px-6 rounded-lg hover:bg-blue-700 dark:hover:bg-blue-600 transform hover:-translate-y-0.5 transition-all duration-300 shadow-lg hover:shadow-xl disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none"
+            >
+              <span id="submitText">Complete Payment</span>
+              <div id="loadingSpinner" class="items-center hidden">
+                <i class="fas fa-spinner fa-spin mr-2"></i>
+                Processing...
+              </div>
+            </button>
+
+            <!-- Security Info -->
             <div
-              class="flex items-center justify-center mb-2 space-x-2 text-lg font-semibold"
+              class="flex items-center justify-center text-sm text-gray-500 dark:text-gray-400 space-x-2"
             >
-              <span class="text-gray-800 dark:text-white">$79.99</span>
-              <span class="text-gray-400 line-through text-sm">$99.99</span>
-              <span class="text-green-600 text-sm">25% off</span>
+              <i class="fas fa-lock"></i>
+              <span>Your payment information is secure and encrypted</span>
             </div>
+          </form>
+        </div>
+      </section>
 
-            <!-- Time Left -->
-            <p class="text-center text-sm text-red-500 mb-4">
-              <span class="font-semibold">3 hours</span> left at this price!
-            </p>
-
-            <!-- Action Buttons -->
-            <div class="space-y-2 mb-4">
-              <button
-                class="w-full bg-[--primary-color] text-white px-8 py-3 rounded-lg font-semibold hover:bg-[#00A0FF] transform hover:scale-105 transition-all duration-200"
-              >
-                Add to cart
-              </button>
-              <button
-                class="w-full border border-blue-600 text-blue-600 font-semibold py-2 px-4 rounded hover:bg-blue-50 transition duration-300"
-              >
-                Buy now
-              </button>
-            </div>
-          </div>
-
-          <!-- Requirements -->
-          <div class="my-[60px]">
-            <h4 class="font-bold mb-2 space-y-2 text-[#40a0d9]">Requirement</h4>
-            <ul
-              class="space-y-2 text-gray-700 text-sm list-disc list-inside font-bold dark:text-white"
+      <!-- Course Navigation -->
+      <div
+        class="bg-white dark:bg-gray-800 border-b border-gray-200 dark:border-gray-700 sticky top-16 z-10 transition-colors duration-300"
+      >
+        <div class="container mx-auto px-4">
+          <nav class="flex space-x-8 py-4">
+            <button
+              class="nav-tab active font-semibold text-blue-600 dark:text-blue-400 border-b-2 border-blue-600 dark:border-blue-400 pb-2"
+              data-tab="overview"
             >
-              <li>No coding or design experience necessary</li>
-              <li>Any computer works Windows, macOS or Linux</li>
-              <li>
-                You don't need to buy any software, we will use the best free
-                code editor in the world
-              </li>
-            </ul>
-          </div>
-        </aside>
+              Overview
+            </button>
+            <button
+              class="nav-tab text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 pb-2"
+              data-tab="curriculum"
+            >
+              Curriculum
+            </button>
+            <button
+              class="nav-tab text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 pb-2"
+              data-tab="instructor"
+            >
+              Instructor
+            </button>
+            <button
+              class="nav-tab text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 pb-2"
+              data-tab="reviews"
+            >
+              Reviews
+            </button>
+          </nav>
+        </div>
       </div>
-      <!-- Related Topics -->
-      <section class="mb-12">
-        <h4 class="text-lg font-semibold mb-4 text-[#40a0d9]">
-          Related Topics
-        </h4>
-        <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
-          <!-- Course Card 1 -->
-          <div
-            class="w-full bg-white rounded-[12px] shadow-md p-4 flex flex-col space-y-4 dark:bg-gray-700 dark:text-white transition-colors duration-300"
-          >
-            <!-- Image -->
-            <div class="w-full h-[177px] rounded-[12px] overflow-hidden">
-              <img
-                src="https://img-c.udemycdn.com/course/750x422/743174_8046_8.jpg"
-                alt="databases"
-                class="w-full h-full object-cover"
-              />
+
+      <div class="container mx-auto px-4 py-8">
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+          <!-- Left Column -->
+          <div class="lg:col-span-2">
+            <!-- Overview Tab -->
+            <div id="overview" class="tab-content">
+              <!-- About This Course -->
+              <section class="mb-12">
+                <h2
+                  class="text-3xl font-bold mb-6 text-gray-900 dark:text-white"
+                >
+                  About This Course
+                </h2>
+                <p
+                  class="text-gray-700 dark:text-gray-300 leading-relaxed mb-4"
+                >
+                  This comprehensive course is designed to take you from
+                  beginner to professional in Development. You'll learn
+                  essential concepts and practical techniques to enhance your
+                  creative skills. This course covers all the tools and
+                  knowledge you need to succeed. Throughout this course, you'll
+                  work on real-world projects that will help you build a strong
+                  portfolio and gain practical experience. By the end, you'll
+                  have the skills and confidence to tackle complex challenges in
+                  the field of Development.
+                </p>
+                <p class="text-gray-700 dark:text-gray-300 leading-relaxed">
+                  Our flexible and self-paced format ensures that you understand
+                  each concept before moving on to more advanced topics, with
+                  plenty of practice exercises that mirror real-world scenarios
+                  in your progress.
+                </p>
+              </section>
+
+              <!-- What You'll Learn -->
+              <section class="mb-12">
+                <h2
+                  class="text-3xl font-bold mb-6 text-gray-900 dark:text-white"
+                >
+                  What You'll Learn
+                </h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  <div class="flex items-start space-x-3">
+                    <i class="fas fa-check text-green-500 mt-1"></i>
+                    <span class="text-gray-700 dark:text-gray-300"
+                      >Master the fundamentals of Development</span
+                    >
+                  </div>
+                  <div class="flex items-start space-x-3">
+                    <i class="fas fa-check text-green-500 mt-1"></i>
+                    <span class="text-gray-700 dark:text-gray-300"
+                      >Build real-world projects for your portfolio</span
+                    >
+                  </div>
+                  <div class="flex items-start space-x-3">
+                    <i class="fas fa-check text-green-500 mt-1"></i>
+                    <span class="text-gray-700 dark:text-gray-300"
+                      >Understand best practices and industry standards</span
+                    >
+                  </div>
+                  <div class="flex items-start space-x-3">
+                    <i class="fas fa-check text-green-500 mt-1"></i>
+                    <span class="text-gray-700 dark:text-gray-300"
+                      >Optimize performance and solve common problems</span
+                    >
+                  </div>
+                  <div class="flex items-start space-x-3">
+                    <i class="fas fa-check text-green-500 mt-1"></i>
+                    <span class="text-gray-700 dark:text-gray-300"
+                      >Deploy your applications to production</span
+                    >
+                  </div>
+                  <div class="flex items-start space-x-3">
+                    <i class="fas fa-check text-green-500 mt-1"></i>
+                    <span class="text-gray-700 dark:text-gray-300"
+                      >Work with modern tools and frameworks</span
+                    >
+                  </div>
+                  <div class="flex items-start space-x-3">
+                    <i class="fas fa-check text-green-500 mt-1"></i>
+                    <span class="text-gray-700 dark:text-gray-300"
+                      >Implement responsive and accessible designs</span
+                    >
+                  </div>
+                  <div class="flex items-start space-x-3">
+                    <i class="fas fa-check text-green-500 mt-1"></i>
+                    <span class="text-gray-700 dark:text-gray-300"
+                      >Debug and troubleshoot effectively</span
+                    >
+                  </div>
+                </div>
+              </section>
+
+              <!-- Requirements -->
+              <section class="mb-12">
+                <h2
+                  class="text-3xl font-bold mb-6 text-gray-900 dark:text-white"
+                >
+                  Requirements
+                </h2>
+                <ul class="space-y-3">
+                  <li class="flex items-start space-x-3">
+                    <i class="fas fa-circle text-gray-400 text-xs mt-2"></i>
+                    <span class="text-gray-700 dark:text-gray-300"
+                      >Basic computer skills and familiarity with using the
+                      Internet</span
+                    >
+                  </li>
+                  <li class="flex items-start space-x-3">
+                    <i class="fas fa-circle text-gray-400 text-xs mt-2"></i>
+                    <span class="text-gray-700 dark:text-gray-300"
+                      >No prior experience in Development is required - we'll
+                      start from the basics</span
+                    >
+                  </li>
+                  <li class="flex items-start space-x-3">
+                    <i class="fas fa-circle text-gray-400 text-xs mt-2"></i>
+                    <span class="text-gray-700 dark:text-gray-300"
+                      >A computer with Internet access (Windows, Mac, or
+                      Linux)</span
+                    >
+                  </li>
+                  <li class="flex items-start space-x-3">
+                    <i class="fas fa-circle text-gray-400 text-xs mt-2"></i>
+                    <span class="text-gray-700 dark:text-gray-300"
+                      >Enthusiasm and willingness to learn</span
+                    >
+                  </li>
+                </ul>
+              </section>
+
+              <!-- Who This Course is For -->
+              <section class="mb-12">
+                <h2
+                  class="text-3xl font-bold mb-6 text-gray-900 dark:text-white"
+                >
+                  Who This Course is For
+                </h2>
+                <ul class="space-y-3">
+                  <li class="flex items-start space-x-3">
+                    <i class="fas fa-circle text-gray-400 text-xs mt-2"></i>
+                    <span class="text-gray-700 dark:text-gray-300"
+                      >Beginners with no prior experience in Development</span
+                    >
+                  </li>
+                  <li class="flex items-start space-x-3">
+                    <i class="fas fa-circle text-gray-400 text-xs mt-2"></i>
+                    <span class="text-gray-700 dark:text-gray-300"
+                      >Intermediate learners looking to fill knowledge
+                      gaps</span
+                    >
+                  </li>
+                  <li class="flex items-start space-x-3">
+                    <i class="fas fa-circle text-gray-400 text-xs mt-2"></i>
+                    <span class="text-gray-700 dark:text-gray-300"
+                      >Professionals wanting to stay updated with the latest
+                      trends</span
+                    >
+                  </li>
+                  <li class="flex items-start space-x-3">
+                    <i class="fas fa-circle text-gray-400 text-xs mt-2"></i>
+                    <span class="text-gray-700 dark:text-gray-300"
+                      >Anyone interested in building a career in
+                      Development</span
+                    >
+                  </li>
+                </ul>
+              </section>
             </div>
 
-            <!-- Text Content -->
-            <div class="flex-1 px-1 space-y-3">
-              <h2 class="text-lg font-bold text-gray-900 dark:text-white">
-                Introduce to Database
-              </h2>
-              <p class="text-sm text-gray-600 dark:text-white">
-                Learn the basics of databases.
-              </p>
+            <!-- Curriculum Tab -->
+            <div id="curriculum" class="tab-content hidden">
+              <div class="p-6 max-w-5xl mx-auto">
+                <h2
+                  class="text-2xl font-bold mb-2 text-gray-900 dark:text-white"
+                >
+                  Course Curriculum
+                </h2>
+                <p class="text-gray-500 dark:text-gray-400 mb-6">
+                  120 lessons • 48 hours total length
+                </p>
 
-              <!-- Time & Rating -->
-              <div class="flex items-center space-x-4 text-xs text-gray-500">
-                <div class="flex items-center space-x-1 dark:text-white">
-                  <svg
-                    class="w-4 h-4 text-gray-400"
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-width="2"
-                    viewBox="0 0 24 24"
+                <!-- Expand All -->
+                <div class="flex justify-end mb-4">
+                  <a href="#" class="text-green-600 font-medium hover:underline"
+                    >Expand All Sections</a
                   >
-                    <path
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      d="M12 8v4l3 2m6-2a9 9 0 11-18 0 9 9 0 0118 0z"
-                    />
-                  </svg>
-                  <span>10 hours</span>
                 </div>
-                <div class="flex items-center space-x-1 dark:text-white">
-                  <svg
-                    class="w-4 h-4 text-yellow-500"
-                    fill="currentColor"
-                    viewBox="0 0 20 20"
+
+                <!-- Sections -->
+                <div class="space-y-4">
+                  <div
+                    class="border-b border-gray-200 dark:border-gray-700 pb-2 flex justify-between items-center cursor-pointer hover:bg-gray-50 dark:hover:bg-gray-700 p-2 rounded-md transition-colors duration-200"
                   >
-                    <path
-                      d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.967a1 1 0 
-                      00.95.69h4.18c.969 0 1.371 1.24.588 1.81l-3.388 
-                      2.46a1 1 0 00-.364 1.118l1.286 
-                      3.966c.3.922-.755 1.688-1.538 
-                      1.118l-3.388-2.46a1 1 0 
-                      00-1.175 0l-3.388 
-                      2.46c-.783.57-1.838-.196-1.538-1.118l1.286-3.966a1 
-                      1 0 00-.364-1.118L2.174 
-                      9.394c-.783-.57-.38-1.81.588-1.81h4.18a1 
-                      1 0 00.95-.69l1.286-3.967z"
-                    />
-                  </svg>
-                  <span class="dark:text-white">4.8 (120 reviews)</span>
+                    <span class="font-semibold text-gray-900 dark:text-white"
+                      >Getting Started</span
+                    >
+                    <span class="text-gray-500 dark:text-gray-400"
+                      >4 lessons • 45 min</span
+                    >
+                  </div>
+                  <div
+                    class="border-b border-gray-200 dark:border-gray-700 pb-2 flex justify-between items-center cursor-pointer hover:bg-gray-50 dark:hover:bg-gray-700 p-2 rounded-md transition-colors duration-200"
+                  >
+                    <span class="font-semibold text-gray-900 dark:text-white"
+                      >Core Concepts</span
+                    >
+                    <span class="text-gray-500 dark:text-gray-400"
+                      >8 lessons • 1h 30min</span
+                    >
+                  </div>
+                  <div
+                    class="border-b border-gray-200 dark:border-gray-700 pb-2 flex justify-between items-center cursor-pointer hover:bg-gray-50 dark:hover:bg-gray-700 p-2 rounded-md transition-colors duration-200"
+                  >
+                    <span class="font-semibold text-gray-900 dark:text-white"
+                      >Advanced Techniques</span
+                    >
+                    <span class="text-gray-500 dark:text-gray-400"
+                      >6 lessons • 2h 15min</span
+                    >
+                  </div>
+                  <div
+                    class="border-b border-gray-200 dark:border-gray-700 pb-2 flex justify-between items-center cursor-pointer hover:bg-gray-50 dark:hover:bg-gray-700 p-2 rounded-md transition-colors duration-200"
+                  >
+                    <span class="font-semibold text-gray-900 dark:text-white"
+                      >Real-World Projects</span
+                    >
+                    <span class="text-gray-500 dark:text-gray-400"
+                      >5 lessons • 3h 20min</span
+                    >
+                  </div>
+                  <div
+                    class="border-b border-gray-200 dark:border-gray-700 pb-2 flex justify-between items-center cursor-pointer hover:bg-gray-50 dark:hover:bg-gray-700 p-2 rounded-md transition-colors duration-200"
+                  >
+                    <span class="font-semibold text-gray-900 dark:text-white"
+                      >Best Practices & Optimization</span
+                    >
+                    <span class="text-gray-500 dark:text-gray-400"
+                      >4 lessons • 1h 45min</span
+                    >
+                  </div>
                 </div>
               </div>
+            </div>
 
-              <!-- Instructor & Price -->
-              <div class="flex items-center justify-between pt-2">
-                <div class="flex items-center space-x-2">
-                  <!-- <div class="w-6 h-6 bg-gray-300 rounded-full flex items-center justify-center text-xs font-bold text-white">
-                      P
-                    </div> -->
-                  <div class="w-6 h-6 bg-gray-300 rounded-full overflow-hidden">
-                    <img
-                      src="https://pbs.twimg.com/media/D425Vt6XkAIzS7m?format=jpg&name=4096x4096"
-                      alt="Avatar"
-                      class="w-full h-full object-cover"
-                    />
+            <!-- Instructor Tab -->
+            <div id="instructor" class="tab-content hidden">
+              <div class="max-w-4xl mx-auto px-4">
+                <div class="flex items-center space-x-6">
+                  <!-- Avatar -->
+                 <img src="https://i.pinimg.com/736x/5f/34/d1/5f34d1662b26217fbd92144c264fafc6.jpg" alt="instructor" class="w-20 h-20 bg-gray-200 dark:bg-gray-600 rounded-[100%] object-cover shadow-lg">
+
+                  <!-- Name & Title -->
+                  <div>
+                 
+                    <h1 class="text-xl font-bold text-gray-900 dark:text-white">
+                      John Smith
+                    </h1>
+                    <p class="text-gray-500 dark:text-gray-400">
+                      Lead Developer & Instructor
+                    </p>
+                    <div
+                      class="flex items-center mt-2 space-x-4 text-sm text-gray-600 dark:text-gray-400"
+                    >
+                      <div class="flex items-center space-x-1">
+                        <span class="text-yellow-400">★</span>
+                        <span>4.8 Instructor Rating</span>
+                      </div>
+                      <div class="flex items-center space-x-1">
+                        <i class="fas fa-users"></i>
+                        <span>45,000+ Students</span>
+                      </div>
+                      <div class="flex items-center space-x-1">
+                        <i class="fas fa-calendar"></i>
+                        <span>12 Courses</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Bio -->
+                <div class="mt-6 text-gray-700 dark:text-gray-300 space-y-4">
+                  <p>
+                    John Smith is a senior developer with over 10 years of
+                    experience in the industry. He has worked with Fortune 500
+                    companies and startups alike, helping them build scalable
+                    and maintainable applications.
+                  </p>
+                  <p>
+                    As an instructor, John has taught over 45,000 students
+                    worldwide, sharing his knowledge and expertise in a way
+                    that's easy to understand and apply. His teaching approach
+                    focuses on practical, real-world examples that help students
+                    build their skills and confidence.
+                  </p>
+                  <p>
+                    John is passionate about helping others learn and grow in
+                    their careers. He regularly updates his courses to ensure
+                    they reflect the latest industry trends and best practices.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Reviews Tab -->
+            <div id="reviews" class="tab-content hidden">
+              <div class="max-w-4xl mx-auto px-4">
+                <!-- Rating Summary -->
+                <div class="flex items-center space-x-8">
+                  <div class="text-center">
+                    <div class="text-5xl font-bold text-green-600">4.8</div>
+                    <div class="flex justify-center mt-1">
+                      <span class="text-yellow-400 text-xl">★★★★★</span>
+                    </div>
+                    <div class="text-gray-500 dark:text-gray-400">
+                      Course Rating
+                    </div>
+                    <div class="text-sm text-gray-400">350 reviews</div>
                   </div>
 
-                  <span
-                    class="text-sm text-gray-800 font-medium dark:text-white"
-                    >John Doe</span
-                  >
+                  <!-- Rating Breakdown -->
+                  <div class="flex-1">
+                    <div class="space-y-2">
+                      <div class="flex items-center space-x-2">
+                        <span
+                          class="w-6 text-sm text-gray-700 dark:text-gray-300"
+                          >5★</span
+                        >
+                        <div
+                          class="flex-1 h-2 bg-gray-200 dark:bg-gray-700 rounded"
+                        >
+                          <div
+                            class="h-2 bg-green-500 rounded"
+                            style="width: 78%"
+                          ></div>
+                        </div>
+                        <span
+                          class="w-10 text-sm text-gray-500 dark:text-gray-400"
+                          >78%</span
+                        >
+                      </div>
+                      <div class="flex items-center space-x-2">
+                        <span
+                          class="w-6 text-sm text-gray-700 dark:text-gray-300"
+                          >4★</span
+                        >
+                        <div
+                          class="flex-1 h-2 bg-gray-200 dark:bg-gray-700 rounded"
+                        >
+                          <div
+                            class="h-2 bg-green-500 rounded"
+                            style="width: 15%"
+                          ></div>
+                        </div>
+                        <span
+                          class="w-10 text-sm text-gray-500 dark:text-gray-400"
+                          >15%</span
+                        >
+                      </div>
+                      <div class="flex items-center space-x-2">
+                        <span
+                          class="w-6 text-sm text-gray-700 dark:text-gray-300"
+                          >3★</span
+                        >
+                        <div
+                          class="flex-1 h-2 bg-gray-200 dark:bg-gray-700 rounded"
+                        >
+                          <div
+                            class="h-2 bg-green-500 rounded"
+                            style="width: 5%"
+                          ></div>
+                        </div>
+                        <span
+                          class="w-10 text-sm text-gray-500 dark:text-gray-400"
+                          >5%</span
+                        >
+                      </div>
+                      <div class="flex items-center space-x-2">
+                        <span
+                          class="w-6 text-sm text-gray-700 dark:text-gray-300"
+                          >2★</span
+                        >
+                        <div
+                          class="flex-1 h-2 bg-gray-200 dark:bg-gray-700 rounded"
+                        >
+                          <div
+                            class="h-2 bg-green-500 rounded"
+                            style="width: 1%"
+                          ></div>
+                        </div>
+                        <span
+                          class="w-10 text-sm text-gray-500 dark:text-gray-400"
+                          >1%</span
+                        >
+                      </div>
+                      <div class="flex items-center space-x-2">
+                        <span
+                          class="w-6 text-sm text-gray-700 dark:text-gray-300"
+                          >1★</span
+                        >
+                        <div
+                          class="flex-1 h-2 bg-gray-200 dark:bg-gray-700 rounded"
+                        >
+                          <div
+                            class="h-2 bg-green-500 rounded"
+                            style="width: 1%"
+                          ></div>
+                        </div>
+                        <span
+                          class="w-10 text-sm text-gray-500 dark:text-gray-400"
+                          >1%</span
+                        >
+                      </div>
+                    </div>
+                  </div>
                 </div>
-                <span
-                  class="text-sm text-blue-600 font-semibold dark:text-white"
-                  >$49</span
-                >
+
+                <!-- Student Reviews -->
+                <div class="mt-10 space-y-8">
+                  <div
+                    class="border-b border-gray-200 dark:border-gray-700 pb-6"
+                  >
+                    <div class="flex items-center justify-between">
+                      <h3 class="font-semibold text-gray-900 dark:text-white">
+                        Michael Brown
+                      </h3>
+                      <span class="text-gray-400 text-sm">2 weeks ago</span>
+                    </div>
+                    <div class="text-yellow-400 mt-1">★★★★★</div>
+                    <p class="mt-2 text-gray-700 dark:text-gray-300">
+                      This course exceeded my expectations! The instructor
+                      explains complex concepts in a way that's easy to
+                      understand. The projects are challenging but doable, and I
+                      feel much more confident in my skills now.
+                    </p>
+                  </div>
+
+                  <div
+                    class="border-b border-gray-200 dark:border-gray-700 pb-6"
+                  >
+                    <div class="flex items-center justify-between">
+                      <h3 class="font-semibold text-gray-900 dark:text-white">
+                        Sarah Johnson
+                      </h3>
+                      <span class="text-gray-400 text-sm">1 month ago</span>
+                    </div>
+                    <div class="text-yellow-400 mt-1">★★★★★</div>
+                    <p class="mt-2 text-gray-700 dark:text-gray-300">
+                      I've taken several courses on this topic, but this one is
+                      by far the best. The instructor is knowledgeable and
+                      engaging, and the content is well-structured and
+                      comprehensive.
+                    </p>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
 
-          <!-- Course Card 2 -->
-          <div
-            class="w-full bg-white rounded-[12px] shadow-md p-4 flex flex-col space-y-4 dark:bg-gray-700 dark:text-white transition-colors duration-300"
-          >
-            <!-- Image -->
-            <div class="w-full h-[177px] rounded-[12px] overflow-hidden">
-              <img
-                src="https://img-c.udemycdn.com/course/750x422/4471614_361e_8.jpg"
-                alt="react"
-                class="w-full h-full object-cover"
-              />
-            </div>
-            <!-- Text Content -->
-            <div class="flex-1 px-1 space-y-3">
-              <h2 class="text-lg font-bold text-gray-900 dark:text-white">
-                Intro to React JS
-              </h2>
-              <p class="text-sm text-gray-600 dark:text-white">
-                Start React JS on code projects.
-              </p>
-
-              <!-- Time & Rating -->
-              <div class="flex items-center space-x-4 text-xs text-gray-500">
-                <div class="flex items-center space-x-1 dark:text-white">
-                  <svg
-                    class="w-4 h-4 text-gray-400"
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-width="2"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      d="M12 8v4l3 2m6-2a9 9 0 11-18 0 9 9 0 0118 0z"
-                    />
-                  </svg>
-                  <span>10 hours</span>
-                </div>
-                <div class="flex items-center space-x-1 dark:text-white">
-                  <svg
-                    class="w-4 h-4 text-yellow-500"
-                    fill="currentColor"
-                    viewBox="0 0 20 20"
-                  >
-                    <path
-                      d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.967a1 1 0 
-                      00.95.69h4.18c.969 0 1.371 1.24.588 1.81l-3.388 
-                      2.46a1 1 0 00-.364 1.118l1.286 
-                      3.966c.3.922-.755 1.688-1.538 
-                      1.118l-3.388-2.46a1 1 0 
-                      00-1.175 0l-3.388 
-                      2.46c-.783.57-1.838-.196-1.538-1.118l1.286-3.966a1 
-                      1 0 00-.364-1.118L2.174 
-                      9.394c-.783-.57-.38-1.81.588-1.81h4.18a1 
-                      1 0 00.95-.69l1.286-3.967z"
-                    />
-                  </svg>
-                  <span>4.8 (120 reviews)</span>
-                </div>
-              </div>
-
-              <!-- Instructor & Price -->
-              <div class="flex items-center justify-between pt-2">
-                <div class="flex items-center space-x-2">
-                  <!-- <div class="w-6 h-6 bg-gray-300 rounded-full flex items-center justify-center text-xs font-bold text-white">
-                      P
-                    </div> -->
-                  <div class="w-6 h-6 bg-gray-300 rounded-full overflow-hidden">
-                    <img
-                      src="https://pbs.twimg.com/media/D425Vt6XkAIzS7m?format=jpg&name=4096x4096"
-                      alt="Avatar"
-                      class="w-full h-full object-cover"
-                    />
-                  </div>
-
-                  <span
-                    class="text-sm text-gray-800 font-medium dark:text-white"
-                    >John Doe</span
+          <!-- Right Column - Course Includes -->
+          <div class="lg:col-span-1">
+            <div
+              class="bg-white dark:bg-gray-800 rounded-lg shadow-lg p-6 sticky top-24 transition-colors duration-300 border border-gray-200 dark:border-gray-700"
+            >
+              <h3 class="text-2xl font-bold mb-6 text-gray-900 dark:text-white">
+                Course Includes
+              </h3>
+              <div class="space-y-4">
+                <div class="flex items-center space-x-3">
+                  <i
+                    class="fas fa-file-text text-blue-600 dark:text-blue-400"
+                  ></i>
+                  <span class="text-gray-700 dark:text-gray-300"
+                    >11 articles and resources</span
                   >
                 </div>
-                <span
-                  class="text-sm text-blue-600 font-semibold dark:text-white"
-                  >$49</span
-                >
+                <div class="flex items-center space-x-3">
+                  <i
+                    class="fas fa-download text-blue-600 dark:text-blue-400"
+                  ></i>
+                  <span class="text-gray-700 dark:text-gray-300"
+                    >42 downloadable resources</span
+                  >
+                </div>
+                <div class="flex items-center space-x-3">
+                  <i
+                    class="fas fa-infinity text-blue-600 dark:text-blue-400"
+                  ></i>
+                  <span class="text-gray-700 dark:text-gray-300"
+                    >Full lifetime access</span
+                  >
+                </div>
+                <div class="flex items-center space-x-3">
+                  <i
+                    class="fas fa-mobile-alt text-blue-600 dark:text-blue-400"
+                  ></i>
+                  <span class="text-gray-700 dark:text-gray-300"
+                    >Access on mobile and TV</span
+                  >
+                </div>
+                <div class="flex items-center space-x-3">
+                  <i
+                    class="fas fa-certificate text-blue-600 dark:text-blue-400"
+                  ></i>
+                  <span class="text-gray-700 dark:text-gray-300"
+                    >Certificate of completion</span
+                  >
+                </div>
               </div>
             </div>
           </div>
-          <!-- Course Card 3 -->
-          <div
-            class="w-full bg-white rounded-[12px] shadow-md p-4 flex flex-col space-y-4 dark:bg-gray-700 dark:text-white transition-colors duration-300"
+        </div>
+      </div>
+
+      <!-- Related Courses -->
+      <section
+        class="bg-gray-100 dark:bg-gray-900 py-16 transition-colors duration-300"
+      >
+        <div class="container mx-auto px-4">
+          <h2
+            class="text-3xl font-bold text-center mb-12 text-gray-900 dark:text-white"
           >
-            <!-- Image -->
-            <div class="w-full h-[177px] rounded-[12px] overflow-hidden">
-              <img
-                src="https://img-c.udemycdn.com/course/750x422/1672410_9ff1_5.jpg"
-                alt="node"
-                class="w-full h-full object-cover"
-              />
-            </div>
-
-            <!-- Text Content -->
-            <div class="flex-1 px-1 space-y-3">
-              <h2 class="text-lg font-bold text-gray-900 dark:text-white">
-                Intro to Node JS
-              </h2>
-              <p class="text-sm text-gray-600 dark:text-white">
-                Start Node JS on code projects.
-              </p>
-
-              <!-- Time & Rating -->
-              <div class="flex items-center space-x-4 text-xs text-gray-500">
-                <div class="flex items-center space-x-1 dark:text-white">
-                  <svg
-                    class="w-4 h-4 text-gray-400"
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-width="2"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      d="M12 8v4l3 2m6-2a9 9 0 11-18 0 9 9 0 0118 0z"
-                    />
-                  </svg>
-                  <span>10 hours</span>
-                </div>
-                <div class="flex items-center space-x-1 dark:text-white">
-                  <svg
-                    class="w-4 h-4 text-yellow-500"
-                    fill="currentColor"
-                    viewBox="0 0 20 20"
-                  >
-                    <path
-                      d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.967a1 1 0 
-                      00.95.69h4.18c.969 0 1.371 1.24.588 1.81l-3.388 
-                      2.46a1 1 0 00-.364 1.118l1.286 
-                      3.966c.3.922-.755 1.688-1.538 
-                      1.118l-3.388-2.46a1 1 0 
-                      00-1.175 0l-3.388 
-                      2.46c-.783.57-1.838-.196-1.538-1.118l1.286-3.966a1 
-                      1 0 00-.364-1.118L2.174 
-                      9.394c-.783-.57-.38-1.81.588-1.81h4.18a1 
-                      1 0 00.95-.69l1.286-3.967z"
-                    />
-                  </svg>
-                  <span>4.8 (120 reviews)</span>
-                </div>
-              </div>
-
-              <!-- Instructor & Price -->
-              <div class="flex items-center justify-between pt-2">
-                <div class="flex items-center space-x-2">
-                  <!-- <div class="w-6 h-6 bg-gray-300 rounded-full flex items-center justify-center text-xs font-bold text-white">
-                      P
-                    </div> -->
-                  <div class="w-6 h-6 bg-gray-300 rounded-full overflow-hidden">
-                    <img
-                      src="https://pbs.twimg.com/media/D425Vt6XkAIzS7m?format=jpg&name=4096x4096"
-                      alt="Avatar"
-                      class="w-full h-full object-cover"
-                    />
-                  </div>
-
-                  <span
-                    class="text-sm text-gray-800 font-medium dark:text-white"
-                    >John Doe</span
-                  >
-                </div>
-                <span
-                  class="text-sm text-blue-600 font-semibold dark:text-white"
-                  >$49</span
-                >
-              </div>
-            </div>
-          </div>
-
-          <!-- Course Card 4 -->
+            Related Courses
+          </h2>
           <div
-            class="w-full bg-white rounded-[12px] shadow-md p-4 flex flex-col space-y-4 dark:bg-gray-700 dark:text-white transition-colors duration-300"
+            class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8"
           >
-            <!-- Image -->
-            <div class="w-full h-[177px] rounded-[12px] overflow-hidden">
-              <img
-                src="https://softnshare.com/wp-content/uploads/2018/08/JavaScript-Crash-Course.png"
-                alt="JS"
-                class="w-full h-full object-cover"
-              />
-            </div>
-
-            <!-- Text Content -->
-            <div class="flex-1 px-1 space-y-3">
-              <h2 class="text-lg font-bold text-gray-900 dark:text-white">
-                Intro to JavaScript
-              </h2>
-              <p class="text-sm text-gray-600 dark:text-white">
-                Start JavaScript on code projects.
-              </p>
-
-              <!-- Time & Rating -->
-              <div class="flex items-center space-x-4 text-xs text-gray-500">
-                <div class="flex items-center space-x-1 dark:text-white">
-                  <svg
-                    class="w-4 h-4 text-gray-400"
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-width="2"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      d="M12 8v4l3 2m6-2a9 9 0 11-18 0 9 9 0 0118 0z"
-                    />
-                  </svg>
-                  <span>10 hours</span>
-                </div>
-                <div class="flex items-center space-x-1 dark:text-white">
-                  <svg
-                    class="w-4 h-4 text-yellow-500"
-                    fill="currentColor"
-                    viewBox="0 0 20 20"
-                  >
-                    <path
-                      d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.967a1 1 0 
-                      00.95.69h4.18c.969 0 1.371 1.24.588 1.81l-3.388 
-                      2.46a1 1 0 00-.364 1.118l1.286 
-                      3.966c.3.922-.755 1.688-1.538 
-                      1.118l-3.388-2.46a1 1 0 
-                      00-1.175 0l-3.388 
-                      2.46c-.783.57-1.838-.196-1.538-1.118l1.286-3.966a1 
-                      1 0 00-.364-1.118L2.174 
-                      9.394c-.783-.57-.38-1.81.588-1.81h4.18a1 
-                      1 0 00.95-.69l1.286-3.967z"
-                    />
-                  </svg>
-                  <span>4.8 (120 reviews)</span>
-                </div>
+            <!-- Course Card 1 -->
+            <div
+              class="w-full bg-white dark:bg-gray-700 rounded-[12px] shadow-md p-4 flex flex-col space-y-4 transition-colors duration-300 border border-gray-200 dark:border-gray-600"
+            >
+              <!-- Image -->
+              <div class="w-full h-[177px] rounded-[12px] overflow-hidden">
+                <img
+                  src="https://img-c.udemycdn.com/course/750x422/743174_8046_8.jpg"
+                  alt="databases"
+                  class="w-full h-full object-cover"
+                />
               </div>
 
-              <!-- Instructor & Price -->
-              <div class="flex items-center justify-between pt-2">
-                <div class="flex items-center space-x-2">
-                  <!-- <div class="w-6 h-6 bg-gray-300 rounded-full flex items-center justify-center text-xs font-bold text-white">
-                      P
-                    </div> -->
-                  <div class="w-6 h-6 bg-gray-300 rounded-full overflow-hidden">
-                    <img
-                      src="https://pbs.twimg.com/media/D425Vt6XkAIzS7m?format=jpg&name=4096x4096"
-                      alt="Avatar"
-                      class="w-full h-full object-cover"
-                    />
-                  </div>
+              <!-- Text Content -->
+              <div class="flex-1 px-1 space-y-3">
+                <h2 class="text-lg font-bold text-gray-900 dark:text-white">
+                  Introduce to Database
+                </h2>
+                <p class="text-sm text-gray-600 dark:text-gray-300">
+                  Learn the basics of databases.
+                </p>
 
+                <!-- Time & Rating -->
+                <div
+                  class="flex items-center space-x-4 text-xs text-gray-500 dark:text-gray-400"
+                >
+                  <div class="flex items-center space-x-1">
+                    <i class="fas fa-clock"></i>
+                    <span>10 hours</span>
+                  </div>
+                  <div class="flex items-center space-x-1">
+                    <span class="text-yellow-400">★</span>
+                    <span>4.8 (120 reviews)</span>
+                  </div>
+                </div>
+
+                <!-- Instructor & Price -->
+                <div class="flex items-center justify-between pt-2">
+                  <div class="flex items-center space-x-2">
+                    <div
+                      class="w-6 h-6 bg-gray-300 dark:bg-gray-600 rounded-full overflow-hidden"
+                    >
+                      <img
+                        src="https://pbs.twimg.com/media/D425Vt6XkAIzS7m?format=jpg&name=4096x4096"
+                        alt="Avatar"
+                        class="w-full h-full object-cover"
+                      />
+                    </div>
+                    <span
+                      class="text-sm text-gray-800 dark:text-gray-200 font-medium"
+                      >John Doe</span
+                    >
+                  </div>
                   <span
-                    class="text-sm text-gray-800 font-medium dark:text-white"
-                    >John Doe</span
+                    class="text-sm text-blue-600 dark:text-blue-400 font-semibold"
+                    >$49</span
                   >
                 </div>
-                <span
-                  class="text-sm text-blue-600 font-semibold dark:text-white"
-                  >$49</span
+              </div>
+            </div>
+
+            <!-- Course Card 2 -->
+            <div
+              class="w-full bg-white dark:bg-gray-700 rounded-[12px] shadow-md p-4 flex flex-col space-y-4 transition-colors duration-300 border border-gray-200 dark:border-gray-600"
+            >
+              <!-- Image -->
+              <div class="w-full h-[177px] rounded-[12px] overflow-hidden">
+                <img
+                  src="https://img-c.udemycdn.com/course/750x422/4471614_361e_8.jpg"
+                  alt="react"
+                  class="w-full h-full object-cover"
+                />
+              </div>
+              <!-- Text Content -->
+              <div class="flex-1 px-1 space-y-3">
+                <h2 class="text-lg font-bold text-gray-900 dark:text-white">
+                  Intro to React JS
+                </h2>
+                <p class="text-sm text-gray-600 dark:text-gray-300">
+                  Start React JS on code projects.
+                </p>
+
+                <!-- Time & Rating -->
+                <div
+                  class="flex items-center space-x-4 text-xs text-gray-500 dark:text-gray-400"
                 >
+                  <div class="flex items-center space-x-1">
+                    <i class="fas fa-clock"></i>
+                    <span>10 hours</span>
+                  </div>
+                  <div class="flex items-center space-x-1">
+                    <span class="text-yellow-400">★</span>
+                    <span>4.8 (120 reviews)</span>
+                  </div>
+                </div>
+
+                <!-- Instructor & Price -->
+                <div class="flex items-center justify-between pt-2">
+                  <div class="flex items-center space-x-2">
+                    <div
+                      class="w-6 h-6 bg-gray-300 dark:bg-gray-600 rounded-full overflow-hidden"
+                    >
+                      <img
+                        src="https://pbs.twimg.com/media/D425Vt6XkAIzS7m?format=jpg&name=4096x4096"
+                        alt="Avatar"
+                        class="w-full h-full object-cover"
+                      />
+                    </div>
+                    <span
+                      class="text-sm text-gray-800 dark:text-gray-200 font-medium"
+                      >John Doe</span
+                    >
+                  </div>
+                  <span
+                    class="text-sm text-blue-600 dark:text-blue-400 font-semibold"
+                    >$49</span
+                  >
+                </div>
+              </div>
+            </div>
+
+            <!-- Course Card 3 -->
+            <div
+              class="w-full bg-white dark:bg-gray-700 rounded-[12px] shadow-md p-4 flex flex-col space-y-4 transition-colors duration-300 border border-gray-200 dark:border-gray-600"
+            >
+              <!-- Image -->
+              <div class="w-full h-[177px] rounded-[12px] overflow-hidden">
+                <img
+                  src="https://img-c.udemycdn.com/course/750x422/1672410_9ff1_5.jpg"
+                  alt="node"
+                  class="w-full h-full object-cover"
+                />
+              </div>
+
+              <!-- Text Content -->
+              <div class="flex-1 px-1 space-y-3">
+                <h2 class="text-lg font-bold text-gray-900 dark:text-white">
+                  Intro to Node JS
+                </h2>
+                <p class="text-sm text-gray-600 dark:text-gray-300">
+                  Start Node JS on code projects.
+                </p>
+
+                <!-- Time & Rating -->
+                <div
+                  class="flex items-center space-x-4 text-xs text-gray-500 dark:text-gray-400"
+                >
+                  <div class="flex items-center space-x-1">
+                    <i class="fas fa-clock"></i>
+                    <span>10 hours</span>
+                  </div>
+                  <div class="flex items-center space-x-1">
+                    <span class="text-yellow-400">★</span>
+                    <span>4.8 (120 reviews)</span>
+                  </div>
+                </div>
+
+                <!-- Instructor & Price -->
+                <div class="flex items-center justify-between pt-2">
+                  <div class="flex items-center space-x-2">
+                    <div
+                      class="w-6 h-6 bg-gray-300 dark:bg-gray-600 rounded-full overflow-hidden"
+                    >
+                      <img
+                        src="https://pbs.twimg.com/media/D425Vt6XkAIzS7m?format=jpg&name=4096x4096"
+                        alt="Avatar"
+                        class="w-full h-full object-cover"
+                      />
+                    </div>
+                    <span
+                      class="text-sm text-gray-800 dark:text-gray-200 font-medium"
+                      >John Doe</span
+                    >
+                  </div>
+                  <span
+                    class="text-sm text-blue-600 dark:text-blue-400 font-semibold"
+                    >$49</span
+                  >
+                </div>
+              </div>
+            </div>
+
+            <!-- Course Card 4 -->
+            <div
+              class="w-full bg-white dark:bg-gray-700 rounded-[12px] shadow-md p-4 flex flex-col space-y-4 transition-colors duration-300 border border-gray-200 dark:border-gray-600"
+            >
+              <!-- Image -->
+              <div class="w-full h-[177px] rounded-[12px] overflow-hidden">
+                <img
+                  src="https://softnshare.com/wp-content/uploads/2018/08/JavaScript-Crash-Course.png"
+                  alt="JS"
+                  class="w-full h-full object-cover"
+                />
+              </div>
+
+              <!-- Text Content -->
+              <div class="flex-1 px-1 space-y-3">
+                <h2 class="text-lg font-bold text-gray-900 dark:text-white">
+                  Intro to JavaScript
+                </h2>
+                <p class="text-sm text-gray-600 dark:text-gray-300">
+                  Start JavaScript on code projects.
+                </p>
+
+                <!-- Time & Rating -->
+                <div
+                  class="flex items-center space-x-4 text-xs text-gray-500 dark:text-gray-400"
+                >
+                  <div class="flex items-center space-x-1">
+                    <i class="fas fa-clock"></i>
+                    <span>10 hours</span>
+                  </div>
+                  <div class="flex items-center space-x-1">
+                    <span class="text-yellow-400">★</span>
+                    <span>4.8 (120 reviews)</span>
+                  </div>
+                </div>
+
+                <!-- Instructor & Price -->
+                <div class="flex items-center justify-between pt-2">
+                  <div class="flex items-center space-x-2">
+                    <div
+                      class="w-6 h-6 bg-gray-300 dark:bg-gray-600 rounded-full overflow-hidden"
+                    >
+                      <img
+                        src="https://pbs.twimg.com/media/D425Vt6XkAIzS7m?format=jpg&name=4096x4096"
+                        alt="Avatar"
+                        class="w-full h-full object-cover"
+                      />
+                    </div>
+                    <span
+                      class="text-sm text-gray-800 dark:text-gray-200 font-medium"
+                      >John Doe</span
+                    >
+                  </div>
+                  <span
+                    class="text-sm text-blue-600 dark:text-blue-400 font-semibold"
+                    >$49</span
+                  >
+                </div>
               </div>
             </div>
           </div>
         </div>
       </section>
     </main>
+    <script>
+      //   ================================== Payment Section ===============================================
+      let selectedPlan = "";
+      let selectedPrice = "";
+
+      function openPaymentModal(planName, price) {
+        selectedPlan = planName;
+        selectedPrice = price;
+        document.getElementById(
+          "selectedPlan"
+        ).textContent = `${planName} - ${price}`;
+
+        const overlay = document.getElementById("modalOverlay");
+        const modal = document.getElementById("paymentModal");
+
+        // Show overlay
+        overlay.classList.remove("opacity-0", "invisible");
+        overlay.classList.add("opacity-100", "visible");
+
+        // Show modal with animation
+        setTimeout(() => {
+          modal.classList.remove("scale-95", "opacity-0");
+          modal.classList.add("scale-100", "opacity-100");
+        }, 50);
+
+        // Prevent background scrolling
+        document.body.style.overflow = "hidden";
+      }
+
+      function closeModal(event) {
+        if (
+          event &&
+          event.target !== event.currentTarget &&
+          !event.target.closest("button")
+        ) {
+          return;
+        }
+
+        const overlay = document.getElementById("modalOverlay");
+        const modal = document.getElementById("paymentModal");
+
+        // Hide modal with animation
+        modal.classList.remove("scale-100", "opacity-100");
+        modal.classList.add("scale-95", "opacity-0");
+
+        // Hide overlay after animation
+        setTimeout(() => {
+          overlay.classList.remove("opacity-100", "visible");
+          overlay.classList.add("opacity-0", "invisible");
+        }, 200);
+
+        // Restore scrolling
+        document.body.style.overflow = "auto";
+
+        // Reset form
+        document.getElementById("paymentForm").reset();
+      }
+
+      function processPayment(event) {
+        event.preventDefault();
+
+        const submitBtn = document.getElementById("submitBtn");
+        const submitText = document.getElementById("submitText");
+        const loadingSpinner = document.getElementById("loadingSpinner");
+
+        // Show loading state
+        submitBtn.disabled = true;
+        submitText.classList.add("hidden");
+        loadingSpinner.classList.remove("hidden");
+
+        // Simulate payment processing
+        setTimeout(() => {
+          // Success state
+          submitBtn.classList.remove("from-purple-600", "to-blue-600");
+          submitBtn.classList.add("from-green-500", "to-green-600");
+          loadingSpinner.classList.add("hidden");
+          submitText.textContent = "Payment Successful!";
+          submitText.classList.remove("hidden");
+
+          setTimeout(() => {
+            alert(
+              `Payment successful for ${selectedPlan}! Thank you for your purchase.`
+            );
+            closeModal();
+
+            // Reset button state
+            submitBtn.disabled = false;
+            submitBtn.classList.remove("from-green-500", "to-green-600");
+            submitBtn.classList.add("from-purple-600", "to-blue-600");
+            submitText.textContent = "Complete Payment";
+          }, 1500);
+        }, 2000);
+      }
+
+      // Format card number input
+      document
+        .getElementById("cardNumber")
+        .addEventListener("input", function (e) {
+          let value = e.target.value.replace(/\s/g, "").replace(/[^0-9]/gi, "");
+          let formattedValue = value.match(/.{1,4}/g)?.join(" ") || value;
+          e.target.value = formattedValue;
+        });
+
+      // Format expiry date input
+      document.getElementById("expiry").addEventListener("input", function (e) {
+        let value = e.target.value.replace(/\D/g, "");
+        if (value.length >= 2) {
+          value = value.substring(0, 2) + "/" + value.substring(2, 4);
+        }
+        e.target.value = value;
+      });
+
+      // Only allow numbers in CVV
+      document.getElementById("cvv").addEventListener("input", function (e) {
+        e.target.value = e.target.value.replace(/\D/g, "");
+      });
+
+      // Close modal with Escape key
+      document.addEventListener("keydown", function (e) {
+        if (e.key === "Escape") {
+          closeModal();
+        }
+      });
+
+      // Tab functionality
+      const tabs = document.querySelectorAll(".nav-tab");
+      const tabContents = document.querySelectorAll(".tab-content");
+
+      tabs.forEach((tab) => {
+        tab.addEventListener("click", () => {
+          // Remove active class from all tabs
+          tabs.forEach((t) => {
+            t.classList.remove(
+              "active",
+              "text-blue-600",
+              "border-b-2",
+              "border-blue-600"
+            );
+            t.classList.add("text-gray-600");
+          });
+
+          // Add active class to clicked tab
+          tab.classList.add(
+            "active",
+            "text-blue-600",
+            "border-b-2",
+            "border-blue-600"
+          );
+          tab.classList.remove("text-gray-600");
+
+          // Hide all tab contents
+          tabContents.forEach((content) => {
+            content.classList.add("hidden");
+          });
+
+          // Show corresponding content
+          const targetTab = tab.getAttribute("data-tab");
+          document.getElementById(targetTab).classList.remove("hidden");
+        });
+      });
+
+      // Add to cart functionality
+      document.getElementById("addToCart").addEventListener("click", () => {
+        // Simple notification (in a real app, this would add to cart)
+        const button = document.getElementById("addToCart");
+        const originalText = button.textContent;
+
+        button.textContent = "Added to Cart!";
+        button.classList.add("bg-green-600");
+        button.classList.remove("bg-blue-600");
+
+        setTimeout(() => {
+          button.textContent = originalText;
+          button.classList.remove("bg-green-600");
+          button.classList.add("bg-blue-600");
+        }, 2000);
+      });
+
+      // Smooth scrolling for internal links
+      document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+        anchor.addEventListener("click", function (e) {
+          e.preventDefault();
+          const target = document.querySelector(this.getAttribute("href"));
+          if (target) {
+            target.scrollIntoView({
+              behavior: "smooth",
+            });
+          }
+        });
+      });
+
+      // Add some scroll effects
+      window.addEventListener("scroll", () => {
+        const nav = document.querySelector(".sticky");
+        if (window.scrollY > 100) {
+          nav.classList.add("shadow-md");
+        } else {
+          nav.classList.remove("shadow-md");
+        }
+      });
+    </script>
 
     <!-- Footer -->
     <footer class="bg-gray-800 text-white py-8">
