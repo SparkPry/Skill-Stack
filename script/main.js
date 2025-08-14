@@ -273,3 +273,51 @@ document.addEventListener("mousemove", function (e) {
     }px)`;
   });
 });
+// =================================================
+const url = "https://course-api.istad.co/api/v1";
+
+async function fetchCourses() {
+  try {
+    const res = await fetch(`${url}/courses?page=0&size=4`);
+    const data = await res.json();
+
+    // data.content contains the course list
+    const cardDisplay = data.content.map((pro) => {
+      return `
+        <div class="bg-white rounded-2xl shadow-lg w-full p-5 dark:bg-gray-800 dark:text-gray-200 transition-all duration-300 hover:scale-105 group" onClick="location.href='./pages/courseDetail.html?id=${pro.id}'"
+>
+        <div class="flex justify-center mb-4">
+          <img src="${pro.thumbnail}" alt ${pro.title} class="rounded-xl w-full max-w-xs object-contain" />
+        </div>
+        <h2 class="text-lg font-bold text-gray-900 mb-2 line-clamp-2 dark:text-white">${pro.title}</h2>
+        <p class="text-gray-600 text-md mb-4 line-clamp-2 dark:text-gray-300">${pro.description}</p>
+        <div class="flex items-center text-sm text-gray-500 mb-4 space-x-4">
+          <div class="flex items-center space-x-1">
+           <span class="bg-yellow-600 text-yellow-100 rounded-xl px-2 py-1 text-sm font-semibold shadow-[0_0_8px_rgba(255,223,93,0.7)]">
+  ${pro.categoryName}
+</span>
+
+          </div>
+        </div>
+        <div class="flex items-center justify-between">
+          <div class="flex items-center space-x-2">
+            <div class="w-8 h-8 rounded-full bg-gray-200 flex items-center justify-center text-gray-500 text-sm font-bold"> <img src="./imgs/ISTAD.png" alt=""> </div>
+            <span class="text-gray-700 font-medium  dark:text-white">ISTAD</span>
+             <div class="flex items-center text-gray-500">
+             <span class="text-gray-700 text-2xl p-1 font-bold dark:text-white">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$${pro.discount}</span>
+           <span class="text-gray-500 text-md line-through dark:text-gray-300"> $${pro.price}</span>
+           </div>
+        </div>
+      </div>
+    </div>
+      `;
+    });
+
+    document.getElementById("images").innerHTML = cardDisplay.join("");
+  } catch (error) {
+    console.error("Error fetching data:", error);
+  }
+}
+
+// Call function
+fetchCourses();

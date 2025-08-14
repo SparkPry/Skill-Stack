@@ -168,6 +168,17 @@
         backdrop-filter: blur(20px);
         border: 1px solid rgba(255, 255, 255, 0.2);
       }
+       .nav-menu a {
+        color: #333;
+        text-decoration: none;
+        padding: 10px 15px;
+      }
+
+      .nav-menu a.active {
+        color: #007bff;
+        font-weight: bold;
+        border-bottom: 2px solid #007bff;
+      }
     </style>
 
     <!-- <script>
@@ -206,22 +217,24 @@
   </head>
 
   <body class="dark:bg-black dark:text-white transition-colors duration-300">
+    <!-- Navigation -->
     <header>
       <!-- Navbar -->
       <nav
-        class="bg-white shadow-lg border-b border-gray-200 fixed top-0 left-0 right-0 z-50 dark:bg-gray-900 text-gray-900 dark:text-gray-100 transition-colors duration-300"
+        class="nav-menu bg-white shadow-lg border-b border-gray-200 fixed top-0 left-0 right-0 z-50 dark:bg-gray-900 text-gray-900 dark:text-gray-100 transition-colors duration-300"
       >
         <div class="max-w-7xl mx-auto px-6">
           <div class="flex justify-between items-center h-16">
             <!-- Logo -->
             <div class="flex items-center">
-              <img
+              <a href="../index.html"><img
                 src="../imgs/Logo.png"
                 alt="Learnode"
                 class="w-[120px] h-[120px]"
-              />
+              /></a>
+
               <a href="../index.html" class="hide-on-mobile">
-                <h1 class="text-2xl font-bold ml-2">𝙎𝙆𝙄𝙇𝙇𝙎𝙏𝘼𝘾𝙆</h1>
+                <h1 class="text-2xl font-bold ml-2 dark:text-white">𝙎𝙆𝙄𝙇𝙇𝙎𝙏𝘼𝘾𝙆</h1>
               </a>
             </div>
 
@@ -229,7 +242,7 @@
             <div class="hidden md:flex items-center space-x-0">
               <a
                 href="./course.html"
-                class="group relative px-3 py-2 text-gray-700 hover:text-blue-600 font-semibold dark:text-white transition-colors duration-300"
+                class=" group relative px-3 py-2 text-gray-700 hover:text-blue-600 font-semibold dark:text-white transition-colors duration-300"
               >
                 Course
                 <div
@@ -238,7 +251,7 @@
               </a>
               <a
                 href="./AboutUs.html"
-                class="group relative px-3 py-2 text-gray-700 hover:text-blue-600 font-semibold dark:text-white transition-colors duration-300"
+                class="active group relative px-3 py-2 text-gray-700 hover:text-blue-600 font-semibold dark:text-white transition-colors duration-300"
               >
                 About
                 <div
@@ -299,7 +312,7 @@
               <!-- Desktop Login -->
               <a
                 href="./login.html"
-                class="hidden md:inline-block bg-[--primary-color] hover:bg-blue-400 shimmer-effect text-white px-3 py-2 rounded-full font-medium hover:scale-105 transition-all duration-300 shadow-md"
+               class="hidden md:inline-block border border-gray-400 hover:bg-white  shimmer-effect text-white dark:text-white px-3 py-2 rounded-full font-medium hover:scale-105 transition-all duration-300 shadow-md"
               >
                 <i class="fas fa-sign-in-alt mr-2"></i>Login
               </a>
@@ -325,7 +338,7 @@
           <div class="flex justify-start px-6 py-3">
             <a
               href="./login.html"
-              class="bg-blue-500 text-white text-sm px-4 py-1 rounded-full font-medium hover:bg-blue-600 transition-all duration-300 shadow"
+              class="border border-gray-400 hover:bg-white  shimmer-effect text-white dark:text-white px-3 py-2 rounded-full font-medium hover:scale-105 transition-all duration-300 shadow-md"
             >
               <i class="fas fa-sign-in-alt mr-1"></i>Login
             </a>
@@ -340,7 +353,7 @@
             </a>
             <a
               href="./AboutUs.html"
-              class="flex items-center px-3 py-2 text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded-lg dark:text-gray-300 dark:hover:bg-gray-700 transition-colors duration-300"
+              class="active flex items-center px-3 py-2 text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded-lg dark:text-gray-300 dark:hover:bg-gray-700 transition-colors duration-300"
             >
               <i class="fas fa-info-circle text-blue-500 mr-2"></i> About
             </a>
@@ -360,6 +373,9 @@
         </div>
       </nav>
     </header>
+
+
+
     <!-- Main Content -->
     <main
       class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 sm:py-8 mt-16 dark:bg-black dark:text-white transition-colors duration-300"
@@ -380,7 +396,7 @@
         <div class="flex justify-center gap-3 sm:gap-4 px-4">
           <!-- <button class="custom-button w-full sm:w-auto">Browse Courses</button> -->
           <a
-            href="./pages/course.html"
+            href="./course.html"
             class="bg-[--primary-color] text-white px-8 py-3 rounded-lg font-semibold hover:bg-[#00A0FF] transform hover:scale-105 transition-all duration-200"
             >Browse Courses</a
           >
@@ -388,7 +404,7 @@
             Start Free Trial
           </button> -->
           <a
-            href="#"
+            href="./login.html"
             class="border border-gray-300 text-gray-700 dark:text-white px-8 py-3 rounded-lg font-semibold hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors"
             >Start Free Trial</a
           >
@@ -398,66 +414,91 @@
       <!-- Mission Statement -->
       <section class="mb-12 sm:mb-16">
         <div
-          class="bg-white rounded-lg shadow-lg overflow-hidden dark:bg-gray-800 dark:text-white transition-colors duration-300"
-        >
-          <div class="flex flex-col md:flex-row">
-            <div class="w-full md:w-1/2 p-6 sm:p-8">
-              <h2 class="text-xl sm:text-2xl font-bold secondary-color mb-4">
-                Mission Statement
+          class="bg-white rounded-3xl shadow-lg overflow-hidden dark:bg-gradient-to-tr dark:from-gray-900 dark:via-gray-800 dark:to-gray-900 transition-colors duration-300 border border-[--primary-color] dark:border-[--primary-color]">
+          <div class="flex flex-col md:flex-row items-center">
+            <div
+              class="w-full md:w-1/2 p-8 sm:p-12 flex flex-col justify-center">
+              <h2
+                class="text-2xl sm:text-3xl font-extrabold text-[--primary-color] dark:text-[--primary-color] mb-4 tracking-tight">
+                <span
+                  class="inline-block [--primary-color]"
+                  >Mission Statement</span
+                >
               </h2>
               <p
-                class="text-gray-600 mb-4 text-sm sm:text-base dark:text-white"
-              >
-                At SkillStack, our mission is to transform the way people learn.
-                We combine innovative technology with expert instruction to
-                deliver education that is engaging, effective, and accessible.
+                class="text-gray-700 dark:text-gray-200 mb-4 text-base sm:text-lg leading-relaxed">
+                At
+                <span
+                  class="font-bold text-[--primary-color] dark:text-[--primary-color]"
+                  >SkillStack</span
+                >, our mission is to transform the way people learn. We combine
+                innovative technology with expert instruction to deliver
+                education.
               </p>
-              <p class="text-gray-600 text-sm sm:text-base dark:text-white">
+              <p
+                class="text-gray-700 dark:text-gray-200 text-base sm:text-lg leading-relaxed">
                 Our focus is always on what is essential to everyone, anytime,
-                anywhere. Whether you are looking to advance individuals, unlock
-                potential, and build real-world skills for the future.
+                anywhere. Whether you are looking to advance individuals real-world skills for the future.
               </p>
             </div>
-            <div class="w-full md:w-1/2 h-64 md:h-auto">
-              <img
-                src="../imgs/picture2.avif"
-                alt="Learning Journey"
-                class="w-full h-full object-cover"
-              />
+            <div
+              class="w-full md:w-1/2 h-64 md:h-auto flex items-center justify-center p-4">
+              <div
+                class="rounded-2xl overflow-hidden shadow-lg  [--primary-color] dark:border-[--primary-color]">
+                <img
+                  src="https://i.pinimg.com/1200x/38/de/8a/38de8a234d9168d0e92909182b12c81d.jpg"
+                  alt="Learning Journey"
+                  class="w-full h-full object-cover transition-transform duration-300 hover:scale-105" />
+              </div>
             </div>
           </div>
         </div>
       </section>
 
+
+      
+
       <!-- Second Section -->
       <section class="mb-12 sm:mb-16">
         <div
-          class="bg-white rounded-lg shadow-lg overflow-hidden dark:bg-gray-800 dark:text-white transition-colors duration-300"
-        >
-          <div class="flex flex-col md:flex-row">
-            <div class="w-full md:w-1/2 h-64 md:h-auto order-2 md:order-1">
-              <img
-                src="../imgs/picture1.avif"
-                alt="Learning Journey"
-                class="w-full h-full object-cover"
-              />
+          class="bg-white rounded-3xl shadow-lg overflow-hidden dark:bg-gradient-to-tr dark:from-gray-900 dark:via-gray-800 dark:to-gray-900 transition-colors duration-300 border border-[--primary-color] dark:border-[--primary-color]">
+          <div class="flex flex-col md:flex-row items-center">
+            <div
+              class="w-full md:w-1/2 h-64 md:h-auto order-2 md:order-1 flex items-center justify-center p-4">
+              <div
+                class="rounded-2xl overflow-hidden shadow-lg roun[--primary-color] dark:border-[--primary-color]">
+                <img
+                  src="https://i.pinimg.com/1200x/75/10/b6/7510b6757ceadb19631a0d8ae6ce1e11.jpg"
+                  alt="Learning Journey"
+                  class="w-full h-full object-cover transition-transform duration-300 hover:scale-105" />
+              </div>
             </div>
-            <div class="w-full md:w-1/2 p-6 sm:p-8 order-1 md:order-2">
-              <p class="text-gray-600 text-sm sm:text-base dark:text-white">
+            <div
+              class="w-full md:w-1/2 p-8 sm:p-12 order-1 md:order-2 flex flex-col justify-center">
+              <h2
+                class="text-2xl sm:text-3xl font-extrabold text-[--primary-color] dark:text-[--primary-color] mb-4 tracking-tight">
+                <span
+                  class="inline-block [--primary-color]"
+                  >Our Vision</span
+                >
+              </h2>
+              <p
+                class="text-gray-700 dark:text-gray-200 text-base sm:text-lg leading-relaxed">
                 Our mission is to revolutionize the way education is delivered
-                by focusing the power of cutting-edge technology with
-                world-class expertise. We believe that everyone should be able
-                to learn, high-quality learning experiences available to
-                everyone, regardless of location, background, or circumstance.
-                We believe that education is a fundamental right, and we are
-                committed to breaking down barriers that prevent people across
-                the globe and deliver the best possible learning experiences to
-                our learners.
+                by harnessing the power of cutting-edge technology and
+                world-class expertise.
+              </p>
+              <p
+                class="text-gray-700 dark:text-gray-200 text-base sm:text-lg leading-relaxed mt-2">
+                Education is a fundamental right, and we are committed to
+                breaking down barriers that prevent people across the globe from
+                learning and growing.
               </p>
             </div>
           </div>
         </div>
       </section>
+
 
       <!-- Future-Proof Your Skills Section -->
       <section class="mb-12 sm:mb-16">
@@ -541,121 +582,66 @@
         </div>
       </section>
 
-      <!-- Our Mentors Section -->
-      <section class="mb-20 lg:mb-28">
-        <div class="text-center mb-16">
-          <h2
-            class="section-title text-4xl lg:text-5xl font-bold text-gray-800 mb-4 fade-in dark:text-white"
-          >
-            Our Mentors
-          </h2>
-          <p
-            class="text-lg text-gray-600 max-w-2xl mx-auto fade-in fade-in-delay-1 dark:text-white"
-          >
-            Meet our experienced mentors who guide and inspire our team to
-            achieve excellence
-          </p>
-        </div>
 
-        <div
-          class="flex flex-col lg:flex-row justify-center items-center gap-12 lg:gap-20"
-        >
-          <!-- Mentor 1 -->
-          <div
-            class="card-hover bg-white rounded-2xl p-8 shadow-lg max-w-sm w-full fade-in fade-in-delay-2 dark:bg-gray-800 dark:text-white transition-colors duration-300"
-          >
-            <div class="text-center">
-              <div
-                class="profile-image w-40 h-40 lg:w-48 lg:h-48 mx-auto mb-6 rounded-full overflow-hidden shadow-xl"
-              >
-                <img
-                  src="../imgs/mentor1.jpg"
-                  alt="Mr. Ing Davann"
-                  class="w-full h-full object-cover"
-                />
-              </div>
-              <h3 class="text-2xl font-bold text-gray-800 mb-2 dark:text-white">
-                Mr. Ing Davann
-              </h3>
-              <div class="role-badge mb-4">Senior Mentor</div>
-              <p class="text-gray-600 mb-6 dark:text-white">
-                Leading with 15+ years of industry experience
-              </p>
-              <div class="flex justify-center space-x-4">
-                <a
-                  href="#"
-                  class="social-link text-blue-600 hover:text-blue-800 bg-blue-50 p-3 rounded-full"
-                >
-                  <i class="fab fa-linkedin text-lg"></i>
-                </a>
-                <a
-                  href="#"
-                  class="social-link text-blue-500 hover:text-blue-700 bg-blue-50 p-3 rounded-full"
-                >
-                  <i class="fab fa-twitter text-lg"></i>
-                </a>
-                <a
-                  href="#"
-                  class="social-link text-gray-600 hover:text-gray-800 bg-gray-50 p-3 rounded-full"
-                >
-                  <i class="fas fa-envelope text-lg"></i>
-                </a>
-              </div>
+
+      <!-- mentor and team member-->
+      <dive class="bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-50 min-h-screen">
+
+    <!--  Mentor Cards Section  -->
+    <section class="max-w-6xl mx-auto px-4 py-14 text-center">
+      <h2 class="section-title text-4xl font-extrabold text-center mb-10 gradient-text" style="background: linear-gradient(90deg,#3b82f6,#8b5cf6);-webkit-background-clip:text;-webkit-text-fill-color:transparent;">
+        Meet Our Mentors
+      </h2>
+      <p class="text-lg text-gray-600 max-w-2xl mx-auto fade-in fade-in-delay-1 dark:text-white">
+      Meet our experienced mentors who guide and inspire our team to achieve excellence</p>
+      <div class="flex flex-col sm:flex-col lg:flex-row md:flex-row justify-center items-center gap-12 lg:gap-20 my-9"> 
+        <!-- Mentor 1 -->
+        <div class="rounded-3xl    p-8 flex flex-col items-center  hover:scale-105 transition-transform  w-96 border-2 border-blue-500 dark:text-white transition-colors duration-300">
+          <div class="relative mb-6">
+      
+            <div class="w-56 h-56 rounded-full border-4 border-blue-400 bg-white shadow-lg overflow-hidden">
+              <img src="../imgs/img-team/mentor001.jpg"
+                   alt="Mr. Ing Davann" class="w-full h-full object-cover rounded-full">
             </div>
           </div>
-
-          <!-- Mentor 2 -->
-          <div
-            class="card-hover bg-white rounded-2xl p-8 shadow-lg max-w-sm w-full fade-in fade-in-delay-3 dark:bg-gray-800 dark:text-white transition-colors duration-300"
-          >
-            <div class="text-center">
-              <div
-                class="profile-image w-40 h-40 lg:w-48 lg:h-48 mx-auto mb-6 rounded-full overflow-hidden shadow-xl"
-              >
-                <img
-                  src="../imgs/mentor2.jpg"
-                  alt="Mr. Chan Chhaya"
-                  class="w-full h-full object-cover"
-                />
-              </div>
-              <h3 class="text-2xl font-bold text-gray-800 mb-2 dark:text-white">
-                Mr. Chan Chhaya
-              </h3>
-              <div class="role-badge mb-4">Technical Mentor</div>
-              <p class="text-gray-600 mb-6 dark:text-white">
-                Specializing in innovation and technical excellence
-              </p>
-              <div class="flex justify-center space-x-4">
-                <a
-                  href="#"
-                  class="social-link text-blue-600 hover:text-blue-800 bg-blue-50 p-3 rounded-full"
-                >
-                  <i class="fab fa-linkedin text-lg"></i>
-                </a>
-                <a
-                  href="#"
-                  class="social-link text-blue-500 hover:text-blue-700 bg-blue-50 p-3 rounded-full"
-                >
-                  <i class="fab fa-twitter text-lg"></i>
-                </a>
-                <a
-                  href="#"
-                  class="social-link text-gray-600 hover:text-gray-800 bg-gray-50 p-3 rounded-full"
-                >
-                  <i class="fas fa-envelope text-lg"></i>
-                </a>
-              </div>
-            </div>
+          <h3 class="text-2xl font-bold text-[#40a0d9;] mb-1">Mr. Ing Davann</h3>
+          <p class="text-[#434343;] font-semibold mb-2 dark:text-white">Mentor</p>
+          <!-- <p class="text-gray-700 text-center text-base mb-4 dark:text-white">20+ years guiding teams through digital transformation and innovation strategies</p> -->
+          <div class="flex gap-4">
+            <a href="#" class="bg-blue-100 hover:bg-blue-200 text-[#40a0d9;] rounded-full p-2 shadow transition"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" class="bg-blue-100 hover:bg-blue-200 text-[#40a0d9;] rounded-full p-2 shadow transition"><i class="fab fa-twitter"></i></a>
+            <a href="#" class="bg-blue-100 hover:bg-blue-200 text-[#40a0d9;] rounded-full p-2 shadow transition"><i class="fab fa-linkedin-in"></i></a>
           </div>
         </div>
-      </section>
+        <!-- Mentor 2 -->
 
-      <!-- Our Team Section -->
+
+        <div class="rounded-3xl border-2 border-blue-500  p-8 flex flex-col items-center  hover:scale-105 transition-transform  w-96  dark:text-white transition-colors duration-300">
+          <div class="relative mb-6">
+      
+            <div class="w-56 h-56 rounded-full border-4 border-blue-400  shadow-lg overflow-hidden">
+              <img src="../imgs/img-team/mentor002.jpg"
+                   alt="Mr. Chan Chhaya" class="w-full h-full object-cover rounded-full">
+            </div>
+          </div>
+          <h3 class="text-2xl font-bold text-[#40a0d9;] mb-1">Mr. Chan Chhaya</h3>
+          <p class="text-[#434343;] font-semibold mb-2 dark:text-white"> Mentor</p>
+          <!-- <p class="text-gray-700 text-center text-base mb-4 dark:text-white">20+ years guiding teams through digital transformation and innovation strategies</p> -->
+          <div class="flex gap-4">
+            <a href="#" class="bg-blue-100 hover:bg-blue-200 text-[#40a0d9;] rounded-full p-2 shadow transition"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" class="bg-blue-100 hover:bg-blue-200 text-[#40a0d9;] rounded-full p-2 shadow transition"><i class="fab fa-twitter"></i></a>
+            <a href="#" class="bg-blue-100 hover:bg-blue-200 text-[#40a0d9;] rounded-full p-2 shadow transition"><i class="fab fa-linkedin-in"></i></a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- Our Team Section -->
       <section>
         <div class="text-center mb-16">
           <h2
-            class="section-title text-4xl lg:text-5xl font-bold text-gray-800 mb-4 fade-in dark:text-white"
-          >
+            class="section-title text-4xl font-extrabold text-center mb-10 gradient-text"  style="background: linear-gradient(90deg,#3b82f6,#8b5cf6);-webkit-background-clip:text;-webkit-text-fill-color:transparent;">
             Our Team
           </h2>
           <p
@@ -666,369 +652,230 @@
           </p>
         </div>
 
-        <!-- Team Grid -->
-        <div
-          class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8 lg:gap-10"
-        >
-          <!-- Team Member 1 - Leader -->
-          <div
-            class="card-hover bg-white rounded-2xl p-6 shadow-lg relative overflow-hidden fade-in fade-in-delay-2 dark:bg-gray-800 dark:text-white transition-colors duration-300"
-          >
-            <div
-              class="absolute top-4 right-4 bg-yellow-100 text-yellow-800 px-3 py-1 rounded-full text-xs font-semibold"
-            >
-              Leader
-            </div>
-            <div class="text-center">
-              <div
-                class="profile-image w-32 h-32 mx-auto mb-4 rounded-full overflow-hidden shadow-lg"
-              >
-                <img
-                  src="../imgs/p1.JPG"
-                  alt="CHOENG SREY LEAK"
-                  class="w-full h-full object-cover"
-                />
-              </div>
-              <h3 class="text-lg font-bold text-gray-800 mb-1 dark:text-white">
-                CHOENG SREY LEAK
-              </h3>
-              <p class="text-sm text-gray-500 mb-4 dark:text-white">
-                Group Leader
-              </p>
-              <div class="flex justify-center space-x-3">
-                <a
-                  href="#"
-                  class="social-link text-blue-600 hover:text-blue-800"
-                >
-                  <i class="fab fa-linkedin text-lg"></i>
-                </a>
-                <a
-                  href="#"
-                  class="social-link text-blue-500 hover:text-blue-700"
-                >
-                  <i class="fab fa-twitter text-lg"></i>
-                </a>
-                <a
-                  href="#"
-                  class="social-link text-blue-700 hover:text-blue-900"
-                >
-                  <i class="fab fa-facebook text-lg"></i>
-                </a>
-                <a
-                  href="#"
-                  class="social-link text-pink-500 hover:text-pink-700"
-                >
-                  <i class="fab fa-instagram text-lg"></i>
-                </a>
-              </div>
-            </div>
-          </div>
 
-          <!-- Team Member 2 - Sub Leader -->
-          <div
-            class="card-hover bg-white rounded-2xl p-6 shadow-lg relative overflow-hidden fade-in fade-in-delay-3 dark:bg-gray-800 dark:text-white transition-colors duration-300"
-          >
-            <div
-              class="absolute top-4 right-4 bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-xs font-semibold"
-            >
-              Sub Leader
-            </div>
-            <div class="text-center">
-              <div
-                class="profile-image w-32 h-32 mx-auto mb-4 rounded-full overflow-hidden shadow-lg"
-              >
-                <img
-                  src="../imgs/p2.JPG"
-                  alt="KOY SOKKEA"
-                  class="w-full h-full object-cover"
-                />
-              </div>
-              <h3 class="text-lg font-bold text-gray-800 mb-1 dark:text-white">
-                KOY SOKKEA
-              </h3>
-              <p class="text-sm text-gray-500 mb-4 dark:text-white">
-                Sub Leader
-              </p>
-              <div class="flex justify-center space-x-3">
-                <a
-                  href="#"
-                  class="social-link text-blue-600 hover:text-blue-800"
-                >
-                  <i class="fab fa-linkedin text-lg"></i>
-                </a>
-                <a
-                  href="#"
-                  class="social-link text-blue-500 hover:text-blue-700"
-                >
-                  <i class="fab fa-twitter text-lg"></i>
-                </a>
-                <a
-                  href="#"
-                  class="social-link text-blue-700 hover:text-blue-900"
-                >
-                  <i class="fab fa-facebook text-lg"></i>
-                </a>
-                <a
-                  href="#"
-                  class="social-link text-pink-500 hover:text-pink-700"
-                >
-                  <i class="fab fa-instagram text-lg"></i>
-                </a>
-              </div>
-            </div>
-          </div>
 
-          <!-- Team Member 3 -->
-          <div
-            class="card-hover bg-white rounded-2xl p-6 shadow-lg fade-in fade-in-delay-4 dark:bg-gray-800 dark:text-white transition-colors duration-300"
-          >
-            <div class="text-center">
-              <div
-                class="profile-image w-32 h-32 mx-auto mb-4 rounded-full overflow-hidden shadow-lg"
-              >
-                <img
-                  src="../imgs/p3.jpg"
-                  alt="TRY SOPHANY"
-                  class="w-full h-full object-cover"
-                />
-              </div>
-              <h3 class="text-lg font-bold text-gray-800 mb-1 dark:text-white">
-                TRY SOPHANY
-              </h3>
-              <p class="text-sm text-gray-500 mb-4 dark:text-white">
-                Team Member
-              </p>
-              <div class="flex justify-center space-x-3">
-                <a
-                  href="#"
-                  class="social-link text-blue-600 hover:text-blue-800"
-                >
-                  <i class="fab fa-linkedin text-lg"></i>
-                </a>
-                <a
-                  href="#"
-                  class="social-link text-blue-500 hover:text-blue-700"
-                >
-                  <i class="fab fa-twitter text-lg"></i>
-                </a>
-                <a
-                  href="#"
-                  class="social-link text-blue-700 hover:text-blue-900"
-                >
-                  <i class="fab fa-facebook text-lg"></i>
-                </a>
-                <a
-                  href="#"
-                  class="social-link text-pink-500 hover:text-pink-700"
-                >
-                  <i class="fab fa-instagram text-lg"></i>
-                </a>
-              </div>
-            </div>
-          </div>
 
-          <!-- Team Member 4 -->
-          <div
-            class="card-hover bg-white rounded-2xl p-6 shadow-lg fade-in fade-in-delay-5 dark:bg-gray-800 dark:text-white transition-colors duration-300"
-          >
-            <div class="text-center">
-              <div
-                class="profile-image w-32 h-32 mx-auto mb-4 rounded-full overflow-hidden shadow-lg"
-              >
-                <img
-                  src="../imgs/p4.png"
-                  alt="SAN SOPHEAK"
-                  class="w-full h-full object-cover"
-                />
-              </div>
-              <h3 class="text-lg font-bold text-gray-800 mb-1 dark:text-white">
-                SAN SOPHEAK
-              </h3>
-              <p class="text-sm text-gray-500 mb-4 dark:text-white">
-                Team Member
-              </p>
-              <div class="flex justify-center space-x-3">
-                <a
-                  href="#"
-                  class="social-link text-blue-600 hover:text-blue-800"
-                >
-                  <i class="fab fa-linkedin text-lg"></i>
-                </a>
-                <a
-                  href="#"
-                  class="social-link text-blue-500 hover:text-blue-700"
-                >
-                  <i class="fab fa-twitter text-lg"></i>
-                </a>
-                <a
-                  href="#"
-                  class="social-link text-blue-700 hover:text-blue-900"
-                >
-                  <i class="fab fa-facebook text-lg"></i>
-                </a>
-                <a
-                  href="#"
-                  class="social-link text-pink-500 hover:text-pink-700"
-                >
-                  <i class="fab fa-instagram text-lg"></i>
-                </a>
-              </div>
-            </div>
-          </div>
 
-          <!-- Team Member 5 -->
-          <div
-            class="card-hover bg-white rounded-2xl p-6 shadow-lg fade-in fade-in-delay-6 dark:bg-gray-800 dark:text-white transition-colors duration-300"
-          >
-            <div class="text-center">
-              <div
-                class="profile-image w-32 h-32 mx-auto mb-4 rounded-full overflow-hidden shadow-lg"
-              >
-                <img
-                  src="../imgs/p5.jpg"
-                  alt="SROEUM SAREN"
-                  class="w-full h-full object-cover"
-                />
-              </div>
-              <h3 class="text-lg font-bold text-gray-800 mb-1 dark:text-white">
-                SROEUM SAREN
-              </h3>
-              <p class="text-sm text-gray-500 mb-4 dark:text-white">
-                Team Member
-              </p>
-              <div class="flex justify-center space-x-3">
-                <a
-                  href="#"
-                  class="social-link text-blue-600 hover:text-blue-800"
-                >
-                  <i class="fab fa-linkedin text-lg"></i>
-                </a>
-                <a
-                  href="#"
-                  class="social-link text-blue-500 hover:text-blue-700"
-                >
-                  <i class="fab fa-twitter text-lg"></i>
-                </a>
-                <a
-                  href="#"
-                  class="social-link text-blue-700 hover:text-blue-900"
-                >
-                  <i class="fab fa-facebook text-lg"></i>
-                </a>
-                <a
-                  href="#"
-                  class="social-link text-pink-500 hover:text-pink-700"
-                >
-                  <i class="fab fa-instagram text-lg"></i>
-                </a>
-              </div>
+            <!-- Desktop Circular Layout -->
+    <div class="hidden lg:block relative max-w-7xl mx-auto px-8 py-9">
+        <div class="relative w-full h-screen max-h-[900px] flex items-center justify-center ">
+            <!-- Central Circle -->
+            <div id="centerCircle" class="center-circle absolute z-10 w-64 h-64 rounded-full flex items-center justify-center text-white text-2xl font-bold  animate-pulse-slow cursor-pointer transition-all duration-300 hover:scale-110  mt-36   border-2 border-blue-500">
+                <div class="text-center">
+                    <div class="flex justify-center">
+                      <img src="../imgs/SkillstactLogo.png" alt="skillstack" class="w-[100px]">
+                    </div>
+                    <p class="text-gray-700 dark:text-white">𝙎𝙆𝙄𝙇𝙇𝙎𝙏𝘼𝘾𝙆</p>
+                    <!-- <div ></div> -->
+                </div>
             </div>
-          </div>
 
-          <!-- Team Member 6 -->
-          <div
-            class="card-hover bg-white rounded-2xl p-6 shadow-lg fade-in fade-in-delay-7 dark:bg-gray-800 dark:text-white transition-colors duration-300"
-          >
-            <div class="text-center">
-              <div
-                class="profile-image w-32 h-32 mx-auto mb-4 rounded-full overflow-hidden shadow-lg"
-              >
-                <img
-                  src="../imgs/p6.JPG"
-                  alt="CHRACH SAVOEUN"
-                  class="w-full h-full object-cover"
-                />
-              </div>
-              <h3 class="text-lg font-bold text-gray-800 mb-1 dark:text-white">
-                CHRACH SAVOEUN
-              </h3>
-              <p class="text-sm text-gray-500 mb-4 dark:text-white">
-                Team Member
-              </p>
-              <div class="flex justify-center space-x-3">
-                <a
-                  href="#"
-                  class="social-link text-blue-600 hover:text-blue-800"
-                >
-                  <i class="fab fa-linkedin text-lg"></i>
-                </a>
-                <a
-                  href="#"
-                  class="social-link text-blue-500 hover:text-blue-700"
-                >
-                  <i class="fab fa-twitter text-lg"></i>
-                </a>
-                <a
-                  href="#"
-                  class="social-link text-blue-700 hover:text-blue-900"
-                >
-                  <i class="fab fa-facebook text-lg"></i>
-                </a>
-                <a
-                  href="#"
-                  class="social-link text-pink-500 hover:text-pink-700"
-                >
-                  <i class="fab fa-instagram text-lg"></i>
-                </a>
-              </div>
+            <!-- Team Members in Circle -->
+            <div id="teamMembers" class="absolute inset-0">
+                <!-- Member positions will be calculated by JavaScript -->
             </div>
-          </div>
-
-          <!-- Team Member 7 -->
-          <div
-            class="card-hover bg-white rounded-2xl p-6 shadow-lg fade-in fade-in-delay-7 dark:bg-gray-800 dark:text-white transition-colors duration-300"
-          >
-            <div class="text-center">
-              <div
-                class="profile-image w-32 h-32 mx-auto mb-4 rounded-full overflow-hidden shadow-lg"
-              >
-                <img
-                  src="../imgs/p7.jpg"
-                  alt="LUY LYHAI"
-                  class="w-full h-full object-cover"
-                />
-              </div>
-              <h3 class="text-lg font-bold text-gray-800 mb-1 dark:text-white">
-                LUY LYHAI
-              </h3>
-              <p class="text-sm text-gray-500 mb-4 dark:text-white">
-                Team Member
-              </p>
-              <div class="flex justify-center space-x-3">
-                <a
-                  href="#"
-                  class="social-link text-blue-600 hover:text-blue-800"
-                >
-                  <i class="fab fa-linkedin text-lg"></i>
-                </a>
-                <a
-                  href="#"
-                  class="social-link text-blue-500 hover:text-blue-700"
-                >
-                  <i class="fab fa-twitter text-lg"></i>
-                </a>
-                <a
-                  href="#"
-                  class="social-link text-blue-700 hover:text-blue-900"
-                >
-                  <i class="fab fa-facebook text-lg"></i>
-                </a>
-                <a
-                  href="#"
-                  class="social-link text-pink-500 hover:text-pink-700"
-                >
-                  <i class="fab fa-instagram text-lg"></i>
-                </a>
-              </div>
-            </div>
-          </div>
         </div>
+    </div>
+
+
+
+     <!-- Mobile/Tablet Grid Layout -->
+    <div class="lg:hidden max-w-6xl mx-auto px-4 pb-16">
+
+        
+
+
+        <!-- Team Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 items-center m-auto justify-center">
+          <!-- member 1 -->
+            <div class="team-card rounded-2xl p-6 shadow-xl transition-all  hover:shadow-2xl animate-slideInUp border-2 border-blue-500 transition-colors duration-300 hover:scale-105">
+                <div class="flex flex-col sm:flex-row items-center gap-6">
+                    <div class="member-image w-24 h-24 sm:w-28 sm:h-28 rounded-full p-1 flex-shrink-0">
+                        <img src="../imgs/img-team/img001.jpg" 
+                             alt="CHOENG SREY LEAK" class="w-full h-full rounded-full object-cover">
+                    </div>
+                    <div class="text-center sm:text-left flex-1">
+                        <h3 class="text-xl font-bold text-[#40a0d9;]  mb-1 ">CHOENG SREY LEAK</h3>
+                        <p class="text-blue-60 dark:text-white0 font-medium mb-2">Group Leader</p>
+                        <!-- <p class="text-gray-600 text-sm mb-3 dark:text-white">Driving growth through innovative marketing strategies</p> -->
+                        <div class="flex justify-center sm:justify-start gap-3">
+                            <a href="#" class="text-[#40a0d9;] hover:text-blue-800 transition-colors transform hover:scale-110">
+                                <i class="fab fa-facebook-f text-lg"></i>
+                            </a>
+                            <a href="#" class="text-[#40a0d9;] hover:text-blue-800 transition-colors transform hover:scale-110">
+                                <i class="fab fa-twitter text-lg"></i>
+                            </a>
+                            <a href="#" class="text-[#40a0d9;] hover:text-blue-800 transition-colors transform hover:scale-110">
+                                <i class="fab fa-linkedin-in text-lg"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+         <!-- member2 -->
+            <div class="team-card rounded-2xl p-6 shadow-xl transition-all  hover:shadow-2xl animate-slideInUp border-2 border-blue-500 transition-colors duration-300 hover:scale-105" style="animation-delay: 0.1s;">
+                <div class="flex flex-col sm:flex-row items-center gap-6">
+                    <div class="member-image w-24 h-24 sm:w-28 sm:h-28 rounded-full p-1 flex-shrink-0">
+                        <img src="../imgs/p2.JPG" 
+                             alt="KOY SOKKEA" class="w-full h-full rounded-full object-cover">
+                    </div>
+                    <div class="text-center sm:text-left flex-1">
+                        <h3 class="text-xl font-bold text-[#40a0d9;] mb-1 ">KOY SOKKEA</h3>
+                        <p class="text-gray-800 dark:text-white font-medium mb-2">Sub Leader</p>
+                        <!-- <p class="text-gray-600 text-sm mb-3 dark:text-white">Creating beautiful and functional user experiences</p> -->
+                        <div class="flex justify-center sm:justify-start gap-3">
+                            <a href="#" class="text-[#40a0d9;] hover:text-blue-800 transition-colors transform hover:scale-110">
+                                <i class="fab fa-facebook-f text-lg"></i>
+                            </a>
+                            <a href="#" class="text-[#40a0d9;] hover:text-blue-800 transition-colors transform hover:scale-110">
+                                <i class="fab fa-twitter text-lg"></i>
+                            </a>
+                            <a href="#" class="text-[#40a0d9;] hover:text-blue-800 transition-colors transform hover:scale-110">
+                                <i class="fab fa-linkedin-in text-lg"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+          <!-- member 3 -->
+            <div class="team-card rounded-2xl p-6 shadow-xl transition-all  hover:shadow-2xl animate-slideInUp border-2 border-blue-500 transition-colors duration-300 hover:scale-105" style="animation-delay: 0.2s;">
+                <div class="flex flex-col sm:flex-row items-center gap-6">
+                    <div class="member-image w-24 h-24 sm:w-28 sm:h-28 rounded-full p-1 flex-shrink-0">
+                        <img src="../imgs/img-team/img003.jpg" 
+                             alt="LUY LYHAI" class="w-full h-full rounded-full object-cover">
+                    </div>
+                    <div class="text-center sm:text-left flex-1">
+                        <h3 class="text-xl font-bold text-gray-800 mb-1 dark:text-white">LUY LYHAI</h3>
+                        <p class="text-gray-800 dark:text-white font-medium mb-2">Team Member</p>
+                        <!-- <p class="text-gray-600 text-sm mb-3 dark:text-white">Leading creative vision and brand strategy</p> -->
+                        <div class="flex justify-center sm:justify-start gap-3">
+                            <a href="#" class="text-[#40a0d9;] hover:text-blue-800 transition-colors transform hover:scale-110">
+                                <i class="fab fa-facebook-f text-lg"></i>
+                            </a>
+                            <a href="#" class="text-[#40a0d9;] hover:text-blue-800 transition-colors transform hover:scale-110">
+                                <i class="fab fa-twitter text-lg"></i>
+                            </a>
+                            <a href="#" class="text-[#40a0d9;] hover:text-blue-800 transition-colors transform hover:scale-110">
+                                <i class="fab fa-linkedin-in text-lg"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- member 4 -->
+            <div class="team-card rounded-2xl p-6 shadow-xl transition-all  hover:shadow-2xl animate-slideInUp border-2 border-blue-500 transition-colors duration-300 hover:scale-105" style="animation-delay: 0.3s;">
+                <div class="flex flex-col sm:flex-row items-center gap-6">
+                    <div class="member-image w-24 h-24 sm:w-28 sm:h-28 rounded-full p-1 flex-shrink-0">
+                        <img src="../imgs/img-team/img004.jpg" 
+                             alt="TRY SOPHANY" class="w-full h-full rounded-full object-cover">
+                    </div>
+                    <div class="text-center sm:text-left flex-1">
+                        <h3 class="text-xl font-bold text-gray-800 mb-1 dark:text-white">TRY SOPHANY</h3>
+                        <p class="text-gray-800 dark:text-white font-medium mb-2">Team Member</p>
+                        <!-- <p class="text-gray-600 text-sm mb-3 dark:text-white">Orchestrating product development and strategy</p> -->
+                        <div class="flex justify-center sm:justify-start gap-3">
+                            <a href="#" class="text-[#40a0d9;] hover:text-blue-800 transition-colors transform hover:scale-110">
+                                <i class="fab fa-facebook-f text-lg"></i>
+                            </a>
+                            <a href="#" class="text-[#40a0d9;] hover:text-blue-800 transition-colors transform hover:scale-110">
+                                <i class="fab fa-twitter text-lg"></i>
+                            </a>
+                            <a href="#" class="text-[#40a0d9;] hover:text-blue-800 transition-colors transform hover:scale-110">
+                                <i class="fab fa-linkedin-in text-lg"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- member 5 -->
+            <div class="team-card rounded-2xl p-6 shadow-xl transition-all duration-500 hover:shadow-2xl animate-slideInUp border-2 border-blue-500 transition-colors hover:scale-105 " style="animation-delay: 0.4s;">
+                <div class="flex flex-col sm:flex-row items-center gap-6">
+                    <div class="member-image w-24 h-24 sm:w-28 sm:h-28 rounded-full p-1 flex-shrink-0">
+                        <img src="../imgs/img-team/img005.jpg" 
+                             alt="SROEUM SAREN" class="w-full h-full rounded-full object-cover">
+                    </div>
+                    <div class="text-center sm:text-left flex-1">
+                        <h3 class="text-xl font-bold text-gray-800 mb-1 dark:text-white">SROEUM SAREN</h3>
+                        <p class="text-gray-800 dark:text-white font-medium mb-2">Team Member</p>
+                        <!-- <p class="text-gray-600 text-sm mb-3 dark:text-white">Building relationships and driving revenue growth</p> -->
+                        <div class="flex justify-center sm:justify-start gap-3">
+                            <a href="#" class="text-[#40a0d9;] hover:text-blue-800 transition-colors transform hover:scale-110">
+                                <i class="fab fa-facebook-f text-lg"></i>
+                            </a>
+                            <a href="#" class="text-[#40a0d9;] hover:text-blue-800 transition-colors transform hover:scale-110">
+                                <i class="fab fa-twitter text-lg"></i>
+                            </a>
+                            <a href="#" class="text-[#40a0d9;] hover:text-blue-800 transition-colors transform hover:scale-110">
+                                <i class="fab fa-linkedin-in text-lg"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- member 6 -->
+            <div class="team-card rounded-2xl p-6 shadow-xl transition-all duration-500 hover:shadow-2xl animate-slideInUp border-2 border-blue-500 transition-colors hover:scale-105" style="animation-delay: 0.5s;">
+                <div class="flex flex-col sm:flex-row items-center gap-6">
+                    <div class="member-image w-24 h-24 sm:w-28 sm:h-28 rounded-full p-1 flex-shrink-0">
+                        <img src="../imgs/img-team/img006.jpg" 
+                             alt="CHRACH SAVOEUN" class="w-full h-full rounded-full object-cover">
+                    </div>
+                    <div class="text-center sm:text-left flex-1">
+                        <h3 class="text-xl font-bold text-gray-800 mb-1 dark:text-white">CHRACH SAVOEUN</h3>
+                        <p class="text-gray-800 dark:text-white font-medium mb-2">Team Member</p>
+                        <!-- <p class="text-gray-600 text-sm mb-3 dark:text-white">Crafting intuitive and delightful user experiences</p> -->
+                        <div class="flex justify-center sm:justify-start gap-3">
+                            <a href="#" class="text-[#40a0d9;] hover:text-blue-800 transition-colors transform hover:scale-110">
+                                <i class="fab fa-facebook-f text-lg"></i>
+                            </a>
+                            <a href="#" class="text-[#40a0d9;] hover:text-blue-800 transition-colors transform hover:scale-110">
+                                <i class="fab fa-twitter text-lg"></i>
+                            </a>
+                            <a href="#" class="text-[#40a0d9;] hover:text-blue-800 transition-colors transform hover:scale-110">
+                                <i class="fab fa-linkedin-in text-lg"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- member 7 -->
+            <div class="team-card rounded-2xl p-6 shadow-xl transition-all duration-500 hover:shadow-2xl animate-slideInUp border-2 border-blue-500 transition-colors hover:scale-105" style="animation-delay: 0.6s;">
+                <div class="flex flex-col sm:flex-row items-center gap-6">
+                    <div class="member-image w-24 h-24 sm:w-28 sm:h-28 rounded-full p-1 flex-shrink-0">
+                        <img src="../imgs/sopheak.jpeg" 
+                             alt="SAN SOPHEAK" class="w-full h-full rounded-full object-cover">
+                    </div>
+                    <div class="text-center sm:text-left flex-1 ">
+                        <h3 class="text-xl font-bold text-gray-800 mb-1 dark:text-white">SAN SOPHEAK</h3>
+                        <p class="text-gray-800 dark:text-white font-medium mb-2">Team Member</p>
+                        <!-- <p class="text-gray-600 text-sm mb-3 dark:text-white">Building robust and scalable software solutions</p> -->
+                        <div class="flex justify-center sm:justify-start gap-3">
+                            <a href="#" class="text-[#40a0d9;] hover:text-blue-800 transition-colors transform hover:scale-110">
+                                <i class="fab fa-facebook-f text-lg"></i>
+                            </a>
+                            <a href="#" class="text-[#40a0d9;] hover:text-blue-800 transition-colors transform hover:scale-110">
+                                <i class="fab fa-twitter text-lg"></i>
+                            </a>
+                            <a href="#" class="text-[#40a0d9;] hover:text-blue-800 transition-colors transform hover:scale-110">
+                                <i class="fab fa-linkedin-in text-lg"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+
+
+
       </section>
+    </dive>
     </main>
 
     <!-- CTA Section -->
     <section
-      class="py-20 bg-[--primary-color] dark:bg-gray-700 dark:text-white transition-colors duration-300"
+      class="py-20  sm:mt-8 lg:mt-32 bg-[--primary-color] dark:bg-gray-700 dark:text-white transition-colors duration-300"
     >
       <div class="max-w-4xl mx-auto text-center px-4 sm:px-6 lg:px-8">
         <h2 class="text-4xl font-bold text-white mb-4">
@@ -1039,7 +886,7 @@
           advance your career today.
         </p>
         <div class="flex justify-center space-x-4">
-          <button
+          <!-- <button
             class="bg-white text-blue-600 px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transform hover:scale-105 transition-all duration-200"
           >
             Get Started
@@ -1048,10 +895,27 @@
             class="border-2 border-white text-white px-8 py-3 rounded-lg font-semibold hover:bg-white hover:text-blue-600 transition-all duration-200"
           >
             Learn More
-          </button>
+          </button> -->
+           <a
+            href="./course.html"
+            class="bg-white text-blue-600 px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transform hover:scale-105 transition-all duration-200"
+            > Get Started</a
+          >
+          <!-- <button class="custom-button-outline w-full sm:w-auto">
+            Start Free Trial
+          </button> -->
+          <a
+            href="./login.html"
+            class="border-2 border-white text-white px-8 py-3 rounded-lg font-semibold hover:bg-white hover:text-blue-600 transition-all duration-200"
+            >Learn More</a
+          >
         </div>
       </div>
     </section>
+
+
+
+    
 
      <!-- Footer -->
     <footer class="bg-gray-800 text-white py-8">
@@ -1225,5 +1089,160 @@
       </div>
     </footer>
     <script src="../script/AboutUS.js"></script>
+    <script>
+        // Team member data
+        const teamMembers = [
+            {
+                name: "CHOENG SREYLEAK",
+                title: "Group Leader", 
+                description: "Driving growth through innovative marketing strategies",
+                image: "../imgs/img-team/img001.jpg"
+            },
+            {
+                name: "KOY SOKKEA",
+                title: "Sub Leader",
+                description: "Creating beautiful and functional user experiences", 
+                image: "../imgs/p2.JPG"
+            },
+            {
+                name: "LUY LYHAI", 
+                title: "Team Member",
+                description: "Lea creative vision and brand strategy",
+                image: "../imgs/img-team/img003.jpg"
+            },
+            {
+                name: "TRY SOPHANY",
+                title: "Team Member", 
+                description: "Orchestrating product development and strategy",
+                image: "../imgs/img-team/img004.jpg"
+            },
+            {
+                name: "SROEUM SAREN",
+                title: "Team Member",
+                description: "Building relationships and driving revenue growth", 
+                image: "../imgs/img-team/img005.jpg"
+            },
+            {
+                name: "CHRACH SAVOEUN", 
+                title: "Team Member",
+                description: "Crafting intuitive and delightful user experiences",
+                image: "../imgs/img-team/img006.jpg"
+            },
+            {
+                name: "SAN SOPHEAK",
+                title: "Team Member", 
+                description: "Building robust and scalable software solutions",
+                image: "../imgs/img-team/img007.jpg"
+            }
+        ];
+
+        // Create circular layout for desktop
+        function createCircularLayout() {
+            const container = document.getElementById('teamMembers');
+            if (!container) return;
+            
+            const radius = 380; // Increased radius for better spacing
+            const centerX = container.offsetWidth / 2;
+            const centerY = container.offsetHeight / 2;
+            
+            teamMembers.forEach((member, index) => {
+                const angle = (index / teamMembers.length) * 2 * Math.PI - Math.PI / 2;
+                const x = centerX + radius * Math.cos(angle);
+                const y = centerY + radius * Math.sin(angle);
+                
+                const memberCard = document.createElement('div');
+                // Removed background and shadow for desktop, keeping transparent look
+                memberCard.className = 'absolute w-80 rounded-2xl p-4 transition-all duration-500 hover:scale-105 animate-fadeIn bg-transparent';
+                memberCard.style.left = `${x - 160}px`;
+                memberCard.style.top = `${y - 80}px`;
+                memberCard.style.animationDelay = `${index * 0.2}s`;
+                
+                memberCard.innerHTML = `
+                    <div class="flex items-center border border-2 border-blue-500 gap-4 hover:bg-white/20 hover:backdrop-blur-sm rounded-3xl p-4 transition-all duration-300 h-56  transition-colors duration-300 mt-4">
+                        <div class="member-image w-36 h-36 rounded-full p-1 flex-shrink-0 shadow-lg">
+                            <img src="${member.image}" alt="${member.name}" class="w-full h-full rounded-full object-cover">
+                        </div>
+                        <div class="flex-1 text-center">
+                            <h3 class="text-lg font-bold text-[#40a0d9;] mb-1 drop-shadow-sm">${member.name}</h3>
+                            <p class="text-[#434343;] font-semibold text-sm mb-2 drop-shadow-sm dark:text-white">${member.title}</p>
+                            <p class="text-[#434343;] text-xs mb-3 drop-shadow-sm  dark:text-white">
+                              </p>
+                            <div class="flex gap-3 text-center items-center justify-center">
+                                <a href="#" class="hover:text-blue-800 transition-colors transform hover:scale-125 drop-shadow-sm">
+                                    <i class="fa-brands fa-facebook-f" style="color: #40a0d9;"></i>
+                                </a>
+                                <a href="#" class="text-[#40a0d9;] hover:text-blue-800 transition-colors transform hover:scale-125 drop-shadow-sm">
+                                    <i class="fab fa-twitter text-lg"></i>
+                                </a>
+                                <a href="#" class="text-[#40a0d9;] hover:text-blue-800 transition-colors transform hover:scale-125 drop-shadow-sm">
+                                    <i class="fab fa-linkedin-in text-lg"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                `;
+                
+                container.appendChild(memberCard);
+            });
+        }
+
+        // Initialize on load
+        document.addEventListener('DOMContentLoaded', function() {
+            createCircularLayout();
+            
+            // Add click effect to center circle
+            const centerCircle = document.getElementById('centerCircle');
+            if (centerCircle) {
+                centerCircle.addEventListener('click', function() {
+                    this.style.transform = 'scale(0.95)';
+                    setTimeout(() => {
+                        this.style.transform = 'scale(1)';
+                    }, 150);
+                });
+            }
+            
+            // Add intersection observer for animations
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('animate-slideInUp');
+                    }
+                });
+            }, observerOptions);
+            
+            // Observe all team cards
+            document.querySelectorAll('.team-card').forEach(card => {
+                observer.observe(card);
+            });
+        });
+
+        // Handle window resize
+        window.addEventListener('resize', function() {
+            const container = document.getElementById('teamMembers');
+            if (container && window.innerWidth >= 1024) {
+                container.innerHTML = '';
+                createCircularLayout();
+            }
+        });
+
+        // Add smooth scrolling
+        document.addEventListener('click', function(e) {
+            if (e.target.matches('a[href^="#"]')) {
+                e.preventDefault();
+                const target = document.querySelector(e.target.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            }
+        });
+    </script>
   </body>
 </html>

@@ -41,6 +41,17 @@
           display: none;
         }
       }
+      .nav-menu a {
+        color: #333;
+        text-decoration: none;
+        padding: 10px 15px;
+      }
+
+      .nav-menu a.active {
+        color: #007bff;
+        font-weight: bold;
+        border-bottom: 2px solid #007bff;
+      }
     </style>
   </head>
 
@@ -49,19 +60,21 @@
     <header>
       <!-- Navbar -->
       <nav
-        class="bg-white shadow-lg border-b border-gray-200 fixed top-0 left-0 right-0 z-50 dark:bg-gray-900 text-gray-900 dark:text-gray-100 transition-colors duration-300"
+        class="nav-menu bg-white shadow-lg border-b border-gray-200 fixed top-0 left-0 right-0 z-50 dark:bg-gray-900 text-gray-900 dark:text-gray-100 transition-colors duration-300"
       >
         <div class="max-w-7xl mx-auto px-6">
           <div class="flex justify-between items-center h-16">
             <!-- Logo -->
             <div class="flex items-center">
-              <img
+              <a href="../index.html">
+                <img
                 src="../imgs/Logo.png"
                 alt="Learnode"
                 class="w-[120px] h-[120px]"
               />
+              </a>
               <a href="../index.html" class="hide-on-mobile"
-                ><h1 class="text-2xl font-bold ml-2">𝙎𝙆𝙄𝙇𝙇𝙎𝙏𝘼𝘾𝙆</h1></a
+                ><h1 class="text-2xl font-bold ml-2 dark:text-white">𝙎𝙆𝙄𝙇𝙇𝙎𝙏𝘼𝘾𝙆</h1></a
               >
             </div>
 
@@ -87,7 +100,7 @@
               </a>
               <a
                 href="./contactUs.html"
-                class="group relative px-3 py-2 text-gray-700 hover:text-blue-600 font-semibold dark:text-white transition-colors duration-300"
+                class="active group relative px-3 py-2 text-gray-700 hover:text-blue-600 font-semibold dark:text-white transition-colors duration-300"
               >
                 Contact Us
                 <div
@@ -139,7 +152,7 @@
               <!-- Desktop Login -->
               <a
                 href="./login.html"
-                class="hidden md:inline-block bg-[--primary-color] hover:bg-blue-400 shimmer-effect text-white px-3 py-2 rounded-full font-medium hover:scale-105 transition-all duration-300 shadow-md"
+                class="hidden md:inline-block border border-gray-400 hover:bg-white  shimmer-effect text-white dark:text-white px-3 py-2 rounded-full font-medium hover:scale-105 transition-all duration-300 shadow-md"
               >
                 <i class="fas fa-sign-in-alt mr-2"></i>Login
               </a>
@@ -165,7 +178,7 @@
           <div class="flex justify-start px-6 py-3">
             <a
               href="./login.html"
-              class="bg-blue-500 text-white text-sm px-4 py-1 rounded-full font-medium hover:bg-blue-600 transition-all duration-300 shadow"
+             class="border border-gray-400 hover:bg-white  shimmer-effect text-white dark:text-white px-3 py-2 rounded-full font-medium hover:scale-105 transition-all duration-300 shadow-md"
             >
               <i class="fas fa-sign-in-alt mr-1"></i>Login
             </a>
@@ -186,7 +199,7 @@
             </a>
             <a
               href="./contactUs.html"
-              class="flex items-center px-3 py-2 text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded-lg dark:text-gray-300 dark:hover:bg-gray-700 transition-colors duration-300"
+              class="active flex items-center px-3 py-2 text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded-lg dark:text-gray-300 dark:hover:bg-gray-700 transition-colors duration-300"
             >
               <i class="fas fa-phone text-blue-500 mr-2"></i> Contact Us
             </a>
@@ -396,7 +409,7 @@
               <li>
                 <a
                   href="./pages/contactUs.html"
-                  class="text-gray-400 hover:text-white transition-colors"
+                  class=" text-gray-400 hover:text-white transition-colors"
                   >Contact Us</a
                 >
               </li>
