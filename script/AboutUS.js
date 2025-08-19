@@ -83,7 +83,7 @@ const teamMembers = [
     name: "KOY SOKKEA",
     title: "Sub Leader",
     description: "Creating beautiful and functional user experiences",
-    image: "../imgs/p2.JPG",
+    image: "../imgs/img-team/img002.jpg",
   },
   {
     name: "LUY LYHAI",
@@ -140,7 +140,7 @@ function createCircularLayout() {
     memberCard.style.animationDelay = `${index * 0.2}s`;
 
     memberCard.innerHTML = `
-                    <div class="flex items-center border border-2 border-blue-500 gap-4 hover:bg-white/20 hover:backdrop-blur-sm rounded-3xl p-4 transition-all duration-300 h-56  transition-colors duration-300 mt-4">
+                    <div class="flex items-center  border-2 border-blue-500 gap-4 hover:bg-white/20 hover:backdrop-blur-sm rounded-3xl p-4 transition-all duration-300 h-56    my-20">
                         <div class="member-image w-36 h-36 rounded-full p-1 flex-shrink-0 shadow-lg">
                             <img src="${member.image}" alt="${member.name}" class="w-full h-full rounded-full object-cover">
                         </div>
