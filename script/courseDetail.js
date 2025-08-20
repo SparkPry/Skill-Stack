@@ -278,24 +278,107 @@ document.addEventListener("mousemove", function (e) {
 
 
 // ==================== Fetch API for Hero Section=====================================
-const params = new URLSearchParams(window.location.search);
-const courseId = params.get("id");
+// Get course slug from URL parameters
+ const params = new URLSearchParams(window.location.search);
+    const courseSlug = params.get("slug");
 
-async function fetchCourseDetailsPages() {
-  try {
-    const res = await fetch(`https://course-api.istad.co/api/v1/courses/${courseId}`);
-    const data = await res.json();
+    const baseUrl = "https://course-api.istad.co/api/v1";
 
-    // Check if data exists and has the expected structure
-    if (!data) {
-      throw new Error("No data received from API");
+    async function fetchCourseData() {
+      try {
+        const res = await fetch(`${baseUrl}/courses/slug/${courseSlug}?part=CONTENT_DETAILS`);
+        const data = await res.json();
+        console.log("Course Data:", data);
+
+        if (!data) throw new Error("No data received from API");
+
+        const course = data.data || data;
+
+        let sectionsHTML = "";
+        if (course.sections && course.sections.length > 0) {
+          sectionsHTML = course.sections
+            .map(
+              (section, idx) => `
+                <div class="border rounded-md mb-3">
+                  <button onclick="toggleDropdown(${idx})"
+                    class="w-full flex justify-between items-center p-3 text-left font-semibold text-gray-900 hover:bg-gray-50">
+                    <span>${course.title}</span>
+                    <i class="fas fa-chevron-down"></i>
+                  </button>
+                  <div id="dropdown-${idx}" class="hidden px-4 py-2 space-y-4">
+                    ${
+                      section.videos && section.videos.length > 0
+                        ? section.videos
+                            .map(
+                              (video) => `
+                              <div class="p-3 rounded-md bg-gray-50">
+                                <div class="flex items-center space-x-3 mb-2">
+                                  <i class="fas fa-play-circle text-blue-500"></i>
+                                  <span class="font-medium">${video.title}</span>
+                                </div>🎥
+                                ${
+                                  video.fileName
+                                    ? `<a href="${video.fileName}" class="text-blue-600 hover:underline">${video.title}</a>`
+                                    : `<button onclick="openVideoModal('${video.videoUrl}')" class="text-blue-600 hover:underline">Watch Video</button>`
+                                      
+                                  
+                                }
+                              </div>
+                            `
+                            )
+                            .join("")
+                        : `<p class="text-gray-400">No videos available</p>`
+                    }
+                  </div>
+                </div>
+              `
+            )
+            .join("");
+        } else {
+          sectionsHTML = `<p class="text-gray-400">No sections available</p>`;
+        }
+
+    function toggleDropdown(idx) {
+      const el = document.getElementById(`dropdown-${idx}`);
+      el.classList.toggle("hidden");
     }
 
-    // Handle single course object (not an array)
-    // Based on the API endpoint pattern, this likely returns a single course object
-    const course = data.content || data; // Fallback in case the structure is different
-    
-    // Create display for single course
+    function openVideoModal(url) {
+      const modal = document.getElementById("videoModal");
+      const iframe = document.getElementById("videoFrame");
+
+      // Convert YouTube links to embed format
+      let embedUrl = url.replace("watch?v=", "embed/").split("&")[0];
+      if (embedUrl.includes("youtu.be")) {
+        embedUrl = embedUrl.replace("youtu.be/", "www.youtube.com/embed/");
+      }
+
+      iframe.src = embedUrl + "?autoplay=1";
+      modal.classList.remove("hidden");
+    }
+
+    function closeVideoModal() {
+      const modal = document.getElementById("videoModal");
+      const iframe = document.getElementById("videoFrame");
+      iframe.src = ""; // stop video
+      modal.classList.add("hidden");
+    }
+
+
+    // Insert into page (you can add your Hero + Curriculum wrapper here)
+    document.getElementById("HeroCourseDetails").innerHTML = `
+      <section class="py-12">
+        <div class="max-w-5xl mx-auto px-6">
+          <h1 class="text-3xl font-bold mb-4">${course.title}</h1>
+          <p class="mb-6 text-gray-600 dark:text-gray-400">${course.description}</p>
+          <h2 class="text-2xl font-semibold mb-4">Course Curriculum</h2>
+          <div class="space-y-4">
+            ${sectionsHTML}
+          </div>
+        </div>
+      </section>
+    `;
+    // Hero + Curriculum
     const CourseDetails = `
       <!-- Hero Section -->
       <section class="bg-[#40a0d9] text-white py-12 md:py-16 lg:py-20 mt-7">
@@ -304,135 +387,120 @@ async function fetchCourseDetailsPages() {
             <!-- Course Info -->
             <div class="lg:w-2/3 mb-8 lg:mb-0">
               <h1 class="text-4xl lg:text-5xl font-bold mb-4 p-2 text-gray-900 dark:text-white">
-                ${course.title || 'Course Title'}
+                ${course.title || "Course Title"}
               </h1>
               <p class="text-md mb-6 p-2 opacity-90 text-gray-800 dark:text-gray-300">
-                ${course.description || 'Course Description'}
+                ${course.description || "Course Description"}
               </p>
               <div class="flex flex-col lg:flex-row items-center space-x-0 lg:space-x-4 space-y-4 lg:space-y-0 mb-6">
-                <div class=" px-9 flex justify-center items-center text-xl bg-yellow-600 hover:bg-amber-500 rounded-lg p-2 text-gray-900 dark:text-gray-300">
-                    ${course.categoryName || 'Category'}
+                <div class="px-9 flex justify-center items-center text-xl bg-yellow-600 hover:bg-amber-500 rounded-lg p-2 text-gray-900 dark:text-gray-300">
+                  ${course.categoryName || "Category"}
                 </div>
-                
-              <!-- Rating and Stats -->  
               </div>
-              
-
               <div class="flex items-center space-x-6 text-lg p-2">
                 <div class="flex items-center">
-                  <i class="fas fa-play-circle mr-2 "></i>
-                  <span class="text-gray-700 dark:text-gray-500">130 lessons</span>
+                  <i class="fas fa-play-circle mr-2"></i>
+                  <span class="text-gray-700 dark:text-white">130Lesson</span>
                 </div>
               </div>
-              
             </div>
 
             <!-- Pricing Card -->
-            <div class="max-w-sm mx-auto  rounded-xl shadow-md overflow-hidden border-gray-200 p-4 dark:bg-gray-800 text-gray-900 dark:text-gray-100 transition-colors duration-300 dark:border-0">
-              <!-- Media Placeholder with Play Icon -->
+            <div class="max-w-sm mx-auto rounded-xl shadow-md overflow-hidden border-gray-200 p-4 dark:bg-gray-800 text-gray-900 dark:text-gray-100 transition-colors duration-300 dark:border-0">
               <div class="flex justify-center mb-4">
-                <div class="relative w-full">
-                  <img
-                    src="${course.thumbnail}"
-                    alt=""
-                    class="w-full h-48  rounded-lg shadow-md"
-                    onerror="this.src='https://via.placeholder.com/400x200'"
-                  />&nbsp; <br>
-                  ${course.slug}
-                  <div class=" p-5 mt-3 flex items-center justify-center">
-                   <button
-                  onclick="openPaymentModal('Premium Plan', '$${course.discount || course.price || '0'}')"
-                  class=" px-9 bg-blue-400 p-3  border-gray-600 text-gray-900 dark:text-gray-300 font-semibold py-2 rounded-md hover:bg-[#40a0d9] dark:hover:bg-gray-900 transition duration-300"
-                >
-                  Enroll Now
-                </button>&nbsp;&nbsp;
-                  <span class="text-gray-700 text-2xl dark:text-white">$${course.discount || '0'}</span>&nbsp;
-                <span class="text-gray-400 line-through text-md">$${course.price || '0'}</span>
+                <div class="relative w-full flex justify-center items-center">
+                  <img src="${course.thumbnail}" class="w-full rounded-xl"/>
+                  <div class="absolute inset-0 flex items-center justify-center">
+                    <i class="fas fa-play-circle text-white text-6xl drop-shadow-lg hover:text-gray-200"></i>
                   </div>
                 </div>
-              </div>             
+              </div>
+
+              <div class="p-5 mt-3 flex items-center justify-center">
+                <button
+                  onclick="openPaymentModal('Premium Plan', '$${course.discount || course.price || "0"}')"
+                  class="px-9 bg-blue-400 p-3 border-gray-600 text-gray-900 dark:text-gray-300 font-semibold py-2 rounded-md hover:bg-[#40a0d9] dark:hover:bg-gray-900 transition duration-300">
+                  Enroll Now
+                </button>&nbsp;&nbsp;
+                <span class="text-gray-700 text-2xl dark:text-white">$${course.discount || "0"}</span>&nbsp;
+                <span class="text-gray-400 line-through text-md">$${course.price || "0"}</span>
+              </div>
             </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Curriculum Section -->
+      <section class="py-12">
+        <div class="max-w-5xl mx-auto px-6">
+          <h1 class="text-3xl font-bold mb-4">${course.title}</h1>
+          <p class="mb-6 text-gray-600 dark:text-gray-400">${course.description}</p>
+          <h2 class="text-2xl font-semibold mb-4">Course Curriculum</h2>
+          <div class="space-y-4">
+            ${sectionsHTML}
           </div>
         </div>
       </section>
     `;
 
-    // Set the innerHTML
-    const heroElement = document.getElementById("HeroCourseDetails");
-    if (heroElement) {
-      heroElement.innerHTML = CourseDetails;
-    } else {
-      console.error("Element with ID 'HeroCourseDetails' not found");
-    }
+    document.getElementById("HeroCourseDetails").innerHTML = CourseDetails;
 
-  } catch (error) {
-    console.error("Error fetching data:", error);
-    
-    // Display error message to user
-    const heroElement = document.getElementById("HeroCourseDetails");
-    if (heroElement) {
-      heroElement.innerHTML = `
-        <div class="text-center py-12">
-          <h2 class="text-2xl font-bold text-red-600 mb-4">Error Loading Course</h2>
-          <p class="text-gray-600">Unable to load course details. Please try again later.</p>
-        </div>
-      `;
-    }
-  }
-}
+    // Fetch Related Courses
+    const resRelated = await fetch(`${baseUrl}/courses?page=0&size=4`);
+    const dataRelated = await resRelated.json();
 
-// Call function only if courseId exists
-if (courseId) {
-  fetchCourseDetailsPages();
-} else {
-  console.error("No course ID provided in URL parameters");
-}
-// ==================== Fetch API for Related Course=====================================
-
-const url = "https://course-api.istad.co/api/v1";
-
-async function fetchCourses() {
-  try {
-    const res = await fetch(`${url}/courses?page=0&size=4`);
-    const data = await res.json();
-
-    // data.content contains the course list
-    const cardDisplay = data.content.map((pro) => {
-      return `
-       <div class="bg-white rounded-2xl shadow-lg w-full p-5 dark:bg-gray-800 dark:text-gray-200 transition-all duration-300 hover:scale-105 group" onClick="location.href='courseDetail.html?id=${pro.id}'"
->
-        <div class="flex justify-center mb-4">
-          <img src="${pro.thumbnail}" alt ${pro.title} class="rounded-xl w-full max-w-xs object-contain" />
-        </div>
-        <h2 class="text-lg font-bold text-gray-900 mb-2 line-clamp-2 dark:text-white">${pro.title}</h2>
-        <p class="text-gray-600 text-md mb-4 line-clamp-2 dark:text-gray-300">${pro.description}</p>
-        <div class="flex items-center text-sm text-gray-500 mb-4 space-x-4">
-          <div class="flex items-center space-x-1">
-           <span class="bg-yellow-600 text-yellow-100 rounded-xl px-2 py-1 text-sm font-semibold shadow-[0_0_8px_rgba(255,223,93,0.7)]">
-  ${pro.categoryName}
-</span>
-
+    const cardDisplay = dataRelated.content
+      .map(
+        (pro) => `
+          <div class="w-full bg-white rounded-[12px] shadow-md p-4 flex flex-col space-y-4 dark:bg-gray-700 dark:text-white transition-colors duration-300" onClick="location.href='./courseDetail.html?slug=${pro.slug}'">
+            <div class="flex justify-center mb-4">
+              <img src="${pro.thumbnail}" alt="${pro.title}" class="rounded-xl w-full max-w-xs object-contain" />
+            </div>
+            <h2 class="text-lg font-bold text-gray-900 mb-2 line-clamp-2 dark:text-white">${pro.title}</h2>
+            <p class="text-gray-600 text-md mb-4 line-clamp-2 dark:text-gray-300">${pro.description}</p>
+            <div class="flex items-center text-sm text-gray-500 mb-4 space-x-4">
+              <span class="bg-yellow-600 text-yellow-100 rounded-xl px-2 py-1 text-sm font-semibold shadow-[0_0_8px_rgba(255,223,93,0.7)]">
+                ${pro.categoryName}
+              </span>
+            </div>
+            <div class="flex items-center justify-between">
+              <div class="flex items-center space-x-2">
+                <img src="../imgs/ISTAD.png" alt="ISTAD" class="w-8 h-8 rounded-full"/>
+                <span class="text-gray-700 dark:text-white font-medium">ISTAD</span>
+                <div class="flex items-center text-gray-500">
+                  <span class="text-gray-700 text-2xl p-1 font-bold dark:text-white">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$${pro.discount}</span>
+                  <span class="text-gray-500 text-md line-through dark:text-gray-300">$${pro.price}</span>
+                </div>
+              </div>
+            </div>
           </div>
-        </div>
-        <div class="flex items-center justify-between">
-          <div class="flex items-center space-x-2">
-            <div class="w-8 h-8 rounded-full bg-gray-200 flex items-center justify-center text-gray-500 text-sm font-bold"> <img src="../imgs/ISTAD.png" alt=""> </div>
-            <span class="text-gray-700 font-medium  dark:text-white">ISTAD</span>
-             <div class="flex items-center text-gray-500">
-             <span class="text-gray-700 text-2xl p-1 font-bold dark:text-white">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$${pro.discount}</span>
-           <span class="text-gray-500 text-md line-through dark:text-gray-300"> $${pro.price}</span>
-           </div>
-        </div>
-      </div>
-    </div>
-      `;
-    });
+        `
+      )
+      .join("");
 
-    document.getElementById("relatedCourses").innerHTML = cardDisplay.join("");
+    document.getElementById("relatedCourses").innerHTML = cardDisplay;
+
   } catch (error) {
     console.error("Error fetching data:", error);
+    document.getElementById("HeroCourseDetails").innerHTML = `
+      <div class="text-center py-12">
+        <h2 class="text-2xl font-bold text-red-600 mb-4">Error Loading Course</h2>
+        <p class="text-gray-600">Unable to load course details. Please try again later.</p>
+      </div>
+    `;
   }
 }
 
-// Call function
-fetchCourses();
+// Run only if slug is provided
+if (courseSlug) {
+  fetchCourseData();
+} else {
+  console.error("No course slug provided in URL parameters");
+  console.warn("Please provide a valid course slug in the URL, e.g., ?slug=course-slug");
+}
+
+// Dropdown toggle
+function toggleDropdown(idx) {
+  const dropdown = document.getElementById(`dropdown-${idx}`);
+  dropdown.classList.toggle("hidden");
+}
