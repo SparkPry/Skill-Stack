@@ -4,8 +4,24 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>profile page</title>
+    <!-- font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.css" rel="stylesheet" />
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
+       tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {},
+        },
+      };
+      
         tailwind.config = {
             theme: {
                 extend: {
@@ -27,8 +43,12 @@
             }
         }
     </script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.css" rel="stylesheet" />
+    <style>
+      * {
+        font-family: "Ubuntu", sans-serif;
+      }
+    </style>
+    
 
     
 </head>
@@ -43,13 +63,12 @@
           <div class="flex justify-between items-center h-16">
             <!-- Logo -->
             <div class="flex items-center">
-              <a href="../index.html">
-                <img
+              <a href="../index.html"
+                ><img
                   src="../imgs/Logo.png"
                   alt="Learnode"
                   class="w-[120px] h-[120px]"
-                />
-              </a>
+              /></a>
 
               <a href="../index.html" class="hide-on-mobile">
                 <h1 class="text-2xl font-bold ml-2 dark:text-white">
@@ -71,7 +90,7 @@
               </a>
               <a
                 href="./AboutUs.html"
-                class="group relative px-3 py-2 text-gray-700 hover:text-blue-600 font-semibold dark:text-white transition-colors duration-300"
+                class="active group relative px-3 py-2 text-gray-700 hover:text-blue-600 font-semibold dark:text-white transition-colors duration-300"
               >
                 About
                 <div
@@ -88,8 +107,8 @@
                 ></div>
               </a>
               <a
-                href="#"
-                class="active group relative px-3 py-2 text-gray-700 hover:text-blue-600 font-semibold dark:text-white transition-colors duration-300"
+                href="./myLearning.html"
+                class="group relative px-3 py-2 text-gray-700 hover:text-blue-600 font-semibold dark:text-white transition-colors duration-300"
               >
                 My Learning
                 <div
@@ -132,7 +151,7 @@
               <!-- Desktop Login -->
               <a
                 href="./login.html"
-                class="hidden md:inline-block border border-gray-400 hover:bg-white shimmer-effect text-white dark:text-white px-3 py-2 rounded-full font-medium hover:scale-105 transition-all duration-300 shadow-md"
+                class="hidden md:inline-block border border-gray-400 hover:bg-white dark:hover:bg-black shimmer-effect text-white dark:text-white px-3 py-2 rounded-full font-medium hover:scale-105 transition-all duration-300 shadow-md"
               >
                 <i class="fas fa-sign-in-alt mr-2"></i>Login
               </a>
@@ -173,7 +192,7 @@
             </a>
             <a
               href="./AboutUs.html"
-              class="flex items-center px-3 py-2 text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded-lg dark:text-gray-300 dark:hover:bg-gray-700 transition-colors duration-300"
+              class="active flex items-center px-3 py-2 text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded-lg dark:text-gray-300 dark:hover:bg-gray-700 transition-colors duration-300"
             >
               <i class="fas fa-info-circle text-blue-500 mr-2"></i> About
             </a>
@@ -184,8 +203,8 @@
               <i class="fas fa-phone text-blue-500 mr-2"></i> Contact Us
             </a>
             <a
-              href="../myLearning.html"
-              class="active flex items-center px-3 py-2 text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded-lg dark:text-gray-300 dark:hover:bg-gray-700 transition-colors duration-300"
+              href="./myLearning.html"
+              class="flex items-center px-3 py-2 text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded-lg dark:text-gray-300 dark:hover:bg-gray-700 transition-colors duration-300"
             >
               <i class="fas fa-book text-blue-500 mr-2"></i>My Learning
             </a>
@@ -241,8 +260,8 @@
         </div>
 
 <!-- profile====================================================================================================================== -->
-    <section id="view-profile" class="page-content mt-10   mx-auto justify-center">
-          <div class="container mx-auto px-4 py-8">
+    <section id="view-profile" class="page-content mt-10   ">
+          <div class="container mx-20 px-4 py-8 ">
         <!-- Profile Card -->
         <div class="max-w-4xl mx-auto  bg-white rounded-2xl shadow-xl overflow-hidden">
             <!-- Header Section -->
@@ -258,11 +277,10 @@
                     
                     <!-- Basic Info -->
                     <div class="text-center md:text-left flex-1">
-                        <h1 class="text-3xl font-bold mb-2 text-[#40a0d9]">Alex Johnson</h1>
-                        <p class="text-gray-700 text-lg mb-2">Senior Software Engineer</p>
+                        <h1 class="text-3xl font-bold mb-2 text-[#40a0d9]">Alina</h1>
+                        <p class="text-gray-700 text-lg mb-2">Student</p>
                         <p class="text-gray-600 flex items-center justify-center md:justify-start">
-                            <i class="fas fa-map-marker-alt mr-2"></i>
-                            San Francisco, CA
+                            I lile learning online courses
                         </p>
                     </div>
                     
@@ -281,7 +299,7 @@
                         <!-- About Section -->
                         <div class="bg-gray-50 rounded-xl p-6">
                             <h2 class="text-xl font-semibold text-gray-800 mb-4 flex items-center">
-                                <i class="fas fa-user mr-3 text-blue-600"></i>About Me
+                                <i class="fas fa-user mr-3 text-[#40a0d9]"></i>About Me
                             </h2>
                             <p class="text-gray-600 leading-relaxed">
                                 Passionate software engineer with 8+ years of experience in full-stack development. 
@@ -293,13 +311,13 @@
                         <!-- Personal Details -->
                         <div class="bg-gray-50 rounded-xl p-6">
                             <h2 class="text-xl font-semibold text-gray-800 mb-4 flex items-center">
-                                <i class="fas fa-info-circle mr-3 text-blue-600"></i>Personal Information
+                                <i class="fas fa-info-circle mr-3 text-[#40a0d9]"></i>Personal Information
                             </h2>
                             <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                                 <div class="space-y-3">
                                     <div class="flex items-center">
                                         <span class="text-gray-500 font-medium w-24">Full Name:</span>
-                                        <span class="text-gray-800">Alexander James Johnson</span>
+                                        <span class="text-gray-800">Alina </span>
                                     </div>
                                     <div class="flex items-center">
                                         <span class="text-gray-500 font-medium w-24">Birth Date:</span>
@@ -321,11 +339,7 @@
                                     </div>
                                     <div class="flex items-center">
                                         <span class="text-gray-500 font-medium w-24">Email:</span>
-                                        <span class="text-gray-800">alex.johnson@email.com</span>
-                                    </div>
-                                    <div class="flex items-center">
-                                        <span class="text-gray-500 font-medium w-24">Website:</span>
-                                        <span class="text-blue-600">www.alexjohnson.dev</span>
+                                        <span class="text-gray-800">Alina168@email.com</span>
                                     </div>
                                     <div class="flex items-center">
                                         <span class="text-gray-500 font-medium w-24">Languages:</span>
@@ -345,19 +359,19 @@
                             <h3 class="text-lg font-semibold text-gray-800 mb-4">Quick Contact</h3>
                             <div class="space-y-3">
                                 <div class="flex items-center text-gray-600">
-                                    <i class="fas fa-envelope mr-3 text-blue-600"></i>
-                                    <span class="text-sm">alex.johnson@email.com</span>
+                                    <i class="fas fa-envelope mr-3 text-[#40a0d9]"></i>
+                                    <span class="text-sm">Alina168@email.com</span>
                                 </div>
                                 <div class="flex items-center text-gray-600">
-                                    <i class="fas fa-phone mr-3 text-blue-600"></i>
+                                    <i class="fas fa-phone mr-3 text-[#40a0d9]"></i>
                                     <span class="text-sm">+1 (555) 123-4567</span>
                                 </div>
                                 <div class="flex items-center text-gray-600">
-                                    <i class="fab fa-linkedin mr-3 text-blue-600"></i>
+                                    <i class="fab fa-linkedin mr-3 text-[#40a0d9]"></i>
                                     <span class="text-sm">linkedin.com/in/alexj</span>
                                 </div>
                                 <div class="flex items-center text-gray-600">
-                                    <i class="fab fa-github mr-3 text-blue-600"></i>
+                                    <i class="fab fa-github mr-3 text-[#40a0d9]"></i>
                                     <span class="text-sm">github.com/alexjohnson</span>
                                 </div>
                             </div>
@@ -578,7 +592,7 @@
     <section class="relative z-10 bg-[#40a0d9] rounded-2xl backdrop-blur-lg border-t border-white/10 py-12 mzx-w-4xl">
         <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <h2 class="text-2xl font-bold text-white mb-4">Still have questions?</h2>
-            <p class="text-[#434343] mb-6">Can't find the answer you're looking for? We're here to help!</p>
+            <p class="text-white mb-6">Can't find the answer you're looking for? We're here to help!</p>
             <div class="flex flex-col sm:flex-row justify-center gap-4">
                 <button class="bg-[#00b67a] hover:bg-[#0b7c56] text-white font-semibold py-3 px-6 rounded-lg transition-all duration-200 transform hover:scale-105">
                     Contact Support
@@ -850,7 +864,7 @@
 
     <!-- footer=============================================================================================================== -->
       <!-- Footer -->
-    <footer class="bg-gray-800 text-white py-8">
+<footer class="bg-gray-800 text-white py-8">
       <div
         class="container mx-auto px-4 sm:px-6 flex justify-center items-center text-center"
       >
