@@ -1,1476 +1,908 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>SkillStack - Master Web Development</title>
-    <!-- Open Graph metadata -->
-    <meta property="og:title" content="SkillStack Modern E-Learning Platform" />
-    <meta
-      property="og:description"
-      content="Learn without limits with our comprehensive e-learning platform"
-    />
-    <meta
-      property="og:image"
-      content="https://i.pinimg.com/1200x/87/32/f9/8732f91798a49c0a1b5114d800de4471.jpg"
-    />
-    <meta property="og:url" content="https://skill-stack-iota.vercel.app/" />
-    <meta property="og:type" content="website" />
 
-    <!-- Twitter Card metadata -->
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta
-      name="twitter:title"
-      content="SkillStack Modern E-Learning Platform"
-    />
-    <meta
-      name="twitter:description"
-      content="Learn without limits with our comprehensive e-learning platform"
-    />
-    <meta
-      name="twitter:image"
-      content="https://i.pinimg.com/1200x/87/32/f9/8732f91798a49c0a1b5114d800de4471.jpg"
-    />
-    <!-- Favicon -->
-    <link rel="icon" href="../imgs/SkillstactLogo.png" />
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SkillStack - Master Web Development</title>
+  <!-- Open Graph metadata -->
+  <meta property="og:title" content="SkillStack Modern E-Learning Platform" />
+  <meta property="og:description" content="Learn without limits with our comprehensive e-learning platform" />
+  <meta property="og:image" content="https://i.pinimg.com/1200x/87/32/f9/8732f91798a49c0a1b5114d800de4471.jpg" />
+  <meta property="og:url" content="https://skill-stack-iota.vercel.app/" />
+  <meta property="og:type" content="website" />
 
-    <!-- <script>
-      tailwind.config = {
-        theme: {
-          extend: {
-            colors: {
-              primary: "#3b82f6",
-              secondary: "#434343",
-              accent: "#06b6d4",
-            },
-          },
-        },
-      };
-    </script> -->
-    <style>
+  <!-- Twitter Card metadata -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="SkillStack Modern E-Learning Platform" />
+  <meta name="twitter:description" content="Learn without limits with our comprehensive e-learning platform" />
+  <meta name="twitter:image" content="https://i.pinimg.com/1200x/87/32/f9/8732f91798a49c0a1b5114d800de4471.jpg" />
+  <!-- Favicon -->
+  <link rel="icon" href="../imgs/SkillstactLogo.png" />
 
-
-.rotate-180 {
+  <style>
+    .rotate-180 {
       transform: rotate(180deg);
       transition: transform 0.3s ease;
     }
+
     .rotate-0 {
       transform: rotate(0deg);
       transition: transform 0.3s ease;
     }
-      :root {
-        --primary-color: #40a0d9;
-        --secondary-color: #434343;
-        --accent-color: #00b67a;
-        --background-color: #e9e9e9;
-        --text-color: #434343;
-        --white-color: #ffffff;
-        /* --border-color: #dee2e6; */
-        /* ==== font==== */
-        --font-family: "Ubuntu";
-        --font-size: 16px;
-        /* ====button=== */
-        --button-padding: 0.6em 1.2em;
-        --button-radius: 5px;
-        --button-font-weight: 600;
-        --button-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-      }
-      * {
-        font-family: var(--font-family);
-      }
-      @media (max-width: 768px) {
-        .hide-on-mobile {
-          display: none;
-        }
-      }
-    </style>
-    <!-- ========================================================== -->
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
-    />
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-      tailwind.config = {
-        darkMode: "class",
-        theme: {
-          extend: {},
-        },
-      };
-    </script>
-  </head>
-  <body
-    class="dark:bg-black text-gray-900 dark:text-gray-100 transition-colors duration-300"
-  >
-    <!-- Navigation -->
-    <header>
-      <!-- Navbar -->
-      <nav
-        class="bg-white shadow-lg border-b border-gray-200 fixed top-0 left-0 right-0 z-50 dark:bg-gray-900 text-gray-900 dark:text-gray-100 transition-colors duration-300"
-      >
-        <div class="max-w-7xl mx-auto px-6">
-          <div class="flex justify-between items-center h-16">
-            <!-- Logo -->
-            <div class="flex items-center">
-              <img
-                src="../imgs/Logo.png"
-                alt="Learnode"
-                class="w-[120px] h-[120px]"
-              />
-              <a href="../index.html" class="hide-on-mobile"
-                ><h1 class="text-2xl font-bold ml-2">𝙎𝙆𝙄𝙇𝙇𝙎𝙏𝘼𝘾𝙆</h1></a
-              >
-            </div>
 
-            <!-- Desktop Links -->
-            <div class="hidden md:flex items-center space-x-0">
-              <a
-                href="./course.html"
-                class="group relative px-3 py-2 text-gray-700 hover:text-blue-600 font-semibold dark:text-white transition-colors duration-300"
-              >
-                Course
-                <div
-                  class="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-blue-500 to-purple-500 group-hover:w-full transition-all duration-300"
-                ></div>
-              </a>
-              <a
-                href="./AboutUs.html"
-                class="group relative px-3 py-2 text-gray-700 hover:text-blue-600 font-semibold dark:text-white transition-colors duration-300"
-              >
-                About
-                <div
-                  class="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-blue-500 to-purple-500 group-hover:w-full transition-all duration-300"
-                ></div>
-              </a>
-              <a
-                href="./contactUs.html"
-                class="group relative px-3 py-2 text-gray-700 hover:text-blue-600 font-semibold dark:text-white transition-colors duration-300"
-              >
-                Contact Us
-                <div
-                  class="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-blue-500 to-purple-500 group-hover:w-full transition-all duration-300"
-                ></div>
-              </a>
-              <a
-                href="./myLearning.html"
-                class="group relative px-3 py-2 text-gray-700 hover:text-blue-600 font-semibold dark:text-white transition-colors duration-300"
-              >
-                My Learning
-                <div
-                  class="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-blue-500 to-purple-500 group-hover:w-full transition-all duration-300"
-                ></div>
-              </a>
-            </div>
-
-            <!-- Right Side -->
-            <div class="flex items-center space-x-4">
-              <!-- Dark Mode Toggle Button -->
-              <button
-                id="darkModeToggle"
-                class="p-2 rounded-lg bg-gray-200 dark:bg-gray-700 hover:bg-gray-300 dark:hover:bg-gray-600 transition-colors duration-200"
-                aria-label="Toggle dark mode"
-              >
-                <svg
-                  id="sunIcon"
-                  class="w-5 h-5 hidden dark:block"
-                  fill="currentColor"
-                  viewBox="0 0 20 20"
-                >
-                  <path
-                    fill-rule="evenodd"
-                    d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z"
-                    clip-rule="evenodd"
-                  ></path>
-                </svg>
-                <svg
-                  id="moonIcon"
-                  class="w-5 h-5 block dark:hidden"
-                  fill="currentColor"
-                  viewBox="0 0 20 20"
-                >
-                  <path
-                    d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"
-                  ></path>
-                </svg>
-              </button>
-              <!-- Desktop Login -->
-              <a
-                href="./login.html"
-                class="hidden md:inline-block border border-gray-400 hover:bg-white  shimmer-effect text-black dark:text-white px-3 py-2 rounded-full font-medium hover:scale-105 transition-all duration-300 shadow-md"
-              >
-                <i class="fas fa-sign-in-alt mr-2"></i>Login
-              </a>
-
-              <!-- Mobile Menu Toggle -->
-              <button
-                id="mobileMenuToggle"
-                class="md:hidden flex items-center justify-center w-10 h-10 text-gray-500 hover:text-blue-600 hover:bg-blue-50 rounded-full cursor-pointer transition-colors duration-300 dark:text-white dark:hover:bg-gray-700"
-              >
-                <i id="hamburgerIcon" class="fas fa-bars"></i>
-                <i id="closeIcon" class="fas fa-times hidden"></i>
-              </button>
-            </div>
-          </div>
-        </div>
-
-        <!-- Mobile Menu -->
-        <div
-          id="mobileMenu"
-          class="hidden md:hidden bg-white border-t border-gray-200 dark:bg-gray-900 dark:border-gray-700"
-        >
-          <!-- Mobile Login -->
-          <div class="flex justify-start px-6 py-3">
-            <a
-              href="./login.html"
-              class="border border-gray-400 hover:bg-white shimmer-effect text-black dark:text-white px-3 py-2 rounded-full font-medium hover:scale-105 transition-all duration-300 shadow-md"
-            >
-              <i class="fas fa-sign-in-alt mr-1"></i>Login
-            </a>
-          </div>
-
-          <div class="px-6 pb-4 space-y-3">
-            <a
-              href="./course.html"
-              class="flex items-center px-3 py-2 text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded-lg dark:text-gray-300 dark:hover:bg-gray-700 transition-colors duration-300"
-            >
-              <i class="fa-solid fa-pager text-blue-500 mr-2"></i> Course
-            </a>
-            <a
-              href="./AboutUs.html"
-              class="flex items-center px-3 py-2 text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded-lg dark:text-gray-300 dark:hover:bg-gray-700 transition-colors duration-300"
-            >
-              <i class="fas fa-info-circle text-blue-500 mr-2"></i> About
-            </a>
-            <a
-              href="./contactUs.html"
-              class="flex items-center px-3 py-2 text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded-lg dark:text-gray-300 dark:hover:bg-gray-700 transition-colors duration-300"
-            >
-              <i class="fas fa-phone text-blue-500 mr-2"></i> Contact Us
-            </a>
-            <a
-              href="./myLearning.html"
-              class="flex items-center px-3 py-2 text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded-lg dark:text-gray-300 dark:hover:bg-gray-700 transition-colors duration-300"
-            >
-              <i class="fas fa-book text-blue-500 mr-2"></i>My Learning
-            </a>
-          </div>
-        </div>
-      </nav>
-    </header>
-    <main>
-      <div id="HeroCourseDetails"></div>
-      <!-- Payment Modal -->
-      <section
-        id="modalOverlay"
-        class="fixed inset-0 bg-black bg-opacity-60 backdrop-blur-sm flex items-center justify-center z-50 opacity-0 invisible transition-all duration-300"
-        onclick="closeModal(event)"
-      >
-        <div
-          class="bg-white dark:bg-gray-800 rounded-2xl shadow-2xl w-full max-w-lg mx-4 max-h-screen overflow-y-auto transform scale-95 opacity-0 transition-all duration-300"
-          onclick="event.stopPropagation()"
-          id="paymentModal"
-        >
-          <!-- Modal Header -->
-          <div
-            class="relative bg-blue-600 dark:bg-blue-700 text-white p-6 rounded-t-2xl"
-          >
-            <button
-              onclick="closeModal()"
-              class="absolute top-4 right-4 w-8 h-8 flex items-center justify-center rounded-full hover:bg-white hover:bg-opacity-20 transition-colors duration-200"
-            >
-              <i class="fas fa-times"></i>
-            </button>
-            <div class="text-center">
-              <h2 class="text-2xl font-bold mb-2">Complete Your Purchase</h2>
-              <p id="selectedPlan" class="text-blue-100">
-                Premium Plan - $79.99
-              </p>
-            </div>
-          </div>
-
-          <!-- Payment Form -->
-          <form
-            id="paymentForm"
-            onsubmit="processPayment(event)"
-            class="p-6 space-y-6"
-          >
-            <!-- Email -->
-            <div>
-              <label
-                for="email"
-                class="block text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2"
-                >Email Address</label
-              >
-              <input
-                type="email"
-                id="email"
-                name="email"
-                required
-                class="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors duration-200 bg-gray-50 dark:bg-gray-700 dark:text-white focus:bg-white dark:focus:bg-gray-600"
-              />
-            </div>
-
-            <!-- Cardholder Name -->
-            <div>
-              <label
-                for="cardName"
-                class="block text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2"
-                >Cardholder Name</label
-              >
-              <input
-                type="text"
-                id="cardName"
-                name="cardName"
-                required
-                class="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors duration-200 bg-gray-50 dark:bg-gray-700 dark:text-white focus:bg-white dark:focus:bg-gray-600"
-              />
-            </div>
-
-            <!-- Card Number -->
-            <div>
-              <label
-                for="cardNumber"
-                class="block text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2"
-                >Card Number</label
-              >
-              <div class="relative">
-                <input
-                  type="text"
-                  id="cardNumber"
-                  name="cardNumber"
-                  placeholder="1234 5678 9012 3456"
-                  required
-                  maxlength="19"
-                  class="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors duration-200 bg-gray-50 dark:bg-gray-700 dark:text-white focus:bg-white dark:focus:bg-gray-600"
-                />
-                <div
-                  class="absolute right-3 top-1/2 transform -translate-y-1/2"
-                >
-                  <i class="fab fa-cc-mastercard text-2xl text-gray-400"></i>
-                </div>
-              </div>
-            </div>
-
-            <!-- Expiry and CVV -->
-            <div class="grid grid-cols-2 gap-4">
-              <div>
-                <label
-                  for="expiry"
-                  class="block text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2"
-                  >Expiry Date</label
-                >
-                <input
-                  type="text"
-                  id="expiry"
-                  name="expiry"
-                  placeholder="MM/YY"
-                  required
-                  maxlength="5"
-                  class="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors duration-200 bg-gray-50 dark:bg-gray-700 dark:text-white focus:bg-white dark:focus:bg-gray-600"
-                />
-              </div>
-              <div>
-                <label
-                  for="cvv"
-                  class="block text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2"
-                  >CVV</label
-                >
-                <input
-                  type="text"
-                  id="cvv"
-                  name="cvv"
-                  placeholder="123"
-                  required
-                  maxlength="4"
-                  class="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors duration-200 bg-gray-50 dark:bg-gray-700 dark:text-white focus:bg-white dark:focus:bg-gray-600"
-                />
-              </div>
-            </div>
-
-            <!-- Billing Address -->
-            <div>
-              <label
-                for="billingAddress"
-                class="block text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2"
-                >Billing Address</label
-              >
-              <input
-                type="text"
-                id="billingAddress"
-                name="billingAddress"
-                required
-                class="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors duration-200 bg-gray-50 dark:bg-gray-700 dark:text-white focus:bg-white dark:focus:bg-gray-600"
-              />
-            </div>
-
-            <!-- City and ZIP -->
-            <div class="grid grid-cols-2 gap-4">
-              <div>
-                <label
-                  for="city"
-                  class="block text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2"
-                  >City</label
-                >
-                <input
-                  type="text"
-                  id="city"
-                  name="city"
-                  required
-                  class="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors duration-200 bg-gray-50 dark:bg-gray-700 dark:text-white focus:bg-white dark:focus:bg-gray-600"
-                />
-              </div>
-              <div>
-                <label
-                  for="zipCode"
-                  class="block text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2"
-                  >ZIP Code</label
-                >
-                <input
-                  type="text"
-                  id="zipCode"
-                  name="zipCode"
-                  required
-                  class="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors duration-200 bg-gray-50 dark:bg-gray-700 dark:text-white focus:bg-white dark:focus:bg-gray-600"
-                />
-              </div>
-            </div>
-
-            <!-- Submit Button -->
-            <button
-              type="submit"
-              id="submitBtn"
-              class="w-full bg-blue-600 dark:bg-blue-700 text-white font-semibold py-4 px-6 rounded-lg hover:bg-blue-700 dark:hover:bg-blue-600 transform hover:-translate-y-0.5 transition-all duration-300 shadow-lg hover:shadow-xl disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none"
-            >
-              <span id="submitText">Complete Payment</span>
-              <div id="loadingSpinner" class="items-center hidden">
-                <i class="fas fa-spinner fa-spin mr-2"></i>
-                Processing...
-              </div>
-            </button>
-
-            <!-- Security Info -->
-            <div
-              class="flex items-center justify-center text-sm text-gray-500 dark:text-gray-400 space-x-2"
-            >
-              <i class="fas fa-lock"></i>
-              <span>Your payment information is secure and encrypted</span>
-            </div>
-          </form>
-        </div>
-      </section>
-
-      <!-- Course Navigation -->
-      <div
-        class="bg-white dark:bg-gray-800 border-b border-gray-200 dark:border-gray-700 sticky top-16 z-10 transition-colors duration-300"
-      >
-        <div class="container mx-auto px-4">
-          <nav class="flex space-x-8 py-4">
-            <button
-              class="nav-tab active font-semibold text-blue-600 dark:text-blue-400 border-b-2 border-blue-600 dark:border-blue-400 pb-2"
-              data-tab="overview"
-            >
-              Overview
-            </button>
-            <button
-              class="nav-tab text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 pb-2"
-              data-tab="curriculum"
-            >
-              Curriculum
-            </button>
-            <button
-              class="nav-tab text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 pb-2"
-              data-tab="instructor"
-            >
-              Instructor
-            </button>
-            <button
-              class="nav-tab text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 pb-2"
-              data-tab="reviews"
-            >
-              Reviews
-            </button>
-          </nav>
-        </div>
-      </div>
-
-      <div class="container mx-auto px-4 py-8">
-        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
-          <!-- Left Column -->
-          <div class="lg:col-span-2">
-            <!-- Overview Tab -->
-            <div id="overview" class="tab-content">
-              <!-- About This Course -->
-              <section class="mb-12">
-                <h2
-                  class="text-3xl font-bold mb-6 text-gray-900 dark:text-white"
-                >
-                  About This Course
-                </h2>
-                <p
-                  class="text-gray-700 dark:text-gray-300 leading-relaxed mb-4"
-                >
-                  This comprehensive course is designed to take you from
-                  beginner to professional in Development. You'll learn
-                  essential concepts and practical techniques to enhance your
-                  creative skills. This course covers all the tools and
-                  knowledge you need to succeed. Throughout this course, you'll
-                  work on real-world projects that will help you build a strong
-                  portfolio and gain practical experience. By the end, you'll
-                  have the skills and confidence to tackle complex challenges in
-                  the field of Development.
-                </p>
-                <p class="text-gray-700 dark:text-gray-300 leading-relaxed">
-                  Our flexible and self-paced format ensures that you understand
-                  each concept before moving on to more advanced topics, with
-                  plenty of practice exercises that mirror real-world scenarios
-                  in your progress.
-                </p>
-              </section>
-
-              <!-- What You'll Learn -->
-              <section class="mb-12">
-                <h2
-                  class="text-3xl font-bold mb-6 text-gray-900 dark:text-white"
-                >
-                  What You'll Learn
-                </h2>
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                  <div class="flex items-start space-x-3">
-                    <i class="fas fa-check text-green-500 mt-1"></i>
-                    <span class="text-gray-700 dark:text-gray-300"
-                      >Master the fundamentals of Development</span
-                    >
-                  </div>
-                  <div class="flex items-start space-x-3">
-                    <i class="fas fa-check text-green-500 mt-1"></i>
-                    <span class="text-gray-700 dark:text-gray-300"
-                      >Build real-world projects for your portfolio</span
-                    >
-                  </div>
-                  <div class="flex items-start space-x-3">
-                    <i class="fas fa-check text-green-500 mt-1"></i>
-                    <span class="text-gray-700 dark:text-gray-300"
-                      >Understand best practices and industry standards</span
-                    >
-                  </div>
-                  <div class="flex items-start space-x-3">
-                    <i class="fas fa-check text-green-500 mt-1"></i>
-                    <span class="text-gray-700 dark:text-gray-300"
-                      >Optimize performance and solve common problems</span
-                    >
-                  </div>
-                  <div class="flex items-start space-x-3">
-                    <i class="fas fa-check text-green-500 mt-1"></i>
-                    <span class="text-gray-700 dark:text-gray-300"
-                      >Deploy your applications to production</span
-                    >
-                  </div>
-                  <div class="flex items-start space-x-3">
-                    <i class="fas fa-check text-green-500 mt-1"></i>
-                    <span class="text-gray-700 dark:text-gray-300"
-                      >Work with modern tools and frameworks</span
-                    >
-                  </div>
-                  <div class="flex items-start space-x-3">
-                    <i class="fas fa-check text-green-500 mt-1"></i>
-                    <span class="text-gray-700 dark:text-gray-300"
-                      >Implement responsive and accessible designs</span
-                    >
-                  </div>
-                  <div class="flex items-start space-x-3">
-                    <i class="fas fa-check text-green-500 mt-1"></i>
-                    <span class="text-gray-700 dark:text-gray-300"
-                      >Debug and troubleshoot effectively</span
-                    >
-                  </div>
-                </div>
-              </section>
-
-              <!-- Requirements -->
-              <section class="mb-12">
-                <h2
-                  class="text-3xl font-bold mb-6 text-gray-900 dark:text-white"
-                >
-                  Requirements
-                </h2>
-                <ul class="space-y-3">
-                  <li class="flex items-start space-x-3">
-                    <i class="fas fa-circle text-gray-400 text-xs mt-2"></i>
-                    <span class="text-gray-700 dark:text-gray-300"
-                      >Basic computer skills and familiarity with using the
-                      Internet</span
-                    >
-                  </li>
-                  <li class="flex items-start space-x-3">
-                    <i class="fas fa-circle text-gray-400 text-xs mt-2"></i>
-                    <span class="text-gray-700 dark:text-gray-300"
-                      >No prior experience in Development is required - we'll
-                      start from the basics</span
-                    >
-                  </li>
-                  <li class="flex items-start space-x-3">
-                    <i class="fas fa-circle text-gray-400 text-xs mt-2"></i>
-                    <span class="text-gray-700 dark:text-gray-300"
-                      >A computer with Internet access (Windows, Mac, or
-                      Linux)</span
-                    >
-                  </li>
-                  <li class="flex items-start space-x-3">
-                    <i class="fas fa-circle text-gray-400 text-xs mt-2"></i>
-                    <span class="text-gray-700 dark:text-gray-300"
-                      >Enthusiasm and willingness to learn</span
-                    >
-                  </li>
-                </ul>
-              </section>
-
-              <!-- Who This Course is For -->
-              <section class="mb-12">
-                <h2
-                  class="text-3xl font-bold mb-6 text-gray-900 dark:text-white"
-                >
-                  Who This Course is For
-                </h2>
-                <ul class="space-y-3">
-                  <li class="flex items-start space-x-3">
-                    <i class="fas fa-circle text-gray-400 text-xs mt-2"></i>
-                    <span class="text-gray-700 dark:text-gray-300"
-                      >Beginners with no prior experience in Development</span
-                    >
-                  </li>
-                  <li class="flex items-start space-x-3">
-                    <i class="fas fa-circle text-gray-400 text-xs mt-2"></i>
-                    <span class="text-gray-700 dark:text-gray-300"
-                      >Intermediate learners looking to fill knowledge
-                      gaps</span
-                    >
-                  </li>
-                  <li class="flex items-start space-x-3">
-                    <i class="fas fa-circle text-gray-400 text-xs mt-2"></i>
-                    <span class="text-gray-700 dark:text-gray-300"
-                      >Professionals wanting to stay updated with the latest
-                      trends</span
-                    >
-                  </li>
-                  <li class="flex items-start space-x-3">
-                    <i class="fas fa-circle text-gray-400 text-xs mt-2"></i>
-                    <span class="text-gray-700 dark:text-gray-300"
-                      >Anyone interested in building a career in
-                      Development</span
-                    >
-                  </li>
-                </ul>
-              </section>
-            </div>
-
-           <div id="curriculum" class="tab-content hidden">
-  <div class="p-6 max-w-5xl mx-auto">
-    <h2 class="text-2xl font-bold mb-2 text-gray-900 dark:text-white">
-      Course Curriculum
-    </h2>
-    <p class="text-gray-500 dark:text-gray-400 mb-6">
-      120 lessons • 48 hours total length
-    </p>
-
-    <!-- Expand All -->
-    <div class="flex justify-end mb-4">
-      <a href="#" onclick="expandAll(event)" class="text-green-600 font-medium hover:underline">
-        Expand All Sections
-      </a>
-    </div>
-
-    <!-- Sections -->
-    <div class="space-y-4">
-
-      <!-- Getting Started -->
-      <div class="border rounded-md mb-3">
-        <button onclick="toggleDropdown(1)"
-          class="w-full flex justify-between items-center p-3 text-left font-semibold text-gray-900 dark:text-white hover:bg-gray-50 dark:hover:bg-gray-700">
-          <span>Getting Started</span>
-          <div class="flex items-center space-x-2 gap-2">
-            <span class="text-gray-500 dark:text-gray-400">4 lessons • 45 min</span>
-            <img id="arrow-1" src="../imgs/arrow-down-sign-to-navigate.png" class="w-4 rotate-0 transition-transform duration-200" alt="">
-          </div>
-        </button>
-        <div id="dropdown-1" class="hidden px-5 pb-3 space-y-2 text-gray-600 dark:text-gray-300">
-          <p>Lesson 1: Introduction</p>
-          <p>Lesson 2: Installation</p>
-          <p>Lesson 3: Your First App</p>
-          <p>Lesson 4: Recap</p>
-        </div>
-      </div>
-
-      <!-- Core Concepts -->
-      <div class="border rounded-md mb-3">
-        <button onclick="toggleDropdown(2)"
-          class="w-full flex justify-between items-center p-3 text-left font-semibold text-gray-900 dark:text-white hover:bg-gray-50 dark:hover:bg-gray-700">
-          <span>Core Concepts</span>
-          <div class="flex items-center space-x-2 gap-2">
-            <span class="text-gray-500 dark:text-gray-400">8 lessons • 1h 30min</span>
-            <img id="arrow-2" src="../imgs/arrow-down-sign-to-navigate.png" class="w-4 rotate-0 transition-transform duration-200" alt="">
-          </div>
-        </button>
-        <div id="dropdown-2" class="hidden px-5 pb-3 space-y-2 text-gray-600 dark:text-gray-300">
-          <p>Lesson 1: Components</p>
-          <p>Lesson 2: Props & State</p>
-          <p>Lesson 3: Lifecycle</p>
-          <p>Lesson 4: Events</p>
-          <p>Lesson 5: Forms</p>
-          <p>Lesson 6: Hooks</p>
-          <p>Lesson 7: Context</p>
-          <p>Lesson 8: Recap</p>
-        </div>
-      </div>
-
-      <!-- Advanced Techniques -->
-      <div class="border rounded-md mb-3">
-        <button onclick="toggleDropdown(3)"
-          class="w-full flex justify-between items-center p-3 text-left font-semibold text-gray-900 dark:text-white hover:bg-gray-50 dark:hover:bg-gray-700">
-          <span>Advanced Techniques</span>
-          <div class="flex items-center space-x-2 gap-2">
-            <span class="text-gray-500 dark:text-gray-400">6 lessons • 2h 15min</span>
-            <img id="arrow-3" src="../imgs/arrow-down-sign-to-navigate.png" class="w-4 rotate-0 transition-transform duration-200" alt="">
-          </div>
-        </button>
-        <div id="dropdown-3" class="hidden px-5 pb-3 space-y-2 text-gray-600 dark:text-gray-300">
-          <p>Lesson 1: Performance</p>
-          <p>Lesson 2: Animations</p>
-          <p>Lesson 3: Routing</p>
-          <p>Lesson 4: State Management</p>
-          <p>Lesson 5: Testing</p>
-          <p>Lesson 6: Deployment</p>
-        </div>
-      </div>
-
-      <!-- Real-World Projects -->
-      <div class="border rounded-md mb-3">
-        <button onclick="toggleDropdown(4)"
-          class="w-full flex justify-between items-center p-3 text-left font-semibold text-gray-900 dark:text-white hover:bg-gray-50 dark:hover:bg-gray-700">
-          <span>Real-World Projects</span>
-          <div class="flex items-center space-x-2 gap-2">
-            <span class="text-gray-500 dark:text-gray-400">5 lessons • 3h 20min</span>
-            <img id="arrow-4" src="../imgs/arrow-down-sign-to-navigate.png" class="w-4 rotate-0 transition-transform duration-200" alt="">
-          </div>
-        </button>
-        <div id="dropdown-4" class="hidden px-5 pb-3 space-y-2 text-gray-600 dark:text-gray-300">
-          <p>Lesson 1: Project Setup</p>
-          <p>Lesson 2: API Integration</p>
-          <p>Lesson 3: Authentication</p>
-          <p>Lesson 4: UI/UX Improvements</p>
-          <p>Lesson 5: Final Review</p>
-        </div>
-      </div>
-
-      <!-- Best Practices & Optimization -->
-      <div class="border rounded-md mb-3">
-        <button onclick="toggleDropdown(5)"
-          class="w-full flex justify-between items-center p-3 text-left font-semibold text-gray-900 dark:text-white hover:bg-gray-50 dark:hover:bg-gray-700">
-          <span>Best Practices & Optimization</span>
-          <div class="flex items-center space-x-2 gap-2">
-            <span class="text-gray-500 dark:text-gray-400">4 lessons • 1h 45min</span>
-            <img id="arrow-5" src="../imgs/arrow-down-sign-to-navigate.png" class="w-4 rotate-0 transition-transform duration-200" alt="">
-          </div>
-        </button>
-        <div id="dropdown-5" class="hidden px-5 pb-3 space-y-2 text-gray-600 dark:text-gray-300">
-          <p>Lesson 1: Code Organization</p>
-          <p>Lesson 2: Security</p>
-          <p>Lesson 3: Optimization</p>
-          <p>Lesson 4: Scaling</p>
-        </div>
-      </div>
-
-    </div>
-  </div>
-</div>
-
-<script>
-  function toggleDropdown(id) {
-    const dropdown = document.getElementById(`dropdown-${id}`);
-    const arrow = document.getElementById(`arrow-${id}`);
-
-    dropdown.classList.toggle("hidden");
-    arrow.classList.toggle("rotate-0");
-    arrow.classList.toggle("rotate-180");
-  }
-
-  function expandAll(e) {
-    e.preventDefault();
-    for (let i = 1; i <= 5; i++) {
-      const dropdown = document.getElementById(`dropdown-${i}`);
-      const arrow = document.getElementById(`arrow-${i}`);
-
-      dropdown.classList.remove("hidden");
-      arrow.classList.remove("rotate-0");
-      arrow.classList.add("rotate-180");
+    :root {
+      --primary-color: #40a0d9;
+      --secondary-color: #434343;
+      --accent-color: #00b67a;
+      --background-color: #e9e9e9;
+      --text-color: #434343;
+      --white-color: #ffffff;
+      /* --border-color: #dee2e6; */
+      /* ==== font==== */
+      --font-family: "Ubuntu";
+      --font-size: 16px;
+      /* ====button=== */
+      --button-padding: 0.6em 1.2em;
+      --button-radius: 5px;
+      --button-font-weight: 600;
+      --button-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
     }
-  }
-</script>
 
+    @media (max-width: 768px) {
+      .hide-on-mobile {
+        display: none;
+      }
+    }
+  </style>
+  <!-- ========================================================== -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {},
+      },
+    };
+  </script>
+</head>
 
-            <!-- Instructor Tab -->
-            <div id="instructor" class="tab-content hidden">
-              <div class="max-w-4xl mx-auto px-4">
-                <div class="flex items-center space-x-6">
-                  <!-- Avatar -->
-                  <img
-                    src="https://i.pinimg.com/736x/5f/34/d1/5f34d1662b26217fbd92144c264fafc6.jpg"
-                    alt="instructor"
-                    class="w-20 h-20 bg-gray-200 dark:bg-gray-600 rounded-[100%] object-cover shadow-lg"
-                  />
-
-                  <!-- Name & Title -->
-                  <div>
-                    <h1 class="text-xl font-bold text-gray-900 dark:text-white">
-                      John Smith
-                    </h1>
-                    <p class="text-gray-500 dark:text-gray-400">
-                      Lead Developer & Instructor
-                    </p>
-                    <div
-                      class="flex items-center mt-2 space-x-4 text-sm text-gray-600 dark:text-gray-400"
-                    >
-                      <div class="flex items-center space-x-1">
-                        <span class="text-yellow-400">★</span>
-                        <span>4.8 Instructor Rating</span>
-                      </div>
-                      <div class="flex items-center space-x-1">
-                        <i class="fas fa-users"></i>
-                        <span>45,000+ Students</span>
-                      </div>
-                      <div class="flex items-center space-x-1">
-                        <i class="fas fa-calendar"></i>
-                        <span>12 Courses</span>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                <!-- Bio -->
-                <div class="mt-6 text-gray-700 dark:text-gray-300 space-y-4">
-                  <p>
-                    John Smith is a senior developer with over 10 years of
-                    experience in the industry. He has worked with Fortune 500
-                    companies and startups alike, helping them build scalable
-                    and maintainable applications.
-                  </p>
-                  <p>
-                    As an instructor, John has taught over 45,000 students
-                    worldwide, sharing his knowledge and expertise in a way
-                    that's easy to understand and apply. His teaching approach
-                    focuses on practical, real-world examples that help students
-                    build their skills and confidence.
-                  </p>
-                  <p>
-                    John is passionate about helping others learn and grow in
-                    their careers. He regularly updates his courses to ensure
-                    they reflect the latest industry trends and best practices.
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            <!-- Reviews Tab -->
-            <div id="reviews" class="tab-content hidden">
-              <div class="max-w-4xl mx-auto px-4">
-                <!-- Rating Summary -->
-                <div class="flex items-center space-x-8">
-                  <div class="text-center">
-                    <div class="text-5xl font-bold text-green-600">4.8</div>
-                    <div class="flex justify-center mt-1">
-                      <span class="text-yellow-400 text-xl">★★★★★</span>
-                    </div>
-                    <div class="text-gray-500 dark:text-gray-400">
-                      Course Rating
-                    </div>
-                    <div class="text-sm text-gray-400">350 reviews</div>
-                  </div>
- 
-                  <!-- Rating Breakdown -->
-                  <div class="flex-1">
-                    <div class="space-y-2">
-                      <div class="flex items-center space-x-2">
-                        <span
-                          class="w-6 text-sm text-gray-700 dark:text-gray-300"
-                          >5★</span
-                        >
-                        <div
-                          class="flex-1 h-2 bg-gray-200 dark:bg-gray-700 rounded"
-                        >
-                          <div
-                            class="h-2 bg-green-500 rounded"
-                            style="width: 78%"
-                          ></div>
-                        </div>
-                        <span
-                          class="w-10 text-sm text-gray-500 dark:text-gray-400"
-                          >78%</span
-                        >
-                      </div>
-                      <div class="flex items-center space-x-2">
-                        <span
-                          class="w-6 text-sm text-gray-700 dark:text-gray-300"
-                          >4★</span
-                        >
-                        <div
-                          class="flex-1 h-2 bg-gray-200 dark:bg-gray-700 rounded"
-                        >
-                          <div
-                            class="h-2 bg-green-500 rounded"
-                            style="width: 15%"
-                          ></div>
-                        </div>
-                        <span
-                          class="w-10 text-sm text-gray-500 dark:text-gray-400"
-                          >15%</span
-                        >
-                      </div>
-                      <div class="flex items-center space-x-2">
-                        <span
-                          class="w-6 text-sm text-gray-700 dark:text-gray-300"
-                          >3★</span
-                        >
-                        <div
-                          class="flex-1 h-2 bg-gray-200 dark:bg-gray-700 rounded"
-                        >
-                          <div
-                            class="h-2 bg-green-500 rounded"
-                            style="width: 5%"
-                          ></div>
-                        </div>
-                        <span
-                          class="w-10 text-sm text-gray-500 dark:text-gray-400"
-                          >5%</span
-                        >
-                      </div>
-                      <div class="flex items-center space-x-2">
-                        <span
-                          class="w-6 text-sm text-gray-700 dark:text-gray-300"
-                          >2★</span
-                        >
-                        <div
-                          class="flex-1 h-2 bg-gray-200 dark:bg-gray-700 rounded"
-                        >
-                          <div
-                            class="h-2 bg-green-500 rounded"
-                            style="width: 1%"
-                          ></div>
-                        </div>
-                        <span
-                          class="w-10 text-sm text-gray-500 dark:text-gray-400"
-                          >1%</span
-                        >
-                      </div>
-                      <div class="flex items-center space-x-2">
-                        <span
-                          class="w-6 text-sm text-gray-700 dark:text-gray-300"
-                          >1★</span
-                        >
-                        <div
-                          class="flex-1 h-2 bg-gray-200 dark:bg-gray-700 rounded"
-                        >
-                          <div
-                            class="h-2 bg-green-500 rounded"
-                            style="width: 1%"
-                          ></div>
-                        </div>
-                        <span
-                          class="w-10 text-sm text-gray-500 dark:text-gray-400"
-                          >1%</span
-                        >
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                <!-- Student Reviews -->
-                <div class="mt-10 space-y-8">
-                  <div
-                    class="border-b border-gray-200 dark:border-gray-700 pb-6"
-                  >
-                    <div class="flex items-center justify-between">
-                      <h3 class="font-semibold text-gray-900 dark:text-white">
-                        Michael Brown
-                      </h3>
-                      <span class="text-gray-400 text-sm">2 weeks ago</span>
-                    </div>
-                    <div class="text-yellow-400 mt-1">★★★★★</div>
-                    <p class="mt-2 text-gray-700 dark:text-gray-300">
-                      This course exceeded my expectations! The instructor
-                      explains complex concepts in a way that's easy to
-                      understand. The projects are challenging but doable, and I
-                      feel much more confident in my skills now.
-                    </p>
-                  </div>
-
-                  <div
-                    class="border-b border-gray-200 dark:border-gray-700 pb-6"
-                  >
-                    <div class="flex items-center justify-between">
-                      <h3 class="font-semibold text-gray-900 dark:text-white">
-                        Sarah Johnson
-                      </h3>
-                      <span class="text-gray-400 text-sm">1 month ago</span>
-                    </div>
-                    <div class="text-yellow-400 mt-1">★★★★★</div>
-                    <p class="mt-2 text-gray-700 dark:text-gray-300">
-                      I've taken several courses on this topic, but this one is
-                      by far the best. The instructor is knowledgeable and
-                      engaging, and the content is well-structured and
-                      comprehensive.
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
+<body class="dark:bg-black text-gray-900 dark:text-gray-100 transition-colors duration-300">
+  <!-- Navigation -->
+  <header>
+    <!-- Navbar -->
+    <nav
+      class="bg-white shadow-lg border-b border-gray-200 fixed top-0 left-0 right-0 z-50 dark:bg-gray-900 text-gray-900 dark:text-gray-100 transition-colors duration-300">
+      <div class="max-w-7xl mx-auto px-6">
+        <div class="flex justify-between items-center h-16">
+          <!-- Logo -->
+          <div class="flex items-center">
+            <img src="../imgs/Logo.png" alt="Learnode" class="w-[120px] h-[120px]" />
+            <a href="../index.html" class="hide-on-mobile">
+              <h1 class="text-2xl font-bold ml-2">𝙎𝙆𝙄𝙇𝙇𝙎𝙏𝘼𝘾𝙆</h1>
+            </a>
           </div>
-          <!-- Right Column - Course Includes -->
-          <div id="course-sections" class="lg:col-span-1">
-            <div
-              class="bg-white dark:bg-gray-800 rounded-lg shadow-lg p-6 sticky top-24 transition-colors duration-300 border border-gray-200 dark:border-gray-700"
-            >
-              <h3 class="text-2xl font-bold mb-6 text-gray-900 dark:text-white">
-                Course Includes
-              </h3>
-              <div class="space-y-4">
-                <div class="flex items-center space-x-3">
-                  <i
-                    class="fas fa-file-text text-blue-600 dark:text-blue-400"
-                  ></i>
-                  <span class="text-gray-700 dark:text-gray-300"
-                    >11 articles and resources</span
-                  >
-                </div>
-                <div class="flex items-center space-x-3">
-                  <i
-                    class="fas fa-download text-blue-600 dark:text-blue-400"
-                  ></i>
-                  <span class="text-gray-700 dark:text-gray-300"
-                    >42 downloadable resources</span
-                  >
-                </div>
-                <div class="flex items-center space-x-3">
-                  <i
-                    class="fas fa-infinity text-blue-600 dark:text-blue-400"
-                  ></i>
-                  <span class="text-gray-700 dark:text-gray-300"
-                    >Full lifetime access</span
-                  >
-                </div>
-                <div class="flex items-center space-x-3">
-                  <i
-                    class="fas fa-mobile-alt text-blue-600 dark:text-blue-400"
-                  ></i>
-                  <span class="text-gray-700 dark:text-gray-300"
-                    >Access on mobile and TV</span
-                  >
-                </div>
-                <div class="flex items-center space-x-3">
-                  <i
-                    class="fas fa-certificate text-blue-600 dark:text-blue-400"
-                  ></i>
-                  <span class="text-gray-700 dark:text-gray-300"
-                    >Certificate of completion</span
-                  >
-                </div>
+
+          <!-- Desktop Links -->
+          <div class="hidden md:flex items-center space-x-0">
+            <a href="./course.html"
+              class="group relative px-3 py-2 text-gray-700 hover:text-blue-600 font-semibold dark:text-white transition-colors duration-300">
+              Course
+              <div
+                class="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-blue-500 to-purple-500 group-hover:w-full transition-all duration-300">
               </div>
-            </div>
+            </a>
+            <a href="./AboutUs.html"
+              class="group relative px-3 py-2 text-gray-700 hover:text-blue-600 font-semibold dark:text-white transition-colors duration-300">
+              About
+              <div
+                class="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-blue-500 to-purple-500 group-hover:w-full transition-all duration-300">
+              </div>
+            </a>
+            <a href="./contactUs.html"
+              class="group relative px-3 py-2 text-gray-700 hover:text-blue-600 font-semibold dark:text-white transition-colors duration-300">
+              Contact Us
+              <div
+                class="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-blue-500 to-purple-500 group-hover:w-full transition-all duration-300">
+              </div>
+            </a>
+            <a href="./myLearning.html"
+              class="group relative px-3 py-2 text-gray-700 hover:text-blue-600 font-semibold dark:text-white transition-colors duration-300">
+              My Learning
+              <div
+                class="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-blue-500 to-purple-500 group-hover:w-full transition-all duration-300">
+              </div>
+            </a>
+          </div>
+
+          <!-- Right Side -->
+          <div class="flex items-center space-x-4">
+            <!-- Dark Mode Toggle Button -->
+            <button id="darkModeToggle"
+              class="p-2 rounded-lg bg-gray-200 dark:bg-gray-700 hover:bg-gray-300 dark:hover:bg-gray-600 transition-colors duration-200"
+              aria-label="Toggle dark mode">
+              <svg id="sunIcon" class="w-5 h-5 hidden dark:block" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd"
+                  d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z"
+                  clip-rule="evenodd"></path>
+              </svg>
+              <svg id="moonIcon" class="w-5 h-5 block dark:hidden" fill="currentColor" viewBox="0 0 20 20">
+                <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path>
+              </svg>
+            </button>
+            <!-- Desktop Login -->
+            <a href="./login.html"
+              class="hidden md:inline-block border border-gray-400 hover:bg-white  shimmer-effect text-black dark:text-white px-3 py-2 rounded-full font-medium hover:scale-105 transition-all duration-300 shadow-md">
+              <i class="fas fa-sign-in-alt mr-2"></i>Login
+            </a>
+
+            <!-- Mobile Menu Toggle -->
+            <button id="mobileMenuToggle"
+              class="md:hidden flex items-center justify-center w-10 h-10 text-gray-500 hover:text-blue-600 hover:bg-blue-50 rounded-full cursor-pointer transition-colors duration-300 dark:text-white dark:hover:bg-gray-700">
+              <i id="hamburgerIcon" class="fas fa-bars"></i>
+              <i id="closeIcon" class="fas fa-times hidden"></i>
+            </button>
           </div>
         </div>
       </div>
 
-      <!-- Related Courses -->
-
-      <section
-        class="py-20 bg-white dark:bg-gray-900 dark:text-white transition-colors duration-300"
-      >
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2
-            class="text-3xl font-bold text-center text-gray-900 dark:text-white mb-12"
-          >
-            Related Courses
-          </h2>
-          <div
-            id="relatedCourses"
-            class="w-full grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 mx-auto"
-          ></div>
+      <!-- Mobile Menu -->
+      <div id="mobileMenu"
+        class="hidden md:hidden bg-white border-t border-gray-200 dark:bg-gray-900 dark:border-gray-700">
+        <!-- Mobile Login -->
+        <div class="flex justify-start px-6 py-3">
+          <a href="./login.html"
+            class="border border-gray-400 hover:bg-white shimmer-effect text-black dark:text-white px-3 py-2 rounded-full font-medium hover:scale-105 transition-all duration-300 shadow-md">
+            <i class="fas fa-sign-in-alt mr-1"></i>Login
+          </a>
         </div>
-      </section>
-    </main>
-    <script>
-      //   ================================== Payment Section ===============================================
-      let selectedPlan = "";
-      let selectedPrice = "";
 
-      function openPaymentModal(planName, price) {
-        selectedPlan = planName;
-        selectedPrice = price;
-        document.getElementById(
-          "selectedPlan"
-        ).textContent = `${planName} - ${price}`;
+        <div class="px-6 pb-4 space-y-3">
+          <a href="./course.html"
+            class="flex items-center px-3 py-2 text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded-lg dark:text-gray-300 dark:hover:bg-gray-700 transition-colors duration-300">
+            <i class="fa-solid fa-pager text-blue-500 mr-2"></i> Course
+          </a>
+          <a href="./AboutUs.html"
+            class="flex items-center px-3 py-2 text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded-lg dark:text-gray-300 dark:hover:bg-gray-700 transition-colors duration-300">
+            <i class="fas fa-info-circle text-blue-500 mr-2"></i> About
+          </a>
+          <a href="./contactUs.html"
+            class="flex items-center px-3 py-2 text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded-lg dark:text-gray-300 dark:hover:bg-gray-700 transition-colors duration-300">
+            <i class="fas fa-phone text-blue-500 mr-2"></i> Contact Us
+          </a>
+          <a href="./myLearning.html"
+            class="flex items-center px-3 py-2 text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded-lg dark:text-gray-300 dark:hover:bg-gray-700 transition-colors duration-300">
+            <i class="fas fa-book text-blue-500 mr-2"></i>My Learning
+          </a>
+        </div>
+      </div>
+    </nav>
+  </header>
+  <main>
+    <section id="HeroCourseDetails"></section>
 
-        const overlay = document.getElementById("modalOverlay");
-        const modal = document.getElementById("paymentModal");
-
-        // Show overlay
-        overlay.classList.remove("opacity-0", "invisible");
-        overlay.classList.add("opacity-100", "visible");
-
-        // Show modal with animation
-        setTimeout(() => {
-          modal.classList.remove("scale-95", "opacity-0");
-          modal.classList.add("scale-100", "opacity-100");
-        }, 50);
-
-        // Prevent background scrolling
-        document.body.style.overflow = "hidden";
-      }
-
-      function closeModal(event) {
-        if (
-          event &&
-          event.target !== event.currentTarget &&
-          !event.target.closest("button")
-        ) {
-          return;
-        }
-
-        const overlay = document.getElementById("modalOverlay");
-        const modal = document.getElementById("paymentModal");
-
-        // Hide modal with animation
-        modal.classList.remove("scale-100", "opacity-100");
-        modal.classList.add("scale-95", "opacity-0");
-
-        // Hide overlay after animation
-        setTimeout(() => {
-          overlay.classList.remove("opacity-100", "visible");
-          overlay.classList.add("opacity-0", "invisible");
-        }, 200);
-
-        // Restore scrolling
-        document.body.style.overflow = "auto";
-
-        // Reset form
-        document.getElementById("paymentForm").reset();
-      }
-
-      function processPayment(event) {
-        event.preventDefault();
-
-        const submitBtn = document.getElementById("submitBtn");
-        const submitText = document.getElementById("submitText");
-        const loadingSpinner = document.getElementById("loadingSpinner");
-
-        // Show loading state
-        submitBtn.disabled = true;
-        submitText.classList.add("hidden");
-        loadingSpinner.classList.remove("hidden");
-
-        // Simulate payment processing
-        setTimeout(() => {
-          // Success state
-          submitBtn.classList.remove("from-purple-600", "to-blue-600");
-          submitBtn.classList.add("from-green-500", "to-green-600");
-          loadingSpinner.classList.add("hidden");
-          submitText.textContent = "Payment Successful!";
-          submitText.classList.remove("hidden");
-
-          setTimeout(() => {
-            alert(
-              `Payment successful for ${selectedPlan}! Thank you for your purchase.`
-            );
-            closeModal();
-
-            // Reset button state
-            submitBtn.disabled = false;
-            submitBtn.classList.remove("from-green-500", "to-green-600");
-            submitBtn.classList.add("from-purple-600", "to-blue-600");
-            submitText.textContent = "Complete Payment";
-          }, 1500);
-        }, 2000);
-      }
-
-      // Format card number input
-      document
-        .getElementById("cardNumber")
-        .addEventListener("input", function (e) {
-          let value = e.target.value.replace(/\s/g, "").replace(/[^0-9]/gi, "");
-          let formattedValue = value.match(/.{1,4}/g)?.join(" ") || value;
-          e.target.value = formattedValue;
-        });
-
-      // Format expiry date input
-      document.getElementById("expiry").addEventListener("input", function (e) {
-        let value = e.target.value.replace(/\D/g, "");
-        if (value.length >= 2) {
-          value = value.substring(0, 2) + "/" + value.substring(2, 4);
-        }
-        e.target.value = value;
-      });
-
-      // Only allow numbers in CVV
-      document.getElementById("cvv").addEventListener("input", function (e) {
-        e.target.value = e.target.value.replace(/\D/g, "");
-      });
-
-      // Close modal with Escape key
-      document.addEventListener("keydown", function (e) {
-        if (e.key === "Escape") {
-          closeModal();
-        }
-      });
-
-      // Tab functionality
-      const tabs = document.querySelectorAll(".nav-tab");
-      const tabContents = document.querySelectorAll(".tab-content");
-
-      tabs.forEach((tab) => {
-        tab.addEventListener("click", () => {
-          // Remove active class from all tabs
-          tabs.forEach((t) => {
-            t.classList.remove(
-              "active",
-              "text-blue-600",
-              "border-b-2",
-              "border-blue-600"
-            );
-            t.classList.add("text-gray-600");
-          });
-
-          // Add active class to clicked tab
-          tab.classList.add(
-            "active",
-            "text-blue-600",
-            "border-b-2",
-            "border-blue-600"
-          );
-          tab.classList.remove("text-gray-600");
-
-          // Hide all tab contents
-          tabContents.forEach((content) => {
-            content.classList.add("hidden");
-          });
-
-          // Show corresponding content
-          const targetTab = tab.getAttribute("data-tab");
-          document.getElementById(targetTab).classList.remove("hidden");
-        });
-      });
-
-      // Add to cart functionality
-      document.getElementById("addToCart").addEventListener("click", () => {
-        // Simple notification (in a real app, this would add to cart)
-        const button = document.getElementById("addToCart");
-        const originalText = button.textContent;
-
-        button.textContent = "Added to Cart!";
-        button.classList.add("bg-green-600");
-        button.classList.remove("bg-blue-600");
-
-        setTimeout(() => {
-          button.textContent = originalText;
-          button.classList.remove("bg-green-600");
-          button.classList.add("bg-blue-600");
-        }, 2000);
-      });
-
-      // Smooth scrolling for internal links
-      document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
-        anchor.addEventListener("click", function (e) {
-          e.preventDefault();
-          const target = document.querySelector(this.getAttribute("href"));
-          if (target) {
-            target.scrollIntoView({
-              behavior: "smooth",
-            });
-          }
-        });
-      });
-
-      // Add some scroll effects
-      window.addEventListener("scroll", () => {
-        const nav = document.querySelector(".sticky");
-        if (window.scrollY > 100) {
-          nav.classList.add("shadow-md");
-        } else {
-          nav.classList.remove("shadow-md");
-        }
-      });
-    </script>
-
-    <!-- Footer -->
-    <footer class="bg-gray-800 text-white py-8">
+    <!-- Payment Modal -->
+    <section id="modalOverlay"
+      class="fixed inset-0 bg-black bg-opacity-60 backdrop-blur-sm flex items-center justify-center z-50 opacity-0 invisible transition-all duration-300"
+      onclick="closeModal(event)">
       <div
-        class="container mx-auto px-4 sm:px-6 flex justify-center items-center text-center"
-      >
-        <div
-          class="grid grid-cols-1 md:grid-cols-4 gap-8 text-center md:text-left items-center md:items-start"
-        >
-          <!-- Organized by Section -->
-          <div class="space-y-4">
-            <h3 class="text-lg font-semibold text-gray-300 mb-4">
-              Organized by
-            </h3>
-            <div>
-              <img
-                src="../imgs/istadwrite.png"
-                alt="Logo"
-                class="w-[200px] mx-auto md:mx-0"
-              />
-              <div class="text-sm mt-8">
-                <div class="font-medium">
-                  Institute of Science and Technology
-                </div>
-                <div>Advanced Development</div>
+        class="bg-white dark:bg-gray-800 rounded-2xl shadow-2xl w-full max-w-lg mx-4 max-h-screen overflow-y-auto transform scale-95 opacity-0 transition-all duration-300"
+        onclick="event.stopPropagation()" id="paymentModal">
+        <!-- Modal Header -->
+        <div class="relative bg-blue-600 dark:bg-blue-700 text-white p-6 rounded-t-2xl">
+          <button onclick="closeModal()"
+            class="absolute top-4 right-4 w-8 h-8 flex items-center justify-center rounded-full hover:bg-white hover:bg-opacity-20 transition-colors duration-200">
+            <i class="fas fa-times"></i>
+          </button>
+          <div class="text-center">
+            <h2 class="text-2xl font-bold mb-2">Complete Your Purchase</h2>
+            <p id="selectedPlan" class="text-blue-100">
+              Premium Plan - $79.99
+            </p>
+          </div>
+        </div>
+
+        <!-- Payment Form -->
+        <form id="paymentForm" onsubmit="processPayment(event)" class="p-6 space-y-6">
+          <!-- Email -->
+          <div>
+            <label for="email" class="block text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2">Email
+              Address</label>
+            <input type="email" id="email" name="email" required
+              class="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors duration-200 bg-gray-50 dark:bg-gray-700 dark:text-white focus:bg-white dark:focus:bg-gray-600" />
+          </div>
+
+          <!-- Cardholder Name -->
+          <div>
+            <label for="cardName" class="block text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2">Cardholder
+              Name</label>
+            <input type="text" id="cardName" name="cardName" required
+              class="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors duration-200 bg-gray-50 dark:bg-gray-700 dark:text-white focus:bg-white dark:focus:bg-gray-600" />
+          </div>
+
+          <!-- Card Number -->
+          <div>
+            <label for="cardNumber" class="block text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2">Card
+              Number</label>
+            <div class="relative">
+              <input type="text" id="cardNumber" name="cardNumber" placeholder="1234 5678 9012 3456" required
+                maxlength="19"
+                class="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors duration-200 bg-gray-50 dark:bg-gray-700 dark:text-white focus:bg-white dark:focus:bg-gray-600" />
+              <div class="absolute right-3 top-1/2 transform -translate-y-1/2">
+                <i class="fab fa-cc-mastercard text-2xl text-gray-400"></i>
               </div>
             </div>
           </div>
 
-          <!-- Quick Links Section -->
-          <div>
-            <h3 class="text-lg font-semibold text-gray-300 mb-4">
-              Quick Links
-            </h3>
-            <ul class="space-y-2">
-              <li>
-                <a
-                  href="#"
-                  class="text-gray-400 hover:text-white transition-colors"
-                  >Home</a
-                >
-              </li>
-              <li>
-                <a
-                  href="./pages/course.html"
-                  class="text-gray-400 hover:text-white transition-colors"
-                  >Course</a
-                >
-              </li>
-              <li>
-                <a
-                  href="./pages/AboutUs.html"
-                  class="text-gray-400 hover:text-white transition-colors"
-                  >About</a
-                >
-              </li>
-              <li>
-                <a
-                  href="./pages/contactUs.html"
-                  class="text-gray-400 hover:text-white transition-colors"
-                  >Contact Us</a
-                >
-              </li>
-              <li>
-                <a
-                  href="#"
-                  class="text-gray-400 hover:text-white transition-colors"
-                  >Privacy Policy</a
-                >
-              </li>
-            </ul>
-          </div>
-
-          <!-- Course Categories Section -->
-          <div>
-            <h3 class="text-lg font-semibold text-gray-300 mb-4">
-              Course Categories
-            </h3>
-            <ul class="space-y-2">
-              <li>
-                <a
-                  href="#"
-                  class="text-gray-400 hover:text-white transition-colors"
-                  >Web Development</a
-                >
-              </li>
-              <li>
-                <a
-                  href="#"
-                  class="text-gray-400 hover:text-white transition-colors"
-                  >Data Science</a
-                >
-              </li>
-              <li>
-                <a
-                  href="#"
-                  class="text-gray-400 hover:text-white transition-colors"
-                  >Mobile Development</a
-                >
-              </li>
-              <li>
-                <a
-                  href="#"
-                  class="text-gray-400 hover:text-white transition-colors"
-                  >Business</a
-                >
-              </li>
-              <li>
-                <a
-                  href="#"
-                  class="text-gray-400 hover:text-white transition-colors"
-                  >Marketing</a
-                >
-              </li>
-            </ul>
-          </div>
-
-          <!-- SkillStack Section -->
-          <div class="top-0">
-            <div class="flex items-center space-x-2 mb-4">
-              <img
-                src="../imgs/SkillstactLogo.png"
-                alt="Logo"
-                class="w-[100px] mx-0"
-              />
-              <h3 class="text-[28px] font-semibold text-[--background-color]">
-                𝙎𝙆𝙄𝙇𝙇𝙎𝙏𝘼𝘾𝙆
-              </h3>
+          <!-- Expiry and CVV -->
+          <div class="grid grid-cols-2 gap-4">
+            <div>
+              <label for="expiry" class="block text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2">Expiry
+                Date</label>
+              <input type="text" id="expiry" name="expiry" placeholder="MM/YY" required maxlength="5"
+                class="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors duration-200 bg-gray-50 dark:bg-gray-700 dark:text-white focus:bg-white dark:focus:bg-gray-600" />
             </div>
-            <p class="text-gray-400 text-sm mb-4 leading-relaxed">
-              Empowering learners worldwide with quality education and skills
-              for the future.
-            </p>
-            <div class="flex space-x-3 md:justify-start justify-center">
-              <!-- Facebook -->
-              <a
-                href="https://web.facebook.com/?_rdc=1&_rdr"
-                class="w-8 h-8 bg-blue-600 text-white rounded-full flex items-center justify-center hover:bg-blue-700 transition"
-                aria-label="Facebook"
-              >
-                <i class="fa-brands fa-facebook-f text-sm"></i>
-              </a>
+            <div>
+              <label for="cvv" class="block text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2">CVV</label>
+              <input type="text" id="cvv" name="cvv" placeholder="123" required maxlength="4"
+                class="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors duration-200 bg-gray-50 dark:bg-gray-700 dark:text-white focus:bg-white dark:focus:bg-gray-600" />
+            </div>
+          </div>
 
-              <!-- Telegram -->
-              <a
-                href="https://web.telegram.org/a/"
-                class="w-8 h-8 bg-blue-500 text-white rounded-full flex items-center justify-center hover:bg-blue-600 transition"
-                aria-label="Telegram"
-              >
-                <i class="fa-brands fa-telegram text-sm"></i>
-              </a>
+          <!-- Billing Address -->
+          <div>
+            <label for="billingAddress"
+              class="block text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2">Billing Address</label>
+            <input type="text" id="billingAddress" name="billingAddress" required
+              class="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors duration-200 bg-gray-50 dark:bg-gray-700 dark:text-white focus:bg-white dark:focus:bg-gray-600" />
+          </div>
 
-              <!-- Instagram -->
-              <a
-                href="https://www.instagram.com/accounts/login/"
-                class="w-8 h-8 bg-gradient-to-tr from-purple-500 to-pink-500 text-white rounded-full flex items-center justify-center hover:from-purple-600 hover:to-pink-600 transition"
-                aria-label="Instagram"
-              >
-                <i class="fa-brands fa-instagram text-sm"></i>
-              </a>
+          <!-- City and ZIP -->
+          <div class="grid grid-cols-2 gap-4">
+            <div>
+              <label for="city" class="block text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2">City</label>
+              <input type="text" id="city" name="city" required
+                class="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors duration-200 bg-gray-50 dark:bg-gray-700 dark:text-white focus:bg-white dark:focus:bg-gray-600" />
+            </div>
+            <div>
+              <label for="zipCode" class="block text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2">ZIP
+                Code</label>
+              <input type="text" id="zipCode" name="zipCode" required
+                class="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors duration-200 bg-gray-50 dark:bg-gray-700 dark:text-white focus:bg-white dark:focus:bg-gray-600" />
+            </div>
+          </div>
 
-              <!-- Gmail -->
-              <a
-                href="example@email.com"
-                class="w-8 h-8 bg-red-500 text-white rounded-full flex items-center justify-center hover:bg-red-600 transition"
-                aria-label="Email"
-              >
-                <i class="fa-solid fa-envelope text-sm"></i>
-              </a>
+          <!-- Submit Button -->
+          <button type="submit" id="submitBtn"
+            class="w-full bg-blue-600 dark:bg-blue-700 text-white font-semibold py-4 px-6 rounded-lg hover:bg-blue-700 dark:hover:bg-blue-600 transform hover:-translate-y-0.5 transition-all duration-300 shadow-lg hover:shadow-xl disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none">
+            <span id="submitText">Complete Payment</span>
+            <div id="loadingSpinner" class="items-center hidden">
+              <i class="fas fa-spinner fa-spin mr-2"></i>
+              Processing...
+            </div>
+          </button>
+
+          <!-- Security Info -->
+          <div class="flex items-center justify-center text-sm text-gray-500 dark:text-gray-400 space-x-2">
+            <i class="fas fa-lock"></i>
+            <span>Your payment information is secure and encrypted</span>
+          </div>
+        </form>
+      </div>
+    </section>
+
+    <!-- Course Navigation -->
+    <div
+      class="bg-white dark:bg-gray-800 border-b border-gray-200 dark:border-gray-700 sticky top-16 z-10 transition-colors duration-300">
+      <div class="container mx-auto px-4">
+        <nav class="flex space-x-8 py-4">
+          <button
+            class="nav-tab active font-semibold text-blue-600 dark:text-blue-400 border-b-2 border-blue-600 dark:border-blue-400 pb-2"
+            data-tab="overview">
+            Overview
+          </button>
+          <button class="nav-tab text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 pb-2"
+            data-tab="curriculum">
+            Curriculum
+          </button>
+          <button class="nav-tab text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 pb-2"
+            data-tab="instructor">
+            Instructor
+          </button>
+          <button class="nav-tab text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 pb-2"
+            data-tab="reviews">
+            Reviews
+          </button>
+        </nav>
+      </div>
+    </div>
+
+    <div class="container mx-auto px-4 py-8">
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+        <!-- Left Column -->
+        <div class="lg:col-span-2">
+          <!-- Overview Tab -->
+          <div id="overview" class="tab-content">
+            <!-- About This Course -->
+            <section class="mb-12">
+              <h2 class="text-3xl font-bold mb-6 text-gray-900 dark:text-white">
+                About This Course
+              </h2>
+              <p class="text-gray-700 dark:text-gray-300 leading-relaxed mb-4">
+                This comprehensive course is designed to take you from
+                beginner to professional in Development. You'll learn
+                essential concepts and practical techniques to enhance your
+                creative skills. This course covers all the tools and
+                knowledge you need to succeed. Throughout this course, you'll
+                work on real-world projects that will help you build a strong
+                portfolio and gain practical experience. By the end, you'll
+                have the skills and confidence to tackle complex challenges in
+                the field of Development.
+              </p>
+              <p class="text-gray-700 dark:text-gray-300 leading-relaxed">
+                Our flexible and self-paced format ensures that you understand
+                each concept before moving on to more advanced topics, with
+                plenty of practice exercises that mirror real-world scenarios
+                in your progress.
+              </p>
+            </section>
+
+            <!-- What You'll Learn -->
+            <section class="mb-12">
+              <h2 class="text-3xl font-bold mb-6 text-gray-900 dark:text-white">
+                What You'll Learn
+              </h2>
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div class="flex items-start space-x-3">
+                  <i class="fas fa-check text-green-500 mt-1"></i>
+                  <span class="text-gray-700 dark:text-gray-300">Master the fundamentals of Development</span>
+                </div>
+                <div class="flex items-start space-x-3">
+                  <i class="fas fa-check text-green-500 mt-1"></i>
+                  <span class="text-gray-700 dark:text-gray-300">Build real-world projects for your portfolio</span>
+                </div>
+                <div class="flex items-start space-x-3">
+                  <i class="fas fa-check text-green-500 mt-1"></i>
+                  <span class="text-gray-700 dark:text-gray-300">Understand best practices and industry standards</span>
+                </div>
+                <div class="flex items-start space-x-3">
+                  <i class="fas fa-check text-green-500 mt-1"></i>
+                  <span class="text-gray-700 dark:text-gray-300">Optimize performance and solve common problems</span>
+                </div>
+                <div class="flex items-start space-x-3">
+                  <i class="fas fa-check text-green-500 mt-1"></i>
+                  <span class="text-gray-700 dark:text-gray-300">Deploy your applications to production</span>
+                </div>
+                <div class="flex items-start space-x-3">
+                  <i class="fas fa-check text-green-500 mt-1"></i>
+                  <span class="text-gray-700 dark:text-gray-300">Work with modern tools and frameworks</span>
+                </div>
+                <div class="flex items-start space-x-3">
+                  <i class="fas fa-check text-green-500 mt-1"></i>
+                  <span class="text-gray-700 dark:text-gray-300">Implement responsive and accessible designs</span>
+                </div>
+                <div class="flex items-start space-x-3">
+                  <i class="fas fa-check text-green-500 mt-1"></i>
+                  <span class="text-gray-700 dark:text-gray-300">Debug and troubleshoot effectively</span>
+                </div>
+              </div>
+            </section>
+
+            <!-- Requirements -->
+            <section class="mb-12">
+              <h2 class="text-3xl font-bold mb-6 text-gray-900 dark:text-white">
+                Requirements
+              </h2>
+              <ul class="space-y-3">
+                <li class="flex items-start space-x-3">
+                  <i class="fas fa-circle text-gray-400 text-xs mt-2"></i>
+                  <span class="text-gray-700 dark:text-gray-300">Basic computer skills and familiarity with using the
+                    Internet</span>
+                </li>
+                <li class="flex items-start space-x-3">
+                  <i class="fas fa-circle text-gray-400 text-xs mt-2"></i>
+                  <span class="text-gray-700 dark:text-gray-300">No prior experience in Development is required - we'll
+                    start from the basics</span>
+                </li>
+                <li class="flex items-start space-x-3">
+                  <i class="fas fa-circle text-gray-400 text-xs mt-2"></i>
+                  <span class="text-gray-700 dark:text-gray-300">A computer with Internet access (Windows, Mac, or
+                    Linux)</span>
+                </li>
+                <li class="flex items-start space-x-3">
+                  <i class="fas fa-circle text-gray-400 text-xs mt-2"></i>
+                  <span class="text-gray-700 dark:text-gray-300">Enthusiasm and willingness to learn</span>
+                </li>
+              </ul>
+            </section>
+
+            <!-- Who This Course is For -->
+            <section class="mb-12">
+              <h2 class="text-3xl font-bold mb-6 text-gray-900 dark:text-white">
+                Who This Course is For
+              </h2>
+              <ul class="space-y-3">
+                <li class="flex items-start space-x-3">
+                  <i class="fas fa-circle text-gray-400 text-xs mt-2"></i>
+                  <span class="text-gray-700 dark:text-gray-300">Beginners with no prior experience in
+                    Development</span>
+                </li>
+                <li class="flex items-start space-x-3">
+                  <i class="fas fa-circle text-gray-400 text-xs mt-2"></i>
+                  <span class="text-gray-700 dark:text-gray-300">Intermediate learners looking to fill knowledge
+                    gaps</span>
+                </li>
+                <li class="flex items-start space-x-3">
+                  <i class="fas fa-circle text-gray-400 text-xs mt-2"></i>
+                  <span class="text-gray-700 dark:text-gray-300">Professionals wanting to stay updated with the latest
+                    trends</span>
+                </li>
+                <li class="flex items-start space-x-3">
+                  <i class="fas fa-circle text-gray-400 text-xs mt-2"></i>
+                  <span class="text-gray-700 dark:text-gray-300">Anyone interested in building a career in
+                    Development</span>
+                </li>
+              </ul>
+            </section>
+          </div>
+
+          <div id="curriculum" class="tab-content hidden">
+            <div class="p-6 max-w-5xl mx-auto">
+              <h2 class="text-2xl font-bold mb-2 text-gray-900 dark:text-white">
+                Course Curriculum
+              </h2>
+              <p class="text-gray-500 dark:text-gray-400 mb-6">
+                120 lessons • 48 hours total length
+              </p>
+
+              <!-- Expand All -->
+              <div class="flex justify-end mb-4">
+                <a href="#" onclick="expandAll(event)" class="text-green-600 font-medium hover:underline">
+                  Expand All Sections
+                </a>
+              </div>
+
+              <!-- Sections -->
+              <div class="space-y-4">
+                <div id="videoContainer"></div>
+                <!-- Video Modal -->
+                <div id="videoModal" class="fixed inset-0 bg-black bg-opacity-75 z-50 hidden">
+                  <div class="flex items-center justify-center min-h-screen p-4">
+                    <div class="bg-white rounded-lg max-w-4xl w-full">
+                      <div class="flex justify-between items-center p-4 border-b">
+                        <h3 id="videoTitle" class="text-lg font-semibold">Video</h3>
+                        <button onclick="closeVideoModal()" class="text-gray-500 hover:text-gray-700">
+                          <i class="fas fa-times"></i>
+                        </button>
+                      </div>
+                      <div class="aspect-video">
+                        <iframe id="videoFrame" class="w-full h-full" frameborder="0" allowfullscreen></iframe>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+
+                <!-- Getting Started -->
+                <!-- <div class="border rounded-md mb-3">
+                  <button onclick="toggleDropdown(1)"
+                    class="w-full flex justify-between items-center p-3 text-left font-semibold text-gray-900 dark:text-white hover:bg-gray-50 dark:hover:bg-gray-700">
+                    <span>Getting Started</span>
+                    <div class="flex items-center space-x-2 gap-2">
+                      <span class="text-gray-500 dark:text-gray-400">4 lessons • 45 min</span>
+                      <img id="arrow-1" src="../imgs/arrow-down-sign-to-navigate.png"
+                        class="w-4 rotate-0 transition-transform duration-200" alt="">
+                    </div>
+                  </button>
+                  <div id="dropdown-1" class="hidden px-5 pb-3 space-y-2 text-gray-600 dark:text-gray-300">
+                    <p>Lesson 1: Introduction</p>
+                    <p>Lesson 2: Installation</p>
+                    <p>Lesson 3: Your First App</p>
+                    <p>Lesson 4: Recap</p>
+                  </div>
+                </div> -->
+
+                <!-- Core Concepts -->
+                <!-- <div class="border rounded-md mb-3">
+                  <button onclick="toggleDropdown(2)"
+                    class="w-full flex justify-between items-center p-3 text-left font-semibold text-gray-900 dark:text-white hover:bg-gray-50 dark:hover:bg-gray-700">
+                    <span>Core Concepts</span>
+                    <div class="flex items-center space-x-2 gap-2">
+                      <span class="text-gray-500 dark:text-gray-400">8 lessons • 1h 30min</span>
+                      <img id="arrow-2" src="../imgs/arrow-down-sign-to-navigate.png"
+                        class="w-4 rotate-0 transition-transform duration-200" alt="">
+                    </div>
+                  </button>
+                  <div id="dropdown-2" class="hidden px-5 pb-3 space-y-2 text-gray-600 dark:text-gray-300">
+                    <p>Lesson 1: Components</p>
+                    <p>Lesson 2: Props & State</p>
+                    <p>Lesson 3: Lifecycle</p>
+                    <p>Lesson 4: Events</p>
+                    <p>Lesson 5: Forms</p>
+                    <p>Lesson 6: Hooks</p>
+                    <p>Lesson 7: Context</p>
+                    <p>Lesson 8: Recap</p>
+                  </div>
+                </div> -->
+
+                <!-- Advanced Techniques -->
+                <!-- <div class="border rounded-md mb-3">
+                  <button onclick="toggleDropdown(3)"
+                    class="w-full flex justify-between items-center p-3 text-left font-semibold text-gray-900 dark:text-white hover:bg-gray-50 dark:hover:bg-gray-700">
+                    <span>Advanced Techniques</span>
+                    <div class="flex items-center space-x-2 gap-2">
+                      <span class="text-gray-500 dark:text-gray-400">6 lessons • 2h 15min</span>
+                      <img id="arrow-3" src="../imgs/arrow-down-sign-to-navigate.png"
+                        class="w-4 rotate-0 transition-transform duration-200" alt="">
+                    </div>
+                  </button>
+                  <div id="dropdown-3" class="hidden px-5 pb-3 space-y-2 text-gray-600 dark:text-gray-300">
+                    <p>Lesson 1: Performance</p>
+                    <p>Lesson 2: Animations</p>
+                    <p>Lesson 3: Routing</p>
+                    <p>Lesson 4: State Management</p>
+                    <p>Lesson 5: Testing</p>
+                    <p>Lesson 6: Deployment</p>
+                  </div>
+                </div> -->
+
+                <!-- Real-World Projects -->
+                <!-- <div class="border rounded-md mb-3">
+                  <button onclick="toggleDropdown(4)"
+                    class="w-full flex justify-between items-center p-3 text-left font-semibold text-gray-900 dark:text-white hover:bg-gray-50 dark:hover:bg-gray-700">
+                    <span>Real-World Projects</span>
+                    <div class="flex items-center space-x-2 gap-2">
+                      <span class="text-gray-500 dark:text-gray-400">5 lessons • 3h 20min</span>
+                      <img id="arrow-4" src="../imgs/arrow-down-sign-to-navigate.png"
+                        class="w-4 rotate-0 transition-transform duration-200" alt="">
+                    </div>
+                  </button>
+                  <div id="dropdown-4" class="hidden px-5 pb-3 space-y-2 text-gray-600 dark:text-gray-300">
+                    <p>Lesson 1: Project Setup</p>
+                    <p>Lesson 2: API Integration</p>
+                    <p>Lesson 3: Authentication</p>
+                    <p>Lesson 4: UI/UX Improvements</p>
+                    <p>Lesson 5: Final Review</p>
+                  </div>
+                </div> -->
+
+                <!-- Best Practices & Optimization -->
+                <!-- <div class="border rounded-md mb-3">
+                  <button onclick="toggleDropdown(5)"
+                    class="w-full flex justify-between items-center p-3 text-left font-semibold text-gray-900 dark:text-white hover:bg-gray-50 dark:hover:bg-gray-700">
+                    <span>Best Practices & Optimization</span>
+                    <div class="flex items-center space-x-2 gap-2">
+                      <span class="text-gray-500 dark:text-gray-400">4 lessons • 1h 45min</span>
+                      <img id="arrow-5" src="../imgs/arrow-down-sign-to-navigate.png"
+                        class="w-4 rotate-0 transition-transform duration-200" alt="">
+                    </div>
+                  </button>
+                  <div id="dropdown-5" class="hidden px-5 pb-3 space-y-2 text-gray-600 dark:text-gray-300">
+                    <p>Lesson 1: Code Organization</p>
+                    <p>Lesson 2: Security</p>
+                    <p>Lesson 3: Optimization</p>
+                    <p>Lesson 4: Scaling</p>
+                  </div>
+                </div> -->
+
+              </div>
+            </div>
+          </div>
+          <!-- Instructor Tab -->
+          <div id="instructor" class="tab-content hidden">
+            <div class="max-w-4xl mx-auto px-4">
+              <div class="flex items-center space-x-6">
+                <!-- Avatar -->
+                <img src="https://i.pinimg.com/736x/5f/34/d1/5f34d1662b26217fbd92144c264fafc6.jpg" alt="instructor"
+                  class="w-20 h-20 bg-gray-200 dark:bg-gray-600 rounded-[100%] object-cover shadow-lg" />
+
+                <!-- Name & Title -->
+                <div>
+                  <h1 class="text-xl font-bold text-gray-900 dark:text-white">
+                    John Smith
+                  </h1>
+                  <p class="text-gray-500 dark:text-gray-400">
+                    Lead Developer & Instructor
+                  </p>
+                  <div class="flex items-center mt-2 space-x-4 text-sm text-gray-600 dark:text-gray-400">
+                    <div class="flex items-center space-x-1">
+                      <span class="text-yellow-400">★</span>
+                      <span>4.8 Instructor Rating</span>
+                    </div>
+                    <div class="flex items-center space-x-1">
+                      <i class="fas fa-users"></i>
+                      <span>45,000+ Students</span>
+                    </div>
+                    <div class="flex items-center space-x-1">
+                      <i class="fas fa-calendar"></i>
+                      <span>12 Courses</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Bio -->
+              <div class="mt-6 text-gray-700 dark:text-gray-300 space-y-4">
+                <p>
+                  John Smith is a senior developer with over 10 years of
+                  experience in the industry. He has worked with Fortune 500
+                  companies and startups alike, helping them build scalable
+                  and maintainable applications.
+                </p>
+                <p>
+                  As an instructor, John has taught over 45,000 students
+                  worldwide, sharing his knowledge and expertise in a way
+                  that's easy to understand and apply. His teaching approach
+                  focuses on practical, real-world examples that help students
+                  build their skills and confidence.
+                </p>
+                <p>
+                  John is passionate about helping others learn and grow in
+                  their careers. He regularly updates his courses to ensure
+                  they reflect the latest industry trends and best practices.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Reviews Tab -->
+          <div id="reviews" class="tab-content hidden">
+            <div class="max-w-4xl mx-auto px-4">
+              <!-- Rating Summary -->
+              <div class="flex items-center space-x-8">
+                <div class="text-center">
+                  <div class="text-5xl font-bold text-green-600">4.8</div>
+                  <div class="flex justify-center mt-1">
+                    <span class="text-yellow-400 text-xl">★★★★★</span>
+                  </div>
+                  <div class="text-gray-500 dark:text-gray-400">
+                    Course Rating
+                  </div>
+                  <div class="text-sm text-gray-400">350 reviews</div>
+                </div>
+
+                <!-- Rating Breakdown -->
+                <div class="flex-1">
+                  <div class="space-y-2">
+                    <div class="flex items-center space-x-2">
+                      <span class="w-6 text-sm text-gray-700 dark:text-gray-300">5★</span>
+                      <div class="flex-1 h-2 bg-gray-200 dark:bg-gray-700 rounded">
+                        <div class="h-2 bg-green-500 rounded" style="width: 78%"></div>
+                      </div>
+                      <span class="w-10 text-sm text-gray-500 dark:text-gray-400">78%</span>
+                    </div>
+                    <div class="flex items-center space-x-2">
+                      <span class="w-6 text-sm text-gray-700 dark:text-gray-300">4★</span>
+                      <div class="flex-1 h-2 bg-gray-200 dark:bg-gray-700 rounded">
+                        <div class="h-2 bg-green-500 rounded" style="width: 15%"></div>
+                      </div>
+                      <span class="w-10 text-sm text-gray-500 dark:text-gray-400">15%</span>
+                    </div>
+                    <div class="flex items-center space-x-2">
+                      <span class="w-6 text-sm text-gray-700 dark:text-gray-300">3★</span>
+                      <div class="flex-1 h-2 bg-gray-200 dark:bg-gray-700 rounded">
+                        <div class="h-2 bg-green-500 rounded" style="width: 5%"></div>
+                      </div>
+                      <span class="w-10 text-sm text-gray-500 dark:text-gray-400">5%</span>
+                    </div>
+                    <div class="flex items-center space-x-2">
+                      <span class="w-6 text-sm text-gray-700 dark:text-gray-300">2★</span>
+                      <div class="flex-1 h-2 bg-gray-200 dark:bg-gray-700 rounded">
+                        <div class="h-2 bg-green-500 rounded" style="width: 1%"></div>
+                      </div>
+                      <span class="w-10 text-sm text-gray-500 dark:text-gray-400">1%</span>
+                    </div>
+                    <div class="flex items-center space-x-2">
+                      <span class="w-6 text-sm text-gray-700 dark:text-gray-300">1★</span>
+                      <div class="flex-1 h-2 bg-gray-200 dark:bg-gray-700 rounded">
+                        <div class="h-2 bg-green-500 rounded" style="width: 1%"></div>
+                      </div>
+                      <span class="w-10 text-sm text-gray-500 dark:text-gray-400">1%</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Student Reviews -->
+              <div class="mt-10 space-y-8">
+                <div class="border-b border-gray-200 dark:border-gray-700 pb-6">
+                  <div class="flex items-center justify-between">
+                    <h3 class="font-semibold text-gray-900 dark:text-white">
+                      Michael Brown
+                    </h3>
+                    <span class="text-gray-400 text-sm">2 weeks ago</span>
+                  </div>
+                  <div class="text-yellow-400 mt-1">★★★★★</div>
+                  <p class="mt-2 text-gray-700 dark:text-gray-300">
+                    This course exceeded my expectations! The instructor
+                    explains complex concepts in a way that's easy to
+                    understand. The projects are challenging but doable, and I
+                    feel much more confident in my skills now.
+                  </p>
+                </div>
+
+                <div class="border-b border-gray-200 dark:border-gray-700 pb-6">
+                  <div class="flex items-center justify-between">
+                    <h3 class="font-semibold text-gray-900 dark:text-white">
+                      Sarah Johnson
+                    </h3>
+                    <span class="text-gray-400 text-sm">1 month ago</span>
+                  </div>
+                  <div class="text-yellow-400 mt-1">★★★★★</div>
+                  <p class="mt-2 text-gray-700 dark:text-gray-300">
+                    I've taken several courses on this topic, but this one is
+                    by far the best. The instructor is knowledgeable and
+                    engaging, and the content is well-structured and
+                    comprehensive.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Right Column - Course Includes -->
+        <div id="course-sections" class="lg:col-span-1">
+          <div
+            class="bg-white dark:bg-gray-800 rounded-lg shadow-lg p-6 sticky top-24 transition-colors duration-300 border border-gray-200 dark:border-gray-700">
+            <h3 class="text-2xl font-bold mb-6 text-gray-900 dark:text-white">
+              Course Includes
+            </h3>
+            <div class="space-y-4">
+              <div class="flex items-center space-x-3">
+                <i class="fas fa-file-text text-blue-600 dark:text-blue-400"></i>
+                <span class="text-gray-700 dark:text-gray-300">11 articles and resources</span>
+              </div>
+              <div class="flex items-center space-x-3">
+                <i class="fas fa-download text-blue-600 dark:text-blue-400"></i>
+                <span class="text-gray-700 dark:text-gray-300">42 downloadable resources</span>
+              </div>
+              <div class="flex items-center space-x-3">
+                <i class="fas fa-infinity text-blue-600 dark:text-blue-400"></i>
+                <span class="text-gray-700 dark:text-gray-300">Full lifetime access</span>
+              </div>
+              <div class="flex items-center space-x-3">
+                <i class="fas fa-mobile-alt text-blue-600 dark:text-blue-400"></i>
+                <span class="text-gray-700 dark:text-gray-300">Access on mobile and TV</span>
+              </div>
+              <div class="flex items-center space-x-3">
+                <i class="fas fa-certificate text-blue-600 dark:text-blue-400"></i>
+                <span class="text-gray-700 dark:text-gray-300">Certificate of completion</span>
+              </div>
             </div>
           </div>
         </div>
       </div>
-    </footer>
-    <script src="../script/courseDetail.js"></script>
-  </body>
+    </div>
+
+    <!-- Related Courses -->
+
+    <section class="py-20 bg-white dark:bg-gray-900 dark:text-white transition-colors duration-300">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h2 class="text-3xl font-bold text-center text-gray-900 dark:text-white mb-12">
+          Related Courses
+        </h2>
+        <div id="relatedCourses"
+          class="w-full grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 mx-auto"></div>
+      </div>
+    </section>
+  </main>
+
+
+  <!-- Footer -->
+  <footer class="bg-gray-800 text-white py-8">
+    <div class="container mx-auto px-4 sm:px-6 flex justify-center items-center text-center">
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-8 text-center md:text-left items-center md:items-start">
+        <!-- Organized by Section -->
+        <div class="space-y-4">
+          <h3 class="text-lg font-semibold text-gray-300 mb-4">
+            Organized by
+          </h3>
+          <div>
+            <img src="../imgs/istadwrite.png" alt="Logo" class="w-[200px] mx-auto md:mx-0" />
+            <div class="text-sm mt-8">
+              <div class="font-medium">
+                Institute of Science and Technology
+              </div>
+              <div>Advanced Development</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Quick Links Section -->
+        <div>
+          <h3 class="text-lg font-semibold text-gray-300 mb-4">
+            Quick Links
+          </h3>
+          <ul class="space-y-2">
+            <li>
+              <a href="#" class="text-gray-400 hover:text-white transition-colors">Home</a>
+            </li>
+            <li>
+              <a href="./pages/course.html" class="text-gray-400 hover:text-white transition-colors">Course</a>
+            </li>
+            <li>
+              <a href="./pages/AboutUs.html" class="text-gray-400 hover:text-white transition-colors">About</a>
+            </li>
+            <li>
+              <a href="./pages/contactUs.html" class="text-gray-400 hover:text-white transition-colors">Contact Us</a>
+            </li>
+            <li>
+              <a href="#" class="text-gray-400 hover:text-white transition-colors">Privacy Policy</a>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Course Categories Section -->
+        <div>
+          <h3 class="text-lg font-semibold text-gray-300 mb-4">
+            Course Categories
+          </h3>
+          <ul class="space-y-2">
+            <li>
+              <a href="#" class="text-gray-400 hover:text-white transition-colors">Web Development</a>
+            </li>
+            <li>
+              <a href="#" class="text-gray-400 hover:text-white transition-colors">Data Science</a>
+            </li>
+            <li>
+              <a href="#" class="text-gray-400 hover:text-white transition-colors">Mobile Development</a>
+            </li>
+            <li>
+              <a href="#" class="text-gray-400 hover:text-white transition-colors">Business</a>
+            </li>
+            <li>
+              <a href="#" class="text-gray-400 hover:text-white transition-colors">Marketing</a>
+            </li>
+          </ul>
+        </div>
+
+        <!-- SkillStack Section -->
+        <div class="top-0">
+          <div class="flex items-center space-x-2 mb-4">
+            <img src="../imgs/SkillstactLogo.png" alt="Logo" class="w-[100px] mx-0" />
+            <h3 class="text-[28px] font-semibold text-[--background-color]">
+              𝙎𝙆𝙄𝙇𝙇𝙎𝙏𝘼𝘾𝙆
+            </h3>
+          </div>
+          <p class="text-gray-400 text-sm mb-4 leading-relaxed">
+            Empowering learners worldwide with quality education and skills
+            for the future.
+          </p>
+          <div class="flex space-x-3 md:justify-start justify-center">
+            <!-- Facebook -->
+            <a href="https://web.facebook.com/?_rdc=1&_rdr"
+              class="w-8 h-8 bg-blue-600 text-white rounded-full flex items-center justify-center hover:bg-blue-700 transition"
+              aria-label="Facebook">
+              <i class="fa-brands fa-facebook-f text-sm"></i>
+            </a>
+
+            <!-- Telegram -->
+            <a href="https://web.telegram.org/a/"
+              class="w-8 h-8 bg-blue-500 text-white rounded-full flex items-center justify-center hover:bg-blue-600 transition"
+              aria-label="Telegram">
+              <i class="fa-brands fa-telegram text-sm"></i>
+            </a>
+
+            <!-- Instagram -->
+            <a href="https://www.instagram.com/accounts/login/"
+              class="w-8 h-8 bg-gradient-to-tr from-purple-500 to-pink-500 text-white rounded-full flex items-center justify-center hover:from-purple-600 hover:to-pink-600 transition"
+              aria-label="Instagram">
+              <i class="fa-brands fa-instagram text-sm"></i>
+            </a>
+
+            <!-- Gmail -->
+            <a href="example@email.com"
+              class="w-8 h-8 bg-red-500 text-white rounded-full flex items-center justify-center hover:bg-red-600 transition"
+              aria-label="Email">
+              <i class="fa-solid fa-envelope text-sm"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <script src="../script/courseDetail.js"></script>
+</body>
+
 </html>

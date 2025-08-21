@@ -236,7 +236,7 @@ async function fetchCourses() {
     // data.content contains the course list
     const cardDisplay = data.content.map((pro) => {
       return `
-        <div class="bg-white rounded-2xl shadow-lg w-full p-5 dark:bg-gray-800 dark:text-gray-200 transition-all duration-300 hover:scale-105 group" onClick="location.href='./pages/courseDetail.html?id=${pro.id}'"
+        <div class="bg-white rounded-2xl shadow-lg w-full p-5 dark:bg-gray-800 dark:text-gray-200 transition-all duration-300 hover:scale-105 group" onClick="location.href='./pages/courseDetail.html?slug=${pro.slug}'"
 >
         <div class="flex justify-center mb-4">
           <img src="${pro.thumbnail}" alt ${pro.title} class="rounded-xl w-full max-w-xs object-contain" />
