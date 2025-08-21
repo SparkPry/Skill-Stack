@@ -106,7 +106,7 @@ function renderCards() {
   const visibleCourses = filteredCourses.slice(start, end);
 
   container.innerHTML = visibleCourses.map(pro => `
-     <div class="w-full bg-white rounded-[12px] shadow-md p-4 flex flex-col space-y-4 dark:bg-gray-700 dark:text-white transition-colors duration-300" onClick="location.href='./courseDetail.html?id=${pro.id}'">
+     <div class="w-full bg-white rounded-[12px] shadow-md p-4 flex flex-col space-y-4 dark:bg-gray-700 dark:text-white transition-colors duration-300" onClick="location.href='./courseDetail.html?slug=${pro.slug}'">
   <div class="flex justify-center mb-4">
     <img src="${pro.thumbnail}" alt="${pro.title}" class="rounded-xl w-full max-w-xs object-contain" />
   </div>

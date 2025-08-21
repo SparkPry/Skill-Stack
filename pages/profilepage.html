@@ -1,0 +1,1043 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>profile page</title>
+    <!-- font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.css" rel="stylesheet" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+       tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {},
+        },
+      };
+      
+        tailwind.config = {
+            theme: {
+                extend: {
+                    animation: {
+                        'fade-in': 'fade-in 0.5s ease-out',
+                        'slide-in': 'slide-in 0.3s ease-out'
+                    },
+                    keyframes: {
+                        'fade-in': {
+                            '0%': { opacity: '0' },
+                            '100%': { opacity: '1' }
+                        },
+                        'slide-in': {
+                            '0%': { transform: 'translateX(-20px)', opacity: '0' },
+                            '100%': { transform: 'translateX(0)', opacity: '1' }
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+      * {
+        font-family: "Ubuntu", sans-serif;
+      }
+    </style>
+    
+
+    
+</head>
+<body class="bg-[#e9e9e9] min-h-screen">
+    <!-- Navigation -->
+    <header>
+      <!-- Navbar -->
+      <nav
+        class="nav-menu bg-white shadow-lg border-b border-gray-200 fixed top-0 left-0 right-0 z-50 dark:bg-gray-900 text-gray-900 dark:text-gray-100 transition-colors duration-300"
+      >
+        <div class="max-w-7xl mx-auto px-6">
+          <div class="flex justify-between items-center h-16">
+            <!-- Logo -->
+            <div class="flex items-center">
+              <a href="../index.html"
+                ><img
+                  src="../imgs/Logo.png"
+                  alt="Learnode"
+                  class="w-[120px] h-[120px]"
+              /></a>
+
+              <a href="../index.html" class="hide-on-mobile">
+                <h1 class="text-2xl font-bold ml-2 dark:text-white">
+                  𝙎𝙆𝙄𝙇𝙇𝙎𝙏𝘼𝘾𝙆
+                </h1>
+              </a>
+            </div>
+
+            <!-- Desktop Links -->
+            <div class="hidden md:flex items-center space-x-0">
+              <a
+                href="./course.html"
+                class="group relative px-3 py-2 text-gray-700 hover:text-blue-600 font-semibold dark:text-white transition-colors duration-300"
+              >
+                Course
+                <div
+                  class="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-blue-500 to-purple-500 group-hover:w-full transition-all duration-300"
+                ></div>
+              </a>
+              <a
+                href="./AboutUs.html"
+                class="active group relative px-3 py-2 text-gray-700 hover:text-blue-600 font-semibold dark:text-white transition-colors duration-300"
+              >
+                About
+                <div
+                  class="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-blue-500 to-purple-500 group-hover:w-full transition-all duration-300"
+                ></div>
+              </a>
+              <a
+                href="./contactUs.html"
+                class="group relative px-3 py-2 text-gray-700 hover:text-blue-600 font-semibold dark:text-white transition-colors duration-300"
+              >
+                Contact Us
+                <div
+                  class="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-blue-500 to-purple-500 group-hover:w-full transition-all duration-300"
+                ></div>
+              </a>
+              <a
+                href="./myLearning.html"
+                class="group relative px-3 py-2 text-gray-700 hover:text-blue-600 font-semibold dark:text-white transition-colors duration-300"
+              >
+                My Learning
+                <div
+                  class="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-blue-500 to-purple-500 group-hover:w-full transition-all duration-300"
+                ></div>
+              </a>
+            </div>
+
+            <!-- Right Side -->
+            <div class="flex items-center space-x-4">
+              <!-- Dark Mode Toggle Button -->
+              <button
+                id="darkModeToggle"
+                class="p-2 rounded-lg bg-gray-200 dark:bg-gray-700 hover:bg-gray-300 dark:hover:bg-gray-600 transition-colors duration-200"
+                aria-label="Toggle dark mode"
+              >
+                <svg
+                  id="sunIcon"
+                  class="w-5 h-5 hidden dark:block"
+                  fill="currentColor"
+                  viewBox="0 0 20 20"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z"
+                    clip-rule="evenodd"
+                  ></path>
+                </svg>
+                <svg
+                  id="moonIcon"
+                  class="w-5 h-5 block dark:hidden"
+                  fill="currentColor"
+                  viewBox="0 0 20 20"
+                >
+                  <path
+                    d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"
+                  ></path>
+                </svg>
+              </button>
+              <!-- Desktop Login -->
+              <a
+                href="./login.html"
+                class="hidden md:inline-block border border-gray-400 hover:bg-white dark:hover:bg-black shimmer-effect text-white dark:text-white px-3 py-2 rounded-full font-medium hover:scale-105 transition-all duration-300 shadow-md"
+              >
+                <i class="fas fa-sign-in-alt mr-2"></i>Login
+              </a>
+
+              <!-- Mobile Menu Toggle -->
+              <button
+                id="mobileMenuToggle"
+                class="md:hidden flex items-center justify-center w-10 h-10 text-gray-500 hover:text-blue-600 hover:bg-blue-50 rounded-full cursor-pointer transition-colors duration-300 dark:text-white dark:hover:bg-gray-700"
+              >
+                <i id="hamburgerIcon" class="fas fa-bars"></i>
+                <i id="closeIcon" class="fas fa-times hidden"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div
+          id="mobileMenu"
+          class="hidden md:hidden bg-white border-t border-gray-200 dark:bg-gray-900 dark:border-gray-700"
+        >
+          <!-- Mobile Login -->
+          <div class="flex justify-start px-6 py-3">
+            <a
+              href="./login.html"
+              class="border border-gray-400 hover:bg-white shimmer-effect text-white dark:text-white px-3 py-2 rounded-full font-medium hover:scale-105 transition-all duration-300 shadow-md"
+            >
+              <i class="fas fa-sign-in-alt mr-1"></i>Login
+            </a>
+          </div>
+
+          <div class="px-6 pb-4 space-y-3">
+            <a
+              href="./course.html"
+              class="flex items-center px-3 py-2 text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded-lg dark:text-gray-300 dark:hover:bg-gray-700 transition-colors duration-300"
+            >
+              <i class="fa-solid fa-pager text-blue-500 mr-2"></i> Course
+            </a>
+            <a
+              href="./AboutUs.html"
+              class="active flex items-center px-3 py-2 text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded-lg dark:text-gray-300 dark:hover:bg-gray-700 transition-colors duration-300"
+            >
+              <i class="fas fa-info-circle text-blue-500 mr-2"></i> About
+            </a>
+            <a
+              href="./contactUs.html"
+              class="flex items-center px-3 py-2 text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded-lg dark:text-gray-300 dark:hover:bg-gray-700 transition-colors duration-300"
+            >
+              <i class="fas fa-phone text-blue-500 mr-2"></i> Contact Us
+            </a>
+            <a
+              href="./myLearning.html"
+              class="flex items-center px-3 py-2 text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded-lg dark:text-gray-300 dark:hover:bg-gray-700 transition-colors duration-300"
+            >
+              <i class="fas fa-book text-blue-500 mr-2"></i>My Learning
+            </a>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+
+
+    <div class="flex sm:flex-cols  mx-auto ">
+        <!-- Sidebar -->
+        <div class="w-80 bg-white shadow-lg min-h-screen animate-slide-in mt-16">
+            <div class="p-6 border-b border-gray-200">
+                <!-- Profile Avatar and Name -->
+                <div class="text-center ">
+                    <div class="relative inline-block mb-4">
+                        <div class="w-24 h-24  rounded-full flex items-center justify-center text-white text-2xl font-bold transition-transform duration-300 hover:scale-110 hover:shadow-lg">
+                         <img src="../imgs/Alina.jpg" alt="" class="w-full h-full object-cover rounded-full">
+                        </div>
+                    </div>
+                    <h2 class="text-xl font-semibold text-gray-800 mb-2">Alina</h2>
+                </div>
+            </div>
+
+            <!-- Navigation Menu -->
+            <nav class="py-4">
+                <ul class="space-y-1">
+                    <li>
+                        <a href="#" class="block px-6 py-3 bg-gray-300 text-gray-800 font-medium border-r-4 border-gray-600 " onclick="showPage('view-profile')">
+                           <i class="fa-solid fa-circle-user"style="color: #40a0d9;"></i>&nbsp;&nbsp;&nbsp; View  profile
+                        </a>
+                    </li>
+                    
+                    
+                    <li>
+                        <a href="#" class="block px-6 py-3 text-gray-600 hover:bg-gray-100 hover:text-gray-800 transition-colors duration-200" onclick="showPage('settings')">
+                            <i class="fa-solid fa-gear" style="color: #40a0d9;"></i>&nbsp;&nbsp;&nbsp;Settings
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="block px-6 py-3 text-gray-600 hover:bg-gray-100 hover:text-gray-800 transition-colors duration-200" onclick="showPage('FAQ')">
+                           <i class="fa-solid fa-circle-question" style="color: #40a0d9;"></i>&nbsp;&nbsp;&nbsp; FAQ
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="block px-6 py-3 over:bg-gray-100 text-red-600 hover:text-red-800 transition-colors duration-200   font-bold" onclick="showPage('log-out')">
+                            <i class="fa-solid fa-right-from-bracket" class="bg-red-600"></i>&nbsp;&nbsp;&nbsp;Log out
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+
+<!-- profile====================================================================================================================== -->
+    <section id="view-profile" class="page-content mt-10   ">
+          <div class="container mx-20 px-4 py-8 ">
+        <!-- Profile Card -->
+        <div class="max-w-4xl mx-auto  bg-white rounded-2xl shadow-xl overflow-hidden">
+            <!-- Header Section -->
+            <div class="bg-gradient-to-r from-blue-600 to-purple-600 px-6 py-8 text-white relative">
+                <div class="flex flex-col md:flex-row items-center space-y-4 md:space-y-0 md:space-x-6 ">
+                    <!-- Profile Picture -->
+                    <div class="relative">
+                        <img src="../imgs/Alina.jpg" 
+                             alt="Profile Picture" 
+                             class="w-32 h-32 rounded-full border-4 border-white shadow-lg object-cover">
+                        <div class="absolute bottom-2 right-2 w-6 h-6 bg-green-400 border-2 border-white rounded-full"></div>
+                    </div>
+                    
+                    <!-- Basic Info -->
+                    <div class="text-center md:text-left flex-1">
+                        <h1 class="text-3xl font-bold mb-2 text-[#40a0d9]">Alina</h1>
+                        <p class="text-gray-700 text-lg mb-2">Student</p>
+                        <p class="text-gray-600 flex items-center justify-center md:justify-start">
+                            I lile learning online courses
+                        </p>
+                    </div>
+                    
+                    <!-- Edit Button -->
+                    <button class="bg-[#40a0d9] hover:bg-blue-700 px-6 py-2 rounded-full transition-colors duration-300 backdrop-blur-sm">
+                        <i class="fas fa-edit mr-2"></i>Edit Profile
+                    </button>
+                </div>
+            </div>
+
+            <!-- Content Section -->
+            <div class="p-6">
+                <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+                    <!-- Personal Information -->
+                    <div class="lg:col-span-2 space-y-6">
+                        <!-- About Section -->
+                        <div class="bg-gray-50 rounded-xl p-6">
+                            <h2 class="text-xl font-semibold text-gray-800 mb-4 flex items-center">
+                                <i class="fas fa-user mr-3 text-[#40a0d9]"></i>About Me
+                            </h2>
+                            <p class="text-gray-600 leading-relaxed">
+                                Passionate software engineer with 8+ years of experience in full-stack development. 
+                                Specialized in React, Node.js, and cloud technologies. Love building scalable applications 
+                                and mentoring junior developers. When not coding, I enjoy hiking and photography.
+                            </p>
+                        </div>
+
+                        <!-- Personal Details -->
+                        <div class="bg-gray-50 rounded-xl p-6">
+                            <h2 class="text-xl font-semibold text-gray-800 mb-4 flex items-center">
+                                <i class="fas fa-info-circle mr-3 text-[#40a0d9]"></i>Personal Information
+                            </h2>
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                <div class="space-y-3">
+                                    <div class="flex items-center">
+                                        <span class="text-gray-500 font-medium w-24">Full Name:</span>
+                                        <span class="text-gray-800">Alina </span>
+                                    </div>
+                                    <div class="flex items-center">
+                                        <span class="text-gray-500 font-medium w-24">Birth Date:</span>
+                                        <span class="text-gray-800">March 15, 1992</span>
+                                    </div>
+                                    <div class="flex items-center">
+                                        <span class="text-gray-500 font-medium w-24">Age:</span>
+                                        <span class="text-gray-800">32 years</span>
+                                    </div>
+                                    <div class="flex items-center">
+                                        <span class="text-gray-500 font-medium w-24">Gender:</span>
+                                        <span class="text-gray-800">Male</span>
+                                    </div>
+                                </div>
+                                <div class="space-y-3">
+                                    <div class="flex items-center">
+                                        <span class="text-gray-500 font-medium w-24">Phone:</span>
+                                        <span class="text-gray-800">+1 (555) 123-4567</span>
+                                    </div>
+                                    <div class="flex items-center">
+                                        <span class="text-gray-500 font-medium w-24">Email:</span>
+                                        <span class="text-gray-800">Alina168@email.com</span>
+                                    </div>
+                                    <div class="flex items-center">
+                                        <span class="text-gray-500 font-medium w-24">Languages:</span>
+                                        <span class="text-gray-800">English, Spanish</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                      
+                    </div>
+
+                    <!-- Sidebar -->
+                    <div class="space-y-6">
+                        <!-- Contact Info -->
+                        <div class="bg-gradient-to-br from-blue-50 to-purple-50 rounded-xl p-6">
+                            <h3 class="text-lg font-semibold text-gray-800 mb-4">Quick Contact</h3>
+                            <div class="space-y-3">
+                                <div class="flex items-center text-gray-600">
+                                    <i class="fas fa-envelope mr-3 text-[#40a0d9]"></i>
+                                    <span class="text-sm">Alina168@email.com</span>
+                                </div>
+                                <div class="flex items-center text-gray-600">
+                                    <i class="fas fa-phone mr-3 text-[#40a0d9]"></i>
+                                    <span class="text-sm">+1 (555) 123-4567</span>
+                                </div>
+                                <div class="flex items-center text-gray-600">
+                                    <i class="fab fa-linkedin mr-3 text-[#40a0d9]"></i>
+                                    <span class="text-sm">linkedin.com/in/alexj</span>
+                                </div>
+                                <div class="flex items-center text-gray-600">
+                                    <i class="fab fa-github mr-3 text-[#40a0d9]"></i>
+                                    <span class="text-sm">github.com/alexjohnson</span>
+                                </div>
+                            </div>
+                        </div>
+
+
+                
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+        </section>
+
+        <!-- Main Content -->
+        <div class="flex-1 p-8 animate-fade-in">
+            
+
+
+<!-- FAQ=====================================================================================================================-->
+      <section id="FAQ"class="page-content hidden  mt-20">
+
+    <!-- Main Content -->
+    <div class="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12  ">
+        <!-- Header -->
+        <div class="text-center mb-12">
+            <h1 class="text-4xl md:text-5xl font-bold text-[#40a0d9] mb-4">
+                Frequently Asked Questions
+            </h1>
+            <p class="text-xl text-gray-700 mb-8">
+                Find answers to the most common questions about our services
+            </p>
+            
+            <!-- Search Bar -->
+            <div class="max-w-2xl mx-auto relative">
+                <input 
+                    type="text" 
+                    id="searchInput"
+                    placeholder="Search for questions..."
+                    class="w-full bg-white/10 backdrop-blur-lg border border-gray-600 rounded-lg px-4 py-3 pl-12 text-gray-600 placeholder-gray-300 focus:outline-none focus:ring-2 focus:ring-[#40a0d9] focus:border-transparent"
+                    oninput="filterFAQs()"
+                >
+                <svg class="absolute left-4 top-1/2 transform -translate-y-1/2 w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
+                </svg>
+            </div>
+        </div>
+
+        <!-- FAQ Categories -->
+        <div class="mb-8">
+            <div class="flex flex-wrap justify-center gap-3">
+                <button onclick="filterByCategory('all')" class="category-btn active px-4 py-2 rounded-full border-2 border-gray-400 bg-blue-500 text-gray-700 hover:text-white font-medium hover:bg-blue-600 transition-colors">
+                    All Questions
+                </button>
+                <button onclick="filterByCategory('account')" class="category-btn px-4 py-2 rounded-full border-2 border-gray-400 bg-blue-500 text-gray-700 hover:text-white font-medium hover:bg-blue-600 transition-colors">
+                    Account
+                </button>
+                <button onclick="filterByCategory('billing')" class="category-btn px-4 py-2 rounded-full border-2 border-gray-400 bg-blue-500 text-gray-700 hover:text-white font-medium hover:bg-blue-600 transition-colors">
+                    Billing
+                </button>
+                <button onclick="filterByCategory('technical')" class="category-btn px-4 py-2 rounded-full border-2 border-gray-400 bg-blue-500 text-gray-700 hover:text-white font-medium hover:bg-blue-600 transition-colors">
+                    Technical
+                </button>
+                <button onclick="filterByCategory('general')" class="category-btn px-4 py-2 rounded-full border-2 border-gray-400 bg-blue-500 text-gray-700 hover:text-white font-medium hover:bg-blue-600  transition-colors">
+                    General
+                </button>
+            </div>
+        </div>
+
+        <!-- FAQ Items -->
+        <div class="space-y-4 " id="faqContainer">
+            <!-- Account Questions -->
+            <div class="faq-item bg-white/10 backdrop-blur-lg rounded-lg border border-white/20 overflow-hidden" data-category="account">
+                <button class="faq-toggle w-full text-left px-6 py-4 focus:outline-none bg-[#40a0d9] hover:bg-blue-600 transition-colors" onclick="toggleFAQ(this)">
+                    <div class="flex justify-between items-center">
+                        <h3 class="text-lg font-semibold text-white">How do I create an account?</h3>
+                        <svg class="faq-icon w-5 h-5 text-white transform transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                        </svg>
+                    </div>
+                </button>
+                <div class="faq-content hidden px-6 pb-4">
+                    <p class="text-[#434343] leading-relaxed">
+                        To create an account, click the "Sign Up" button in the top right corner of our homepage. Fill out the required information including your email address, password, and basic profile details. You'll receive a confirmation email to verify your account.
+                    </p>
+                </div>
+            </div>
+
+            <div class="faq-item bg-white/10 backdrop-blur-lg rounded-lg border border-white/20 overflow-hidden" data-category="account">
+                <button class="faq-toggle w-full text-left px-6 py-4 focus:outline-none bg-[#40a0d9] hover:bg-blue-600 transition-colors" onclick="toggleFAQ(this)">
+                    <div class="flex justify-between items-center">
+                        <h3 class="text-lg font-semibold text-white">How can I reset my password?</h3>
+                        <svg class="faq-icon w-5 h-5 text-white transform transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                        </svg>
+                    </div>
+                </button>
+                <div class="faq-content hidden px-6 pb-4">
+                    <p class="text-[#434343] leading-relaxed">
+                        If you've forgotten your password, go to the login page and click "Forgot Password." Enter your email address and we'll send you a secure link to reset your password. The link will expire in 24 hours for security purposes.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Billing Questions -->
+            <div class="faq-item bg-white/10 backdrop-blur-lg rounded-lg border border-white/20 overflow-hidden" data-category="billing">
+                <button class="faq-toggle w-full text-left px-6 py-4 focus:outline-none bg-[#40a0d9] hover:bg-blue-600 transition-colors" onclick="toggleFAQ(this)">
+                    <div class="flex justify-between items-center">
+                        <h3 class="text-lg font-semibold text-white">What payment methods do you accept?</h3>
+                        <svg class="faq-icon w-5 h-5 text-white transform transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                        </svg>
+                    </div>
+                </button>
+                <div class="faq-content hidden px-6 pb-4">
+                    <p class="text-[#434343] leading-relaxed">
+                        We accept all major credit cards (Visa, MasterCard, American Express), PayPal, Apple Pay, Google Pay, and bank transfers. All payments are processed securely through our encrypted payment system.
+                    </p>
+                </div>
+            </div>
+
+            <div class="faq-item bg-white/10 backdrop-blur-lg rounded-lg border border-white/20 overflow-hidden" data-category="billing">
+                <button class="faq-toggle w-full text-left px-6 py-4 focus:outline-none bg-[#40a0d9] hover:bg-blue-600 transition-colors" onclick="toggleFAQ(this)">
+                    <div class="flex justify-between items-center">
+                        <h3 class="text-lg font-semibold text-white">Can I cancel my subscription at any time?</h3>
+                        <svg class="faq-icon w-5 h-5 text-white transform transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                        </svg>
+                    </div>
+                </button>
+                <div class="faq-content hidden px-6 pb-4">
+                    <p class="text-[#434343] leading-relaxed">
+                        Yes, you can cancel your subscription at any time from your account settings. Your subscription will remain active until the end of your current billing period. You won't be charged for the next billing cycle after cancellation.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Technical Questions -->
+            <div class="faq-item bg-white/10 backdrop-blur-lg rounded-lg border border-white/20 overflow-hidden" data-category="technical">
+                <button class="faq-toggle w-full text-left px-6 py-4 focus:outline-none bg-[#40a0d9] hover:bg-blue-600 transition-colors" onclick="toggleFAQ(this)">
+                    <div class="flex justify-between items-center">
+                        <h3 class="text-lg font-semibold text-white">What browsers are supported?</h3>
+                        <svg class="faq-icon w-5 h-5 text-white transform transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                        </svg>
+                    </div>
+                </button>
+                <div class="faq-content hidden px-6 pb-4">
+                    <p class="text-[#434343] leading-relaxed">
+                        Our platform works best on modern browsers including Chrome (latest 2 versions), Firefox (latest 2 versions), Safari (latest 2 versions), and Edge (latest 2 versions). We also support mobile browsers on iOS Safari and Android Chrome.
+                    </p>
+                </div>
+            </div>
+
+            <div class="faq-item bg-white/10 backdrop-blur-lg rounded-lg border border-white/20 overflow-hidden" data-category="technical">
+                <button class="faq-toggle w-full text-left px-6 py-4 focus:outline-none bg-[#40a0d9] hover:bg-blue-600 transition-colors" onclick="toggleFAQ(this)">
+                    <div class="flex justify-between items-center">
+                        <h3 class="text-lg font-semibold text-white">Is there a mobile app available?</h3>
+                        <svg class="faq-icon w-5 h-5 text-white transform transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                        </svg>
+                    </div>
+                </button>
+                <div class="faq-content hidden px-6 pb-4">
+                    <p class="text-[#434343] leading-relaxed">
+                        Yes! Our mobile app is available for both iOS and Android devices. You can download it from the App Store or Google Play Store. The app includes all the features of our web platform optimized for mobile use.
+                    </p>
+                </div>
+            </div>
+
+            <!-- General Questions -->
+            <div class="faq-item bg-white/10 backdrop-blur-lg rounded-lg border border-white/20 overflow-hidden" data-category="general">
+                <button class="faq-toggle w-full text-left px-6 py-4 focus:outline-none bg-[#40a0d9] hover:bg-blue-600 transition-colors" onclick="toggleFAQ(this)">
+                    <div class="flex justify-between items-center">
+                        <h3 class="text-lg font-semibold text-white">How can I contact customer support?</h3>
+                        <svg class="faq-icon w-5 h-5 text-white transform transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                        </svg>
+                    </div>
+                </button>
+                <div class="faq-content hidden px-6 pb-4">
+                    <p class="text-[#434343] leading-relaxed">
+                        You can reach our customer support team through multiple channels: email us at support@helpdesk.com, use the live chat feature on our website (available 24/7), or call us at 1-800-HELP-DESK during business hours (9 AM - 6 PM EST, Monday through Friday).
+                    </p>
+                </div>
+            </div>
+
+            <div class="faq-item bg-white/10 backdrop-blur-lg rounded-lg border border-white/20 overflow-hidden" data-category="general">
+                <button class="faq-toggle w-full text-left px-6 py-4 focus:outline-none bg-[#40a0d9] hover:bg-blue-600 transition-colors" onclick="toggleFAQ(this)">
+                    <div class="flex justify-between items-center">
+                        <h3 class="text-lg font-semibold text-white">Do you offer free trials?</h3>
+                        <svg class="faq-icon w-5 h-5 text-white transform transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                        </svg>
+                    </div>
+                </button>
+                <div class="faq-content hidden px-6 pb-4">
+                    <p class="text-[#434343] leading-relaxed">
+                        Yes! We offer a 14-day free trial for all new users. No credit card required to start your trial. You'll have access to all premium features during this period. After the trial ends, you can choose to upgrade to a paid plan or continue with our free tier.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- No Results Message -->
+        <div id="noResults" class="hidden text-center py-12">
+            <div class="text-gray-400 mb-4">
+                <svg class="w-16 h-16 mx-auto mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
+                </svg>
+                <h3 class="text-xl font-semibold text-white mb-2">No results found</h3>
+                <p>Try adjusting your search or browse different categories</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Contact Section -->
+    <section class="relative z-10 bg-[#40a0d9] rounded-2xl backdrop-blur-lg border-t border-white/10 py-12 mzx-w-4xl">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-2xl font-bold text-white mb-4">Still have questions?</h2>
+            <p class="text-white mb-6">Can't find the answer you're looking for? We're here to help!</p>
+            <div class="flex flex-col sm:flex-row justify-center gap-4">
+                <button class="bg-[#00b67a] hover:bg-[#0b7c56] text-white font-semibold py-3 px-6 rounded-lg transition-all duration-200 transform hover:scale-105">
+                    Contact Support
+                </button>
+                <!-- <button class="bg-white/10 hover:bg-white/20 text-white font-semibold py-3 px-6 rounded-lg border border-white/20 hover:border-white/30 transition-colors">
+                    Live Chat
+                </button> -->
+            </div>
+        </div>
+    </section>
+  </section>
+<!-- Settings section =====================================================================================================================================-->
+     <section id="settings" class="page-content hidden    justify-center mt-20 items-center flex mx-auto">
+
+        <div class=" justify-center bg-[#40a0d9] w-3/5 rounded-xl">
+          <div>
+            <p class="text-2xl font-bold pl-6 py-4 text-white">Security</p>
+          </div>
+          <aside class="flex justify-between items-center border-b-2 border-[#e9e9e9] p-2 py-6 bg-white ">
+            <span class="ms-3 text-base font-medium text-[#434343]">Two-Step Verification</span>
+            <label class="inline-flex items-center cursor-pointer">
+            <input type="checkbox" value="" class="sr-only peer">
+            <div class="relative w-11 h-6 bg-gray-200 peer-focus:outline-none    rounded-full peer dark:bg-gray-300 peer-checked:after:translate-x-5 rtl:peer-checked:after:-translate-x-full  after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white   after:rounded-full after:h-5 after:w-5 after:transition-all  peer-checked:bg-blue-600 dark:peer-checked:bg-blue-600"></div>
+            </label>
+          </aside>
+
+          <aside class="flex justify-between items-center border-b-2 border-[#e9e9e9] p-2 py-6 bg-white">
+            <span class="ms-3 text-base font-medium text-[#434343]">Local passcode</span>
+            <label class="inline-flex items-center cursor-pointer">
+            <input type="checkbox" value="" class="sr-only peer">
+            <div class="relative w-11 h-6 bg-gray-200 peer-focus:outline-none    rounded-full peer dark:bg-gray-300 peer-checked:after:translate-x-5 rtl:peer-checked:after:-translate-x-full  after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white   after:rounded-full after:h-5 after:w-5 after:transition-all  peer-checked:bg-blue-600 dark:peer-checked:bg-blue-600"></div>
+            </label>
+          </aside>
+
+          <aside class="flex justify-between items-center border-b-2 border-[#e9e9e9] p-2 py-6 bg-white ">
+            <span class="ms-3 text-base font-semibold text-[#434343] ">Profile Private</span>
+            <label class="inline-flex items-center cursor-pointer">
+            <input type="checkbox" value="" class="sr-only peer">
+            <div class="relative w-11 h-6 bg-gray-200 peer-focus:outline-none    rounded-full peer dark:bg-gray-300 peer-checked:after:translate-x-5 rtl:peer-checked:after:-translate-x-full  after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white   after:rounded-full after:h-5 after:w-5 after:transition-all  peer-checked:bg-blue-600 dark:peer-checked:bg-blue-600"></div>
+            </label>
+          </aside>
+
+
+        
+        <!-- Privacy======================================== -->
+  
+          <div>
+            <p class="text-2xl font-bold pl-6 py-4 text-white">Privacy</p>
+          </div>
+
+          <!-- last online =========== -->
+          <aside class="flex justify-between items-center border-b-2 border-[#e9e9e9] p-2 py-4 bg-white ">
+            <p class="ms-3 text-base font-semibold text-[#434343] ">last online</p>
+
+            <button id="dropdownOffsetButton"       data-dropdown-toggle="dropdownlast-online" data-dropdown-offset-distance="10" data-dropdown-offset-skidding="100" data-dropdown-placement="right" class="text-base text-[#434343] font-medium rounded-lg  px-5 py-2 text-center inline-flex items-center  " type="button">Everybody<svg class="w-2.5 h-2.5 ms-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
+          <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 4 4 4-4"/>
+          </svg>
+          </button>
+
+          <!-- Dropdown menu -->
+          <div id="dropdownlast-online" class="z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow-sm w-44 dark:bg-gray-700">
+              <ul class="py-2 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="dropdownDefault">
+                <li>
+                  <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Nobody</a>
+                </li>
+                <li>
+                  <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">My Contacts</a>
+                </li>
+                <li>
+                  <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Everybody</a>
+                </li>
+              </ul>
+          </div>
+          </aside>
+        <!-- date of birth=========== -->
+          <aside class="flex justify-between items-center border-b-2 border-[#e9e9e9] p-2 py-4 bg-white">
+            <p class="ms-3 text-base font-semibold text-[#434343] ">Date of birth</p>
+
+          <button id="dropdownOffsetButton"       data-dropdown-toggle="dropdownDate-of-birth" data-dropdown-offset-distance="10" data-dropdown-offset-skidding="100" data-dropdown-placement="right" class="text-base text-[#434343]      font-medium rounded-lg  px-5 py-2 text-center inline-flex items-center  " type="button">Everybody<svg class="w-2.5 h-2.5 ms-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
+          <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 4 4 4-4"/>
+          </svg>
+          </button>
+
+          <!-- Dropdown menu -->
+          <div id="dropdownDate-of-birth" class="z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow-sm w-44 dark:bg-gray-700">
+              <ul class="py-2 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="dropdownDefault">
+                <li>
+                  <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Nobody</a>
+                </li>
+                <li>
+                  <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">My Contacts</a>
+                </li>
+                <li>
+                  <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Everybody</a>
+                </li>
+              </ul>
+          </div>
+          </aside>
+          <!-- language=========== -->
+          <aside class="flex justify-between items-center border-b-2 border-[#e9e9e9] p-2 py-4 bg-white ">
+            <p class="ms-3 text-base font-semibold text-[#434343] ">Language</p>
+            
+          <button id="dropdownOffsetButton"       data-dropdown-toggle="dropdownlanguage" data-dropdown-offset-distance="10" data-dropdown-offset-skidding="100" data-dropdown-placement="right" class="text-base text-[#434343]      font-medium rounded-lg  px-5 py-2 text-center inline-flex items-center  " type="button">English<svg class="w-2.5 h-2.5 ms-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
+          <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 4 4 4-4"/>
+          </svg>
+          </button>
+
+          <!-- Dropdown menu -->
+          <div id="dropdownlanguage" class="z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow-sm w-44 dark:bg-gray-700">
+              <ul class="py-2 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="dropdownDefault">
+                <li>
+                  <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">English</a>
+                </li>
+                <li>
+                  <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Khmer</a>
+                </li>
+                <li>
+                  <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Chinese</a>
+                </li>
+                <li>
+                  <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Japanese</a>
+                </li>
+              </ul>
+          </div>
+          </aside>
+
+
+
+        </div>
+     </section>
+
+
+<!--Sign out ====================================================================================================================================================-->
+     <section id="log-out" class="page-content hidden items-center justify-center flex">
+      <div id="signupPage" class="page min-h-screen items-center justify-center p-4 w-3/4 mt-20">
+        <div class="flex max-w-6xl mx-auto bg-white rounded-3xl shadow-2xl overflow-hidden">
+            <!-- Main logout card -->
+    <div class="relative z-10  max-w-md w-1/2">
+        <div class="backdrop-blur-lg rounded-2xl  border border-white/20 p-8 ">
+            <!-- Header -->
+            <div class="text-center mb-8">
+                <!-- Logout icon -->
+                <div class="mx-auto w-16 h-16 bg-[#cbe0ed] rounded-full flex items-center justify-center mb-4">
+                    <svg class="w-8 h-8 text-[#40A0D9]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1"/>
+                    </svg>
+                </div>
+                
+                <h1 class="text-2xl font-bold text-[#40A0D9] mb-2">Sign Out</h1>
+                <p class="text-gray-700">Are you sure you want to log out of your account?</p>
+            </div>
+
+            <!-- User info (optional) -->
+            <div class=" rounded-lg p-4 mb-6 border border-[#40A0D9]">
+                <div class="flex items-center space-x-3">
+                    <div class="w-10 h-10 bg-gradient-to-br from-purple-400 to-blue-500 rounded-full flex items-center justify-center">
+                      <img src="../imgs/Alina.jpg" alt="profile" class="w-full h-full rounded-full object-cover">
+                    </div>
+                    <div>
+                        <p class="text-gray-600 font-medium">Alina</p>
+                        <p class="text-gray-400 text-sm">Alina168@gmail.com</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Action buttons -->
+            <div class="space-y-3">
+                <button onclick="handleLogout()" class="w-full bg-red-600 bg-gradient-to-r from-red-500 to-red-600 hover:from-red-600 hover:to-red-700 text-white font-semibold py-3 px-4 rounded-lg transition-all duration-200 transform hover:scale-105 hover:shadow-lg">
+                    Yes, Sign Me Out
+                </button>
+                
+                <button onclick="handleCancel()" class="w-full bg-white/10 hover:bg-white/20 text-gray-700 font-semibold py-3 px-4 rounded-lg border border-gray-200 hover:border-white/30 transition-all duration-200">
+                    Cancel
+                </button>
+            </div>
+
+            <!-- Additional options -->
+            <div class=" pt-4 border-t border-white/10">
+                <div class="flex items-center justify-between text-sm">
+                    <label class="flex items-center text-[#40A0D9] cursor-pointer">
+                        <input type="checkbox" class="mr-2 rounded border-gray-600 border-2  focus:ring-purple-400">
+                        Remember my choice
+                    </label>
+                    <a href="#" onclick="handleForgotPassword()" class="text-[#40A0D9] hover:text-blue-600 transition-colors">
+                        Forgot password?
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <div class="text-center   my-2">
+            <p class="text-gray-400 text-sm">
+                Need help? <a href="#" class="text-[#40A0D9] hover:text-blue-600 transition-colors">Contact Support</a>
+            </p>
+        </div>
+      </div>
+
+    <!-- Loading overlay (hidden by default) -->
+    <div id="loadingOverlay" class="fixed inset-0 bg-black/50 backdrop-blur-sm hidden items-center justify-center z-50">
+        <div class="bg-white/10 backdrop-blur-lg rounded-2xl p-8 text-center">
+            <div class="animate-spin rounded-full h-12 w-12 border-b-2 border-white mx-auto mb-4"></div>
+            <p class="text-white">Signing you out...</p>
+        </div>
+    </div>
+
+            <!-- Right Side - Illustration -->
+            <div class="hidden md:flex md:w-1/2 illustration p-12 items-center justify-center relative">
+                <div class="absolute inset-0 bg-gradient-to-br from-cyan-400 to-blue-500 bg-[#40A0D9]"></div>
+                <div class="relative z-10 text-center">
+                    <!-- Education Icons -->
+                    <div class="flex justify-center space-x-4 mb-8">
+                        <div class="w-12 h-12 bg-white rounded-full flex items-center justify-center shadow-lg">
+                            <svg class="w-6 h-6 text-gray-700" fill="currentColor" viewBox="0 0 20 20">
+                                <path d="M10.394 2.08a1 1 0 00-.788 0l-7 3a1 1 0 000 1.84L5.25 8.051a.999.999 0 01.356-.257l4-1.714a1 1 0 11.788 1.838L7.667 9.088l1.94.831a1 1 0 00.787 0l7-3a1 1 0 000-1.838l-7-3zM3.31 9.397L5 10.12v4.102a8.969 8.969 0 00-1.05-.174 1 1 0 01-.89-.89 11.115 11.115 0 01.25-3.762zM9.3 16.573A9.026 9.026 0 007 14.935v-3.957l1.818.78a3 3 0 002.364 0l5.508-2.361a11.026 11.026 0 01.25 3.762 1 1 0 01-.89.89 8.968 8.968 0 00-5.35 2.524 1 1 0 01-1.4 0zM6 18a1 1 0 001-1v-2.065a8.935 8.935 0 00-2-.712V17a1 1 0 001 1z"/>
+                            </svg>
+                        </div>
+                        <div class="w-12 h-12 bg-white rounded-full flex items-center justify-center shadow-lg">
+                            <svg class="w-6 h-6 text-gray-700" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M12.316 3.051a1 1 0 01.633 1.265l-4 12a1 1 0 11-1.898-.632l4-12a1 1 0 011.265-.633zM5.707 6.293a1 1 0 010 1.414L3.414 10l2.293 2.293a1 1 0 11-1.414 1.414l-3-3a1 1 0 010-1.414l3-3a1 1 0 011.414 0zm8.586 0a1 1 0 011.414 0l3 3a1 1 0 010 1.414l-3 3a1 1 0 11-1.414-1.414L16.586 10l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd"/>
+                            </svg>
+                        </div>
+                        <div class="w-12 h-12 bg-white rounded-full flex items-center justify-center shadow-lg">
+                            <svg class="w-6 h-6 text-gray-700" fill="currentColor" viewBox="0 0 20 20">
+                                <path d="M3 4a1 1 0 011-1h12a1 1 0 011 1v2a1 1 0 01-1 1H4a1 1 0 01-1-1V4zM3 10a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H4a1 1 0 01-1-1v-6zM14 9a1 1 0 00-1 1v6a1 1 0 001 1h2a1 1 0 001-1v-6a1 1 0 00-1-1h-2z"/>
+                            </svg>
+                        </div>
+                        <div class="w-12 h-12 bg-white rounded-full flex items-center justify-center shadow-lg">
+                            <svg class="w-6 h-6 text-gray-700" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M3 17a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM6.293 6.707a1 1 0 010-1.414l3-3a1 1 0 011.414 0l3 3a1 1 0 01-1.414 1.414L11 5.414V13a1 1 0 11-2 0V5.414L7.707 6.707a1 1 0 01-1.414 0z" clip-rule="evenodd"/>
+                            </svg>
+                        </div>
+                    </div>
+                    <!-- Laptop Illustration -->
+                    <div class="relative mx-auto w-64 h-40">
+                        <div class="bg-gray-800 rounded-t-lg p-2 h-32">
+                            <div class="bg-white rounded h-full relative overflow-hidden">
+                                <div class="absolute top-2 left-2 w-2 h-2 bg-red-400 rounded-full"></div>
+                                <div class="absolute top-2 left-6 w-2 h-2 bg-yellow-400 rounded-full"></div>
+                                <div class="absolute top-2 left-10 w-2 h-2 bg-green-400 rounded-full"></div>
+                                <div class="mt-8 px-4">
+                                    <div class="h-1 bg-gray-200 rounded mb-2"></div>
+                                    <div class="h-1 bg-gray-200 rounded mb-2"></div>
+                                    <div class="h-1 bg-blue-400 rounded w-3/4"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="bg-gray-700 h-2 rounded-b-lg"></div>
+                        <div class="bg-gray-600 h-4 w-20 mx-auto rounded-b-lg"></div>
+                        <!-- Cursor -->
+                        <div class="absolute top-16 right-20 transform rotate-12">
+                            <svg class="w-4 h-4 text-gray-700" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M6.672 1.911a1 1 0 10-1.932.518l.259.966a1 1 0 001.932-.518l-.26-.966zM2.429 4.74a1 1 0 10-.517 1.932l.966.259a1 1 0 00.517-1.932l-.966-.26zm8.814-.569a1 1 0 00-1.415-1.414l-.707.707a1 1 0 101.415 1.415l.707-.708zm-7.071 7.072l.707-.707A1 1 0 003.465 9.12l-.708.707a1 1 0 001.415 1.415zm3.2-5.171a1 1 0 00-1.3 1.3l4 10a1 1 0 001.823.075l1.38-2.759 3.018 3.02a1 1 0 001.414-1.415l-3.019-3.02 2.76-1.379a1 1 0 00-.076-1.822l-10-4z" clip-rule="evenodd"/>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+     </section>
+
+    </div>
+    </div>
+
+
+
+
+
+    <!-- footer=============================================================================================================== -->
+      <!-- Footer -->
+<footer class="bg-gray-800 text-white py-8">
+      <div
+        class="container mx-auto px-4 sm:px-6 flex justify-center items-center text-center"
+      >
+        <div
+          class="grid grid-cols-1 md:grid-cols-4 gap-8 text-center md:text-left items-center md:items-start"
+        >
+          <!-- Organized by Section -->
+          <div class="space-y-4">
+            <h3 class="text-lg font-semibold text-gray-300 mb-4">
+              Organized by
+            </h3>
+            <div>
+              <img
+                src="../imgs/lastLogoISTAD.png"
+                alt="Logo"
+                class="w-[200px] mx-auto md:mx-0"
+              />
+              <div class="text-sm mt-8">
+                <div class="font-medium">
+                  Institute of Science and Technology
+                </div>
+                <div>Advanced Development</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Quick Links Section -->
+          <div>
+            <h3 class="text-lg font-semibold text-gray-300 mb-4">
+              Quick Links
+            </h3>
+            <ul class="space-y-2">
+              <li>
+                <a
+                  href="#"
+                  class="text-gray-400 hover:text-white transition-colors"
+                  >Home</a
+                >
+              </li>
+              <li>
+                <a
+                  href="./pages/course.html"
+                  class="text-gray-400 hover:text-white transition-colors"
+                  >Course</a
+                >
+              </li>
+              <li>
+                <a
+                  href="./pages/AboutUs.html"
+                  class="text-gray-400 hover:text-white transition-colors"
+                  >About</a
+                >
+              </li>
+              <li>
+                <a
+                  href="./pages/contactUs.html"
+                  class="text-gray-400 hover:text-white transition-colors"
+                  >Contact Us</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="text-gray-400 hover:text-white transition-colors"
+                  >Privacy Policy</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <!-- Course Categories Section -->
+          <div>
+            <h3 class="text-lg font-semibold text-gray-300 mb-4">
+              Course Categories
+            </h3>
+            <ul class="space-y-2">
+              <li>
+                <a
+                  href="#"
+                  class="text-gray-400 hover:text-white transition-colors"
+                  >Web Development</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="text-gray-400 hover:text-white transition-colors"
+                  >Data Science</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="text-gray-400 hover:text-white transition-colors"
+                  >Mobile Development</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="text-gray-400 hover:text-white transition-colors"
+                  >Business</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="text-gray-400 hover:text-white transition-colors"
+                  >Marketing</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <!-- SkillStack Section -->
+          <div class="top-0">
+            <div class="flex items-center space-x-2 mb-4">
+              <img
+                src="../imgs/SkillstactLogo.png"
+                alt="Logo"
+                class="w-[100px] mx-0"
+              />
+              <h3 class="text-[28px] font-semibold text-[--background-color]">
+                𝙎𝙆𝙄𝙇𝙇𝙎𝙏𝘼𝘾𝙆
+              </h3>
+            </div>
+            <p class="text-gray-400 text-sm mb-4 leading-relaxed">
+              Empowering learners worldwide with quality education and skills
+              for the future.
+            </p>
+            <div class="flex space-x-3 md:justify-start justify-center">
+              <!-- Facebook -->
+              <a
+                href="https://web.facebook.com/?_rdc=1&_rdr"
+                class="w-8 h-8 bg-blue-600 text-white rounded-full flex items-center justify-center hover:bg-blue-700 transition"
+                aria-label="Facebook"
+              >
+                <i class="fa-brands fa-facebook-f text-sm"></i>
+              </a>
+
+              <!-- Telegram -->
+              <a
+                href="https://web.telegram.org/a/"
+                class="w-8 h-8 bg-blue-500 text-white rounded-full flex items-center justify-center hover:bg-blue-600 transition"
+                aria-label="Telegram"
+              >
+                <i class="fa-brands fa-telegram text-sm"></i>
+              </a>
+
+              <!-- Instagram -->
+              <a
+                href="https://www.instagram.com/accounts/login/"
+                class="w-8 h-8 bg-gradient-to-tr from-purple-500 to-pink-500 text-white rounded-full flex items-center justify-center hover:from-purple-600 hover:to-pink-600 transition"
+                aria-label="Instagram"
+              >
+                <i class="fa-brands fa-instagram text-sm"></i>
+              </a>
+
+              <!-- Gmail -->
+              <a
+                href="example@email.com"
+                class="w-8 h-8 bg-red-500 text-white rounded-full flex items-center justify-center hover:bg-red-600 transition"
+                aria-label="Email"
+              >
+                <i class="fa-solid fa-envelope text-sm"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+  
+<script src="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.js"></script>
+</body>
+ <script src="../script/profilepage.js"></script>
+</html>
