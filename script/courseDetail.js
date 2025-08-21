@@ -88,351 +88,428 @@ document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
   });
 });
 
-// Add scroll effect to navbar
-//   window.addEventListener("scroll", function () {
-//     const nav = document.querySelector("nav");
-//     if (window.scrollY > 50) {
-//       nav.classList.add("shadow-lg");
-//     } else {
-//       nav.classList.remove("shadow-lg");
-//     }
-//   });
 
-// Testimonial carousel functionality
-let currentTestimonial = 0;
-const testimonials = document.querySelectorAll(".testimonial-slide");
-const dots = document.querySelectorAll(".pagination-dot");
+// ==================== get course slug for hero section course details=====================================
+// Get course slug from URL
+const params = new URLSearchParams(window.location.search);
+const courseSlug = params.get("slug");
 
-function showTestimonial(index) {
-  testimonials.forEach((testimonial, i) => {
-    testimonial.style.display = i === index ? "block" : "none";
-  });
+const baseUrl = "https://course-api.istad.co/api/v1";
 
-  dots.forEach((dot, i) => {
-    if (i === index) {
-      dot.classList.remove("bg-gray-300");
-      dot.classList.add("bg-blue-600");
-    } else {
-      dot.classList.remove("bg-blue-600");
-      dot.classList.add("bg-gray-300");
-    }
-  });
+// ====================== 1. Fetch Hero Section ======================
+async function fetchHeroSection() {
+  try {
+    const res = await fetch(`${baseUrl}/courses/slug/${courseSlug}?part=CONTENT_DETAILS`);
+    const data = await res.json();
+    const course = data.data || data;
+
+    const heroHTML = `
+  <section class="bg-[#40a0d9] text-white py-12 md:py-16 lg:py-20 mt-7"> 
+  <div class="container  mx-auto px-9 p-8 mt-12 bg-white dark:bg-gray-900 rounded-3xl">
+   <div class="flex flex-col lg:flex-row items-center justify-between">
+    <!-- Course Info --> <div class="lg:w-2/3 mb-8 lg:mb-0">
+     <h1 class="text-4xl lg:text-5xl font-bold mb-4 p-2 text-gray-900 dark:text-white"> ${course.title || "Course Title"} </h1>
+      <p class="text-md mb-6 p-2 opacity-90 text-gray-800 dark:text-gray-300">
+       ${course.description || "Course Description"} 
+       </p>
+        <div class="flex flex-col lg:flex-row items-center space-x-0 lg:space-x-4 space-y-4 lg:space-y-0 mb-6">
+         <div class="px-9 flex justify-center items-center text-xl bg-yellow-600 hover:bg-amber-500 rounded-lg p-2 text-white dark:text-">
+          ${course.categoryName || "Category"}
+         </div> </div> <div class="flex items-center space-x-6 text-lg p-2"> <div class="flex items-center"> <i class="fas fa-play-circle mr-2"></i>
+          <span class="text-gray-700 dark:text-white">130Lesson</span> </div> </div> </div> <!-- Pricing Card --> 
+          <div class="max-w-sm mx-auto rounded-xl shadow-md overflow-hidden border-gray-200 p-4 dark:bg-gray-800 text-gray-900 dark:text-gray-100 transition-colors duration-300 dark:border-0">
+           <div class="flex justify-center mb-4"> <div class="relative w-full flex justify-center items-center"> <img src="${course.thumbnail}" class="w-full rounded-xl"/> 
+           <div class="absolute inset-0 flex items-center justify-center"> <i class="fas fa-play-circle text-white text-6xl drop-shadow-lg hover:text-gray-200"></i> </div> </div> </div> 
+           <div class="p-5 mt-3 flex items-center justify-center"> 
+           <button onclick="openPaymentModal('Premium Plan', '$${course.discount || course.price || "0"}')" class="px-9 bg-blue-400 p-3 border-gray-600 text-white dark:text-gray-300 font-semibold py-2 rounded-md hover:bg-[#40a0d9] dark:hover:bg-gray-900 transition duration-300">
+            Enroll Now </button>&nbsp;&nbsp; <span class="text-gray-700 text-2xl dark:text-white">$${course.discount || "0"}</span>&nbsp; <span class="text-gray-400 line-through text-md">$${course.price || "0"}</span> </div> </div> </div> </div> </section>
+    `;
+    document.getElementById("HeroCourseDetails").innerHTML = heroHTML;
+
+  } catch (err) {
+    console.error("Error fetching hero section:", err);
+  }
 }
 
-// Auto-rotate testimonials every 5 seconds
-setInterval(() => {
-  currentTestimonial = (currentTestimonial + 1) % testimonials.length;
-  showTestimonial(currentTestimonial);
-}, 5000);
+// ====================== 2. Fetch Video / Curriculum Section ======================
+async function fetchVideoSection() {
+  try {
+    const res = await fetch(`${baseUrl}/courses/slug/${courseSlug}?part=CONTENT_DETAILS`);
+    const data = await res.json();
+    const course = data.data || data;
 
-// Add click handlers for pagination dots
-dots.forEach((dot, index) => {
-  dot.addEventListener("click", () => {
-    currentTestimonial = index;
-    showTestimonial(currentTestimonial);
-  });
-});
-
-// Add animation on scroll
-const observerOptions = {
-  threshold: 0.1,
-  rootMargin: "0px 0px -50px 0px",
-};
-
-const observer = new IntersectionObserver((entries) => {
-  entries.forEach((entry) => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add("animate-fade-in");
+    let videoHTML = "";
+    if (course.sections && course.sections.length > 0) {
+      videoHTML = course.sections.map((section, idx) => `
+        <div class="border rounded-md mb-3">
+          <button onclick="toggleDropdown(${idx})"
+            class="w-full flex justify-between items-center p-3 text-left font-semibold text-gray-900 hover:bg-gray-50">
+            <span>${section.title}</span>
+            <i class="fas fa-chevron-down"></i>
+          </button>
+          <div id="dropdown-${idx}" class="hidden px-4 py-2 space-y-4">
+            ${section.videos && section.videos.length > 0
+          ? section.videos.map(video => `
+                <div class="p-3 rounded-md bg-gray-50">
+                  <div class="flex items-center space-x-3 mb-2">
+                    <i class="fas fa-play-circle text-blue-500"></i>
+                    <span class="font-medium">${video.title}</span>
+                  </div>
+                  ${video.fileName
+              ? `<a href="${video.fileName}" class="text-blue-600 hover:underline">${video.title}</a>`
+              : `<button class="watch-video-btn text-blue-600 hover:underline" data-video="${encodeURIComponent(video.videoFrame || '')}">
+    Watch Video
+ </button>`}
+                </div>
+              `).join("")
+          : `<p class="text-gray-400">No videos available</p>`}
+          </div>
+        </div>
+      `).join("");
+    } else {
+      videoHTML = `<p class="text-gray-400">No sections available</p>`;
     }
-  });
-}, observerOptions);
 
-// Observe elements for animation
-document.querySelectorAll(".group, .bg-white").forEach((el) => {
-  observer.observe(el);
+    document.getElementById("videoContainer").innerHTML = videoHTML;
+
+  } catch (err) {
+    console.error("Error fetching video section:", err);
+  }
+}
+
+// ====================== 3. Fetch Related Courses ======================
+async function fetchRelatedCourses() {
+  try {
+    const res = await fetch(`${baseUrl}/courses?page=0&size=4`);
+    const data = await res.json();
+
+    const relatedHTML = data.content.map(pro => `
+      <div class="w-full bg-white rounded-[12px] shadow-md p-4 flex flex-col space-y-4 dark:bg-gray-700 dark:text-white transition-colors duration-300" onClick="location.href='./courseDetail.html?slug=${pro.slug}'"> <div class="flex justify-center mb-4"> <img src="${pro.thumbnail}" alt="${pro.title}" class="rounded-xl w-full max-w-xs object-contain" /> </div> <h2 class="text-lg font-bold text-gray-900 mb-2 line-clamp-2 dark:text-white">${pro.title}</h2> <p class="text-gray-600 text-md mb-4 line-clamp-2 dark:text-gray-300">${pro.description}</p> <div class="flex items-center text-sm text-gray-500 mb-4 space-x-4"> <span class="bg-yellow-600 text-yellow-100 rounded-xl px-2 py-1 text-sm font-semibold shadow-[0_0_8px_rgba(255,223,93,0.7)]"> ${pro.categoryName} </span> </div> <div class="flex items-center justify-between"> <div class="flex items-center space-x-2"> <img src="../imgs/ISTAD.png" alt="ISTAD" class="w-8 h-8 rounded-full"/> <span class="text-gray-700 dark:text-white font-medium">ISTAD</span> <div class="flex items-center text-gray-500"> <span class="text-gray-700 text-2xl p-1 font-bold dark:text-white">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$${pro.discount}</span> <span class="text-gray-500 text-md line-through dark:text-gray-300">$${pro.price}</span> </div> </div> </div> </div>
+    `).join("");
+
+    document.getElementById("relatedCourses").innerHTML = relatedHTML;
+
+  } catch (err) {
+    console.error("Error fetching related courses:", err);
+  }
+}
+
+// ====================== Helpers ======================
+// Fixed JavaScript functions
+function toggleDropdown(idx) {
+    const el = document.getElementById(`dropdown-${idx}`); // Fixed template literal
+    el.classList.toggle("hidden");
+    
+    // Also toggle the chevron icon
+    const button = el.previousElementSibling;
+    const icon = button.querySelector('i');
+    icon.classList.toggle('fa-chevron-down');
+    icon.classList.toggle('fa-chevron-up');
+}
+
+// safer open/close
+function openVideoModal(videoUrl) {
+  try {
+    if (!videoUrl) {
+      console.error("openVideoModal: no videoUrl provided");
+      return;
+    }
+
+    const modal = document.getElementById("videoModal");
+    const iframe = document.getElementById("videoFrame");
+    if (!modal || !iframe) {
+      console.error("openVideoModal: modal or iframe not found (check IDs)");
+      return;
+    }
+
+    let src = videoUrl;
+
+    // Try to extract YouTube ID (watch?v= / youtu.be / embed)
+    const ytMatch = videoUrl.match(/(?:youtube\.com\/watch\?v=|youtu\.be\/|youtube\.com\/embed\/)([A-Za-z0-9_-]{11})/);
+    if (ytMatch) {
+      src = `https://www.youtube.com/embed/${ytMatch[1]}?autoplay=1`;
+    } else if (videoUrl.includes("youtube.com") && !videoUrl.includes("embed")) {
+      // fallback to add autoplay if not embed
+      src = videoUrl + (videoUrl.includes("?") ? "&" : "?") + "autoplay=1";
+    }
+
+    iframe.src = src;
+    modal.classList.remove("hidden");
+    document.body.classList.add("overflow-hidden"); // optional: prevent background scroll
+  } catch (err) {
+    console.error("openVideoModal error:", err);
+  }
+}
+
+function closeVideoModal() {
+  const modal = document.getElementById("videoModal");
+  const iframe = document.getElementById("videoFrame");
+  if (iframe) iframe.src = "";
+  if (modal) modal.classList.add("hidden");
+  document.body.classList.remove("overflow-hidden");
+}
+
+// close when clicking outside modal content
+window.addEventListener("click", (e) => {
+  const modal = document.getElementById("videoModal");
+  if (modal && e.target === modal) {
+    closeVideoModal();
+  }
 });
 
-// Add CSS animation classes
-const style = document.createElement("style");
-style.textContent = `
-            @keyframes fadeIn {
-                from {
-                    opacity: 0;
-                    transform: translateY(20px);
-                }
-                to {
-                    opacity: 1;
-                    transform: translateY(0);
-                }
-            }
-            
-            .animate-fade-in {
-                animation: fadeIn 0.6s ease-out forwards;
-            }
-            
-            .group:hover .group-hover\\:scale-105 {
-                transform: scale(1.05);
-            }
-            
-            .transition-all {
-                transition: all 0.3s ease;
-            }
-        `;
-document.head.appendChild(style);
+// ====================== Run All ======================
+if (courseSlug) {
+  fetchHeroSection();
+  fetchVideoSection();
+  fetchRelatedCourses();
+} else {
+  console.error("No course slug in URL");
+}
 
-// Form validation and submission
-function handleFormSubmission(event) {
+
+// =======================open video modal==========================================
+
+// =====================dropdown video===============================
+function toggleDropdown(id) {
+  const dropdown = document.getElementById(`dropdown-${id}`);
+  const arrow = document.getElementById(`arrow-${id}`);
+
+  dropdown.classList.toggle("hidden");
+  arrow.classList.toggle("rotate-180");
+}
+
+function expandAll(event) {
   event.preventDefault();
 
-  // Simple form validation
-  const email = event.target.querySelector('input[type="email"]');
-  if (email && !email.value.includes("@")) {
-    alert("Please enter a valid email address");
-    return;
-  }
+  // Get all dropdowns and arrows
+  const dropdowns = document.querySelectorAll('[id^="dropdown-"]');
+  const arrows = document.querySelectorAll('[id^="arrow-"]');
 
-  // Simulate form submission
-  alert("Thank you for your interest! We'll get back to you soon.");
+  dropdowns.forEach(dropdown => dropdown.classList.remove("hidden"));
+  arrows.forEach(arrow => arrow.classList.add("rotate-180"));
 }
 
-// Add event listeners to forms
-document.querySelectorAll("form").forEach((form) => {
-  form.addEventListener("submit", handleFormSubmission);
-});
-// ========================= animetion hero section========================================
-// Initialize animations when page loads
-document.addEventListener("DOMContentLoaded", function () {
-  // Typewriter effect for heading
-  const lines = ["line1", "line2", "line3", "line4"];
-  let currentLine = 0;
 
-  function showNextLine() {
-    if (currentLine < lines.length) {
-      const element = document.getElementById(lines[currentLine]);
-      element.style.display = "block";
 
-      // Remove cursor from previous line
-      if (currentLine > 0) {
-        const prevElement = document.getElementById(lines[currentLine - 1]);
-        prevElement.classList.add("no-cursor");
+
+
+//   ================================== Payment Section ===============================================
+    let selectedPlan = "";
+    let selectedPrice = "";
+
+    function openPaymentModal(planName, price) {
+      selectedPlan = planName;
+      selectedPrice = price;
+      document.getElementById(
+        "selectedPlan"
+      ).textContent = `${planName} - ${price}`;
+
+      const overlay = document.getElementById("modalOverlay");
+      const modal = document.getElementById("paymentModal");
+
+      // Show overlay
+      overlay.classList.remove("opacity-0", "invisible");
+      overlay.classList.add("opacity-100", "visible");
+
+      // Show modal with animation
+      setTimeout(() => {
+        modal.classList.remove("scale-95", "opacity-0");
+        modal.classList.add("scale-100", "opacity-100");
+      }, 50);
+
+      // Prevent background scrolling
+      document.body.style.overflow = "hidden";
+    }
+
+    function closeModal(event) {
+      if (
+        event &&
+        event.target !== event.currentTarget &&
+        !event.target.closest("button")
+      ) {
+        return;
       }
 
-      currentLine++;
+      const overlay = document.getElementById("modalOverlay");
+      const modal = document.getElementById("paymentModal");
 
-      // Schedule next line
-      if (currentLine < lines.length) {
-        setTimeout(showNextLine, 1800); // Wait for typewriter + small delay
-      } else {
-        // Remove cursor from last line
-        element.classList.add("no-cursor");
-        // Start other animations after typewriter is complete
-        startOtherAnimations();
+      // Hide modal with animation
+      modal.classList.remove("scale-100", "opacity-100");
+      modal.classList.add("scale-95", "opacity-0");
+
+      // Hide overlay after animation
+      setTimeout(() => {
+        overlay.classList.remove("opacity-100", "visible");
+        overlay.classList.add("opacity-0", "invisible");
+      }, 200);
+
+      // Restore scrolling
+      document.body.style.overflow = "auto";
+
+      // Reset form
+      document.getElementById("paymentForm").reset();
+    }
+
+    function processPayment(event) {
+      event.preventDefault();
+
+      const submitBtn = document.getElementById("submitBtn");
+      const submitText = document.getElementById("submitText");
+      const loadingSpinner = document.getElementById("loadingSpinner");
+
+      // Show loading state
+      submitBtn.disabled = true;
+      submitText.classList.add("hidden");
+      loadingSpinner.classList.remove("hidden");
+
+      // Simulate payment processing
+      setTimeout(() => {
+        // Success state
+        submitBtn.classList.remove("from-purple-600", "to-blue-600");
+        submitBtn.classList.add("from-green-500", "to-green-600");
+        loadingSpinner.classList.add("hidden");
+        submitText.textContent = "Payment Successful!";
+        submitText.classList.remove("hidden");
+
+        setTimeout(() => {
+          alert(
+            `Payment successful for ${selectedPlan}! Thank you for your purchase.`
+          );
+          closeModal();
+
+          // Reset button state
+          submitBtn.disabled = false;
+          submitBtn.classList.remove("from-green-500", "to-green-600");
+          submitBtn.classList.add("from-purple-600", "to-blue-600");
+          submitText.textContent = "Complete Payment";
+        }, 1500);
+      }, 2000);
+    }
+
+    // Format card number input
+    document
+      .getElementById("cardNumber")
+      .addEventListener("input", function (e) {
+        let value = e.target.value.replace(/\s/g, "").replace(/[^0-9]/gi, "");
+        let formattedValue = value.match(/.{1,4}/g)?.join(" ") || value;
+        e.target.value = formattedValue;
+      });
+
+    // Format expiry date input
+    document.getElementById("expiry").addEventListener("input", function (e) {
+      let value = e.target.value.replace(/\D/g, "");
+      if (value.length >= 2) {
+        value = value.substring(0, 2) + "/" + value.substring(2, 4);
       }
-    }
-  }
-
-  function startOtherAnimations() {
-    // Animate subtitle and buttons
-    const subtitle = document.querySelector(".subtitle");
-    const buttons = document.querySelector(".buttons");
-
-    setTimeout(() => {
-      subtitle.classList.add("animate-fade-in-up");
-    }, 200);
-
-    setTimeout(() => {
-      buttons.classList.add("animate-fade-in-up");
-    }, 400);
-  }
-
-  // Start typewriter effect
-  setTimeout(showNextLine, 500);
-
-  // Animate image
-  const imageContainer = document.querySelector(".image-container");
-  setTimeout(() => {
-    imageContainer.classList.add("animate-fade-in-right");
-  }, 1000);
-
-  // Add floating particles animation
-  const particles = document.querySelectorAll(".particle");
-  particles.forEach((particle, index) => {
-    particle.style.animation = `float ${3 + index}s ease-in-out infinite`;
-    particle.style.animationDelay = `${index * 0.5}s`;
-  });
-});
-
-// Add mouse movement parallax effect
-document.addEventListener("mousemove", function (e) {
-  const mouseX = e.clientX / window.innerWidth;
-  const mouseY = e.clientY / window.innerHeight;
-
-  const particles = document.querySelectorAll(".particle");
-  particles.forEach((particle, index) => {
-    const speed = (index + 1) * 0.5;
-    particle.style.transform = `translate(${mouseX * speed}px, ${
-      mouseY * speed
-    }px)`;
-  });
-});
-
-
-// ==================== Fetch API for Hero Section=====================================
-const params = new URLSearchParams(window.location.search);
-const courseId = params.get("id");
-
-async function fetchCourseDetailsPages() {
-  try {
-    const res = await fetch(`https://course-api.istad.co/api/v1/courses/${courseId}`);
-    const data = await res.json();
-
-    // Check if data exists and has the expected structure
-    if (!data) {
-      throw new Error("No data received from API");
-    }
-
-    // Handle single course object (not an array)
-    // Based on the API endpoint pattern, this likely returns a single course object
-    const course = data.content || data; // Fallback in case the structure is different
-    
-    // Create display for single course
-    const CourseDetails = `
-      <!-- Hero Section -->
-      <section class="bg-[#40a0d9] text-white py-12 md:py-16 lg:py-20 mt-7">
-        <div class="container mx-auto px-9 p-5 mt-12 bg-gray-200 dark:bg-gray-900 rounded-3xl">
-          <div class="flex flex-col lg:flex-row items-center justify-between">
-            <!-- Course Info -->
-            <div class="lg:w-2/3 mb-8 lg:mb-0">
-              <h1 class="text-4xl lg:text-5xl font-bold mb-4 p-2 text-gray-900 dark:text-white">
-                ${course.title || 'Course Title'}
-              </h1>
-              <p class="text-md mb-6 p-2 opacity-90 text-gray-800 dark:text-gray-300">
-                ${course.description || 'Course Description'}
-              </p>
-              <div class="flex flex-col lg:flex-row items-center space-x-0 lg:space-x-4 space-y-4 lg:space-y-0 mb-6">
-                <div class=" px-9 flex justify-center items-center text-xl bg-yellow-600 hover:bg-amber-500 rounded-lg p-2 text-gray-900 dark:text-gray-300">
-                    ${course.categoryName || 'Category'}
-                </div>
-                
-              <!-- Rating and Stats -->  
-              </div>
-              
-
-              <div class="flex items-center space-x-6 text-lg p-2">
-                <div class="flex items-center">
-                  <i class="fas fa-play-circle mr-2 "></i>
-                  <span class="text-gray-700 dark:text-gray-500">130 lessons</span>
-                </div>
-              </div>
-              
-            </div>
-
-            <!-- Pricing Card -->
-            <div class="max-w-sm mx-auto  rounded-xl shadow-md overflow-hidden border-gray-200 p-4 dark:bg-gray-800 text-gray-900 dark:text-gray-100 transition-colors duration-300 dark:border-0">
-              <!-- Media Placeholder with Play Icon -->
-              <div class="flex justify-center mb-4">
-                <div class="relative w-full">
-                  <img
-                    src="${course.thumbnail}"
-                    alt=""
-                    class="w-full h-48  rounded-lg shadow-md"
-                    onerror="this.src='https://via.placeholder.com/400x200'"
-                  />&nbsp; <br>
-                  ${course.slug}
-                  <div class=" p-5 mt-3 flex items-center justify-center">
-                   <button
-                  onclick="openPaymentModal('Premium Plan', '$${course.discount || course.price || '0'}')"
-                  class=" px-9 bg-blue-400 p-3  border-gray-600 text-gray-900 dark:text-gray-300 font-semibold py-2 rounded-md hover:bg-[#40a0d9] dark:hover:bg-gray-900 transition duration-300"
-                >
-                  Enroll Now
-                </button>&nbsp;&nbsp;
-                  <span class="text-gray-700 text-2xl dark:text-white">$${course.discount || '0'}</span>&nbsp;
-                <span class="text-gray-400 line-through text-md">$${course.price || '0'}</span>
-                  </div>
-                </div>
-              </div>             
-            </div>
-          </div>
-        </div>
-      </section>
-    `;
-
-    // Set the innerHTML
-    const heroElement = document.getElementById("HeroCourseDetails");
-    if (heroElement) {
-      heroElement.innerHTML = CourseDetails;
-    } else {
-      console.error("Element with ID 'HeroCourseDetails' not found");
-    }
-
-  } catch (error) {
-    console.error("Error fetching data:", error);
-    
-    // Display error message to user
-    const heroElement = document.getElementById("HeroCourseDetails");
-    if (heroElement) {
-      heroElement.innerHTML = `
-        <div class="text-center py-12">
-          <h2 class="text-2xl font-bold text-red-600 mb-4">Error Loading Course</h2>
-          <p class="text-gray-600">Unable to load course details. Please try again later.</p>
-        </div>
-      `;
-    }
-  }
-}
-
-// Call function only if courseId exists
-if (courseId) {
-  fetchCourseDetailsPages();
-} else {
-  console.error("No course ID provided in URL parameters");
-}
-// ==================== Fetch API for Related Course=====================================
-
-const url = "https://course-api.istad.co/api/v1";
-
-async function fetchCourses() {
-  try {
-    const res = await fetch(`${url}/courses?page=0&size=4`);
-    const data = await res.json();
-
-    // data.content contains the course list
-    const cardDisplay = data.content.map((pro) => {
-      return `
-       <div class="bg-white rounded-2xl shadow-lg w-full p-5 dark:bg-gray-800 dark:text-gray-200 transition-all duration-300 hover:scale-105 group" onClick="location.href='courseDetail.html?id=${pro.id}'"
->
-        <div class="flex justify-center mb-4">
-          <img src="${pro.thumbnail}" alt ${pro.title} class="rounded-xl w-full max-w-xs object-contain" />
-        </div>
-        <h2 class="text-lg font-bold text-gray-900 mb-2 line-clamp-2 dark:text-white">${pro.title}</h2>
-        <p class="text-gray-600 text-md mb-4 line-clamp-2 dark:text-gray-300">${pro.description}</p>
-        <div class="flex items-center text-sm text-gray-500 mb-4 space-x-4">
-          <div class="flex items-center space-x-1">
-           <span class="bg-yellow-600 text-yellow-100 rounded-xl px-2 py-1 text-sm font-semibold shadow-[0_0_8px_rgba(255,223,93,0.7)]">
-  ${pro.categoryName}
-</span>
-
-          </div>
-        </div>
-        <div class="flex items-center justify-between">
-          <div class="flex items-center space-x-2">
-            <div class="w-8 h-8 rounded-full bg-gray-200 flex items-center justify-center text-gray-500 text-sm font-bold"> <img src="../imgs/ISTAD.png" alt=""> </div>
-            <span class="text-gray-700 font-medium  dark:text-white">ISTAD</span>
-             <div class="flex items-center text-gray-500">
-             <span class="text-gray-700 text-2xl p-1 font-bold dark:text-white">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$${pro.discount}</span>
-           <span class="text-gray-500 text-md line-through dark:text-gray-300"> $${pro.price}</span>
-           </div>
-        </div>
-      </div>
-    </div>
-      `;
+      e.target.value = value;
     });
 
-    document.getElementById("relatedCourses").innerHTML = cardDisplay.join("");
-  } catch (error) {
-    console.error("Error fetching data:", error);
-  }
-}
+    // Only allow numbers in CVV
+    document.getElementById("cvv").addEventListener("input", function (e) {
+      e.target.value = e.target.value.replace(/\D/g, "");
+    });
 
-// Call function
-fetchCourses();
+    // Close modal with Escape key
+    document.addEventListener("keydown", function (e) {
+      if (e.key === "Escape") {
+        closeModal();
+      }
+    });
+
+    // Tab functionality
+    const tabs = document.querySelectorAll(".nav-tab");
+    const tabContents = document.querySelectorAll(".tab-content");
+
+    tabs.forEach((tab) => {
+      tab.addEventListener("click", () => {
+        // Remove active class from all tabs
+        tabs.forEach((t) => {
+          t.classList.remove(
+            "active",
+            "text-blue-600",
+            "border-b-2",
+            "border-blue-600"
+          );
+          t.classList.add("text-gray-600");
+        });
+
+        // Add active class to clicked tab
+        tab.classList.add(
+          "active",
+          "text-blue-600",
+          "border-b-2",
+          "border-blue-600"
+        );
+        tab.classList.remove("text-gray-600");
+
+        // Hide all tab contents
+        tabContents.forEach((content) => {
+          content.classList.add("hidden");
+        });
+
+        // Show corresponding content
+        const targetTab = tab.getAttribute("data-tab");
+        document.getElementById(targetTab).classList.remove("hidden");
+      });
+    });
+
+    // Add to cart functionality
+    document.getElementById("addToCart").addEventListener("click", () => {
+      // Simple notification (in a real app, this would add to cart)
+      const button = document.getElementById("addToCart");
+      const originalText = button.textContent;
+
+      button.textContent = "Added to Cart!";
+      button.classList.add("bg-green-600");
+      button.classList.remove("bg-blue-600");
+
+      setTimeout(() => {
+        button.textContent = originalText;
+        button.classList.remove("bg-green-600");
+        button.classList.add("bg-blue-600");
+      }, 2000);
+    });
+
+    // Smooth scrolling for internal links
+    document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+      anchor.addEventListener("click", function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute("href"));
+        if (target) {
+          target.scrollIntoView({
+            behavior: "smooth",
+          });
+        }
+      });
+    });
+
+    // Add some scroll effects
+    window.addEventListener("scroll", () => {
+      const nav = document.querySelector(".sticky");
+      if (window.scrollY > 100) {
+        nav.classList.add("shadow-md");
+      } else {
+        nav.classList.remove("shadow-md");
+      }
+    });
+    // ==========================================
+    function toggleDropdown(id) {
+      const dropdown = document.getElementById(`dropdown-${id}`);
+      const arrow = document.getElementById(`arrow-${id}`);
+
+      dropdown.classList.toggle("hidden");
+      arrow.classList.toggle("rotate-0");
+      arrow.classList.toggle("rotate-180");
+    }
+
+    function expandAll(e) {
+      e.preventDefault();
+      for (let i = 1; i <= 5; i++) {
+        const dropdown = document.getElementById(`dropdown-${i}`);
+        const arrow = document.getElementById(`arrow-${i}`);
+
+        dropdown.classList.remove("hidden");
+        arrow.classList.remove("rotate-0");
+        arrow.classList.add("rotate-180");
+      }
+    }

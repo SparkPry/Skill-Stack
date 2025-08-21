@@ -85,118 +85,70 @@ document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
     }
   });
 });
+ let currentSlide = 0;
+        const container = document.querySelector(".testimonial-container");
+        const slides = document.querySelectorAll(".testimonial-slide");
+        const dots = document.querySelectorAll(".pagination-dot");
 
-// Add scroll effect to navbar
-//   window.addEventListener("scroll", function () {
-//     const nav = document.querySelector("nav");
-//     if (window.scrollY > 50) {
-//       nav.classList.add("shadow-lg");
-//     } else {
-//       nav.classList.remove("shadow-lg");
-//     }
-//   });
+        let totalSlides = slides.length;
 
-// Testimonial carousel functionality
-let currentTestimonial = 0;
-const testimonials = document.querySelectorAll(".testimonial-slide");
-const dots = document.querySelectorAll(".pagination-dot");
+        // Clone first slide and append
+        const firstClone = slides[0].cloneNode(true);
+        container.appendChild(firstClone);
+        totalSlides++;
 
-function showTestimonial(index) {
-  testimonials.forEach((testimonial, i) => {
-    testimonial.style.display = i === index ? "block" : "none";
-  });
+        function showSlide(index) {
+            container.style.transition = "transform 0.5s ease-in-out";
+            container.style.transform = `translateX(-${index * 100}%)`;
 
-  dots.forEach((dot, i) => {
-    if (i === index) {
-      dot.classList.remove("bg-gray-300");
-      dot.classList.add("bg-blue-600");
-    } else {
-      dot.classList.remove("bg-blue-600");
-      dot.classList.add("bg-gray-300");
-    }
-  });
-}
-
-// Auto-rotate testimonials every 5 seconds
-setInterval(() => {
-  currentTestimonial = (currentTestimonial + 1) % testimonials.length;
-  showTestimonial(currentTestimonial);
-}, 5000);
-
-// Add click handlers for pagination dots
-dots.forEach((dot, index) => {
-  dot.addEventListener("click", () => {
-    currentTestimonial = index;
-    showTestimonial(currentTestimonial);
-  });
-});
-
-// Add animation on scroll
-const observerOptions = {
-  threshold: 0.1,
-  rootMargin: "0px 0px -50px 0px",
-};
-
-const observer = new IntersectionObserver((entries) => {
-  entries.forEach((entry) => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add("animate-fade-in");
-    }
-  });
-}, observerOptions);
-
-// Observe elements for animation
-document.querySelectorAll(".group, .bg-white").forEach((el) => {
-  observer.observe(el);
-});
-
-// Add CSS animation classes
-const style = document.createElement("style");
-style.textContent = `
-            @keyframes fadeIn {
-                from {
-                    opacity: 0;
-                    transform: translateY(20px);
+            // Update dots (ignore cloned slide)
+            dots.forEach((dot, i) => {
+                if (i === index % (totalSlides - 1)) {
+                    dot.classList.add("bg-blue-600");
+                    dot.classList.remove("bg-gray-300");
+                } else {
+                    dot.classList.add("bg-gray-300");
+                    dot.classList.remove("bg-blue-600");
                 }
-                to {
-                    opacity: 1;
-                    transform: translateY(0);
-                }
-            }
-            
-            .animate-fade-in {
-                animation: fadeIn 0.6s ease-out forwards;
-            }
-            
-            .group:hover .group-hover\\:scale-105 {
-                transform: scale(1.05);
-            }
-            
-            .transition-all {
-                transition: all 0.3s ease;
-            }
-        `;
-document.head.appendChild(style);
+            });
 
-// Form validation and submission
-function handleFormSubmission(event) {
-  event.preventDefault();
+            currentSlide = index;
+        }
 
-  // Simple form validation
-  const email = event.target.querySelector('input[type="email"]');
-  if (email && !email.value.includes("@")) {
-    alert("Please enter a valid email address");
-    return;
-  }
+        container.addEventListener("transitionend", () => {
+            if (currentSlide === totalSlides - 1) {
+                container.style.transition = "none";
+                container.style.transform = "translateX(0%)";
+                currentSlide = 0;
+            }
+        });
 
-  // Simulate form submission
-  alert("Thank you for your interest! We'll get back to you soon.");
-}
+        // Auto play
+        setInterval(() => {
+            currentSlide++;
+            showSlide(currentSlide);
+        }, 7000);
 
-// Add event listeners to forms
-document.querySelectorAll("form").forEach((form) => {
-  form.addEventListener("submit", handleFormSubmission);
-});
+        // Dot navigation
+        dots.forEach((dot, index) => {
+            dot.addEventListener("click", () => {
+                currentSlide = index;
+                showSlide(currentSlide);
+            });
+        });
+// ========================slide text loop=================================
+        // Optional: Add pause on hover
+        const banner = document.querySelector('.slide-text');
+        const containerr = document.querySelector('.slide-container');
+        
+        containerr.addEventListener('mouseenter', () => {
+            banner.style.animationPlayState = 'paused';
+        });
+        
+        containerr.addEventListener('mouseleave', () => {
+            banner.style.animationPlayState = 'running';
+        });
+        
 // ========================= animetion hero section========================================
 // Initialize animations when page loads
 document.addEventListener("DOMContentLoaded", function () {
@@ -219,7 +171,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
       // Schedule next line
       if (currentLine < lines.length) {
-        setTimeout(showNextLine, 1800); // Wait for typewriter + small delay
+        setTimeout(showNextLine, 700); // Wait for typewriter + small delay
       } else {
         // Remove cursor from last line
         element.classList.add("no-cursor");
@@ -284,7 +236,7 @@ async function fetchCourses() {
     // data.content contains the course list
     const cardDisplay = data.content.map((pro) => {
       return `
-        <div class="bg-white rounded-2xl shadow-lg w-full p-5 dark:bg-gray-800 dark:text-gray-200 transition-all duration-300 hover:scale-105 group" onClick="location.href='./pages/courseDetail.html?id=${pro.id}'"
+        <div class="bg-white rounded-2xl shadow-lg w-full p-5 dark:bg-gray-800 dark:text-gray-200 transition-all duration-300 hover:scale-105 group" onClick="location.href='./pages/courseDetail.html?slug=${pro.slug}'"
 >
         <div class="flex justify-center mb-4">
           <img src="${pro.thumbnail}" alt ${pro.title} class="rounded-xl w-full max-w-xs object-contain" />
